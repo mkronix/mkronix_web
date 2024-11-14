@@ -6,6 +6,12 @@ import Header from '../components/Header';
 import { cardData } from '../data/CardData.js';
 import { splitText, wordVariants } from '../utils/splitextAnime.jsx';
 import MarqueeText from '../components/marquetext/MarqueeText.jsx';
+import StickyCard from '../components/StickyCard/StickyCard.jsx';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
     return (
@@ -53,6 +59,7 @@ const Home = () => {
                     </h2>
                 </div>
             </div>
+            {/* 
             <div className='overflow-hidden flex gap-4 flex-wrap p-2 max-md:p-4'>
                 {cardData.map((cardData, index) => (
                     <React.Fragment key={index}>
@@ -64,7 +71,8 @@ const Home = () => {
                         />
                     </React.Fragment>
                 ))}
-            </div>
+            </div> */}
+            <StickyCard />
             <MarqueeText />
         </main>
     )
