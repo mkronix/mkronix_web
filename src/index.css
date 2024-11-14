@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora.ttf');
+}
+
+@font-face {
+    font-family: 'Arizona';
+    src: url('/fonts/Arizonia.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('/fonts/Oswald.ttf');
+}
+
+@font-face {
+    font-family: 'Monument-bold';
+    src: url('/fonts/Monument-Ultrabold.otf');
+}
+
+@font-face {
+    font-family: 'Monument';
+    src: url('/fonts/MonumentExtended.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3 ease;
+    cursor: none;
+}
+
+image {
+    cursor: none !important;
+}
+
+body {
+    font-family: 'Monument';
+    background-color: #0A0A0A;
+    cursor: none;
+    user-select: none;
+}
+
+button {
+    cursor: none;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 0.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-icon {
+    width: 41px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: opactity .4s cubic-bezier(.65, .05, .36, 1);
+    position: relative;
+    z-index: 50;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: 100% 50%;
+}
+
+.menu-icon.open span:nth-child(1) {
+    transform: rotate(-45deg) scaleX(.75);
+}
+
+.menu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+    transform: rotate(45deg) scaleX(.75);
+}
+
+.contactBtn:hover img {
+    transform: translateX(10px);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+/* .hero-text-shadow:hover {
+    animation: glowText 3s ease-in-out infinite;
+} */
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0px 0px 8px, 0 0 0px;
+    }
+
+    25% {
+        text-shadow: 2px 4px 8px, 0 0 2px;
+    }
+
+    50% {
+        text-shadow: 0px 0px 8px, 0 0 0px;
+    }
+
+    75% {
+        text-shadow: 2px 4px 8px, 0 0 2px;
+    }
+
+    100% {
+        text-shadow: 4px 8px 8px, 0 0 5px;
+    }
+}
+
+.scrolling-text {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.scrolling-text .rail {
+    display: flex;
+}
+
+.scrolling-text .rail h4 {
+    white-space: nowrap;
+    font-size: 200px;
+    font-weight: 900;
+    letter-spacing: ls(120);
+    line-height: 1em;
+    margin: 0 2rem 0 0;
+    color: white;
+}
+
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+    height: 100vh;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100%;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.c-scrollbar:hover {
+    transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+    opacity: 1;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar {
+    width: 100%;
+    height: 10px;
+    top: auto;
+    bottom: 0;
+    transform: scaleY(1);
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+    transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+    right: auto;
+    bottom: 0;
+}
