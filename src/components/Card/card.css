@@ -1,3 +1,25 @@
+:root {
+    --color-bg-1: #927af1;
+    --color-bg-2: #927af1;
+}
+
+.content {
+    padding: var(--page-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content--sticky {
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    --offset: 0px;
+    top: var(--offset);
+    height: calc(100vh - var(--offset));
+}
+
 .list_inner {
     width: 18rem;
     border-radius: 0.5rem;
@@ -48,7 +70,7 @@
     inset: 0;
     width: calc(100% + 3px);
     height: 100%;
-    background: linear-gradient(180deg, #c2ff3f, transparent 80%);
+    background: linear-gradient(180deg, var(--color-bg-1), transparent 80%);
     opacity: 0;
 }
 
@@ -73,19 +95,9 @@
     border-radius: 0 0 0.5rem 0.5rem;
 }
 
-.number {
-    position: absolute;
-    top: -0.5rem;
-    left: 0.6rem;
-    color: #c2ff3f;
-    font-weight: 700;
-    font-size: 0.85rem;
-    z-index: 3;
-}
-
 .card_title {
     position: relative;
-    color: #f8f6fd;
+    color: var(--color-bg-1);
     margin-bottom: .18rem;
     font-size: 1.25rem;
     text-transform: uppercase;
