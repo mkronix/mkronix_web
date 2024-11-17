@@ -2,7 +2,7 @@ import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import star from '../../assets/star.svg';
+import star from '../../assets/icon/star.svg';
 import './MarqueeText.css';
 
 const MarqueeText = () => {

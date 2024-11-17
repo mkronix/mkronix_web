@@ -61,8 +61,8 @@
     content: "";
     display: block;
     position: absolute;
-    -webkit-mask-image: url('../../assets/what_can_we_do_mask.svg');
-    mask-image: url('../../assets/what_can_we_do_mask.svg');
+    -webkit-mask-image: url('../../assets/icon/what_can_we_do_mask.svg');
+    mask-image: url('../../assets/icon/what_can_we_do_mask.svg');
     mask-position: 50%;
     mask-repeat: no-repeat;
     mask-size: cover;
@@ -87,8 +87,8 @@
     content: "";
     display: block;
     position: absolute;
-    -webkit-mask-image: url('../../assets/what_can_we_do_mask.svg');
-    mask-image: url('../../assets/what_can_we_do_mask.svg');
+    -webkit-mask-image: url('../../assets/icon/what_can_we_do_mask.svg');
+    mask-image: url('../../assets/icon/what_can_we_do_mask.svg');
     mask-position: 50%;
     mask-repeat: no-repeat;
     mask-size: cover;

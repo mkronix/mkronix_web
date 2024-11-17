@@ -6,12 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'black': '#0A0A0A',
-        'white': '#F5F5F5',
-        'primary': '#6a47f7a3',
-        'gray-dark': '#151518',
-        'gray': '#2E2E2E',
-        'gray-light': '#A8A8A8',
+        'bg-secondary': '#000000',
+        'text-primary': '#FFFFFF',
+        'card-bg': '#1C1C1C',
       },
       fontFamily: {
         'sora': ['Sora', 'sans-serif'],
@@ -19,6 +16,8 @@ module.exports = {
         'oswald': ['Oswald', 'sans-serif'],
         'monu-bold': ['Monument-bold', 'sans-serif'],
         'monu': ['Monument', 'sans-serif'],
+        'irish': ['Irish'],
+        'antic': ['Antic', 'sans-serif'],
       },
     },
   },
