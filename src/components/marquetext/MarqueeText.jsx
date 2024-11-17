@@ -1,8 +1,8 @@
-import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import star from '../../assets/icon/star.svg';
+import '@splidejs/splide/dist/css/splide.min.css';
+import React from 'react';
+import { dummyImages } from '../../data/dummyImages';
 import './MarqueeText.css';
 
 const MarqueeText = () => {
@@ -16,17 +16,22 @@ const MarqueeText = () => {
                         drag: 'free',
                         focus: 'center',
                         autoWidth: true,
-                        gap: 40,
+                        gap: 0,
                         pagination: false,
                         arrows: false,
                         autoScroll: {
-                            speed: 3,
+                            speed: 0.8,
 
                         },
                     }}
                     extensions={{ AutoScroll }}
                 >
-                    <SplideSlide>
+                    {dummyImages.map((image, index) => (
+                        <SplideSlide key={index}>
+                            <img key={index} src={image} alt={`Image ${index}`} className="md:w-56 md:h-44 sm:w-36 sm:h-28 w-24 h-20 object-cover rounded-lg mx-2" />
+                        </SplideSlide>
+                    ))}
+                    {/* <SplideSlide>
                         <span className="marquee_text">
                             Bring <span className='ml-2'>Life</span>
                             <img src={star} alt="" />
@@ -49,7 +54,7 @@ const MarqueeText = () => {
                             For More<span className='ml-2'>Information</span>
                             <img src={star} alt="" />
                         </span>
-                    </SplideSlide>
+                    </SplideSlide> */}
                 </Splide>
             </div>
         </div>

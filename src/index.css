@@ -26,26 +26,23 @@
     font-family: 'Monument';
     src: url('/fonts/MonumentExtended.otf');
 }
-@font-face{
+
+@font-face {
     font-family: 'Irish';
     src: url('/fonts/IrishGrover.ttf');
 }
-@font-face{
+
+@font-face {
     font-family: 'Antic';
     src: url('/fonts/AnticDidone-Regular.ttf');
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all 0.3 ease;
     cursor: none;
-}
-
-.cardHeading {
-    font-family: 'Antic';
-    line-height: auto;
-    font-size: 36px;
 }
 
 image {

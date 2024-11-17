@@ -11,6 +11,8 @@ import { projectCards } from './data/project';
 import LabelCard from './components/LabelCard/LabelCard';
 import ServiceCard from './components/ServiceCard/ServiceCard';
 import ProjectCard from './components/ProjectCard/ProjectCard';
+import { dummyImages } from './data/dummyImages';
+import MarqueeText from './components/marquetext/MarqueeText';
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
@@ -36,24 +38,24 @@ const App = () => {
         {
           opacity: 0,
           scale: 0.5,
-          y: 50, // Slightly increase the Y-axis offset for smoother entry
+          y: 50,
         },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 1.2, // Slower animation duration
-          ease: 'power2.out', // Gradual easing
+          duration: 1.2,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: card,
             start: 'top 100%',
-            end: 'top 10%',
-            scrub: 1, // Smoother transition during scroll
+            end: 'bottom 100%',
+            scrub: 1.5,  // Increase the scrub value for smoother, slower animations
             toggleActions: 'play none none reverse',
           },
-          delay: index * 0.8, // Increased delay for stagger effect
         }
       );
+
     });
 
     return () => {
@@ -66,7 +68,7 @@ const App = () => {
   return (
     <>
       <div className='bg-black'>
-        <section className="px-10 py-12 mt-10">
+        <section className="px-10 py-12">
           <h2 className="lg:text-[96px] md:text-[60px] sm:text-[48px] text-[36px] lg:leading-[100px]
           md:leading-[80px] sm:leading-[60px] leading-[40px] font-bold font-antic text-white md:mb-8 mb-4">
             Success-Driven Design for Ambitious Leaders
@@ -75,15 +77,18 @@ const App = () => {
             We design <span className="text-black px-2 rounded-md bg-white font-sans">brands</span>{" "}
             that transform visions into thriving businesses.
           </p>
+          <div className="overflow-hidden w-full h-44 relative my-5">
+            <MarqueeText />
+          </div>
         </section>
-        <section className="md:px-10 flex justify-center py-4">
+        <section className="md:px-10 flex justify-center pb-4">
           <div className="fadeOutAnimation grid grid-cols-2 max-sm:grid-cols-1 gap-3 px-8">
             {services.map((service) => (
               <ServiceCard key={service.id} title={service.title} description={service.description} img={service.image} />
             ))}
           </div>
         </section>
-        <section className="md:px-10 flex justify-center py-4">
+        <section className="md:px-10 flex justify-center pb-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-8">
             <div className="fadeOutAnimation max-w-[660px] wfull bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
               <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
@@ -111,7 +116,7 @@ const App = () => {
             </div>
           </div>
         </section>
-        <section className="md:px-10 flex justify-center py-4">
+        <section className="md:px-10 flex justify-center pb-4">
           <div className="fadeOutAnimation grid grid-cols-1 md:grid-cols-3 gap-3 px-8">
             {projectCards.map((card,) => (
               <ProjectCard buttonText={card.buttonText} title={card.title} description={card.description} image={card.image} key={card.id} />

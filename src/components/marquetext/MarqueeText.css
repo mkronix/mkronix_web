@@ -13,8 +13,8 @@
 }
 
 .marquee {
-    border-top: 1px solid var(--pr-color);
-    border-bottom: 1px solid var(--pr-color);
+    /* border-top: 1px solid var(--pr-color);
+    border-bottom: 1px solid var(--pr-color); */
     padding: 10px 0;
 }
 
