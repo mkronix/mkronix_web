@@ -1,5 +1,5 @@
 :root {
-    --pr-color: #afc50a;
+    --pr-color: #927af1;
     --second-color: #0a0a0a;
     --cubicbz: cubic-bezier (.9, 0, .1, 1);
     --fz-big: 80px;
@@ -9,21 +9,12 @@
 .marquee_wrapp {
     position: relative;
     width: 100%;
-    height: auto;
-    overflow: hidden;
     z-index: 1;
 }
 
-.marquee_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
 .marquee {
-    border-top: 1px solid var(--pr-color);
-    border-bottom: 1px solid var(--pr-color);
+    /* border-top: 1px solid var(--pr-color);
+    border-bottom: 1px solid var(--pr-color); */
     padding: 10px 0;
 }
 

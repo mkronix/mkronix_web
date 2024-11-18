@@ -1,6 +1,5 @@
 {
-  "name": "kkcreative",
-  "private": true,
+  "name": "mkronix",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -12,12 +11,8 @@
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "github:splidejs/splide-extension-auto-scroll",
-    "framer-motion": "^11.3.24",
     "gsap": "^3.12.5",
-<<<<<<< HEAD
     "lenis": "^1.1.16",
-=======
->>>>>>> 02a3cb6b8d886f12c57cfc3c5133822b82070d69
     "locomotive-scroll": "^4.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
