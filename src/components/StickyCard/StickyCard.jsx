@@ -58,10 +58,10 @@ const StickyCard = () => {
                     style={{
                         '--offset': `${service.id === 1 ? '0px' : `${Number(service.id) * 2}rem`}`
                     }}
-                    className={`sticky_content sticky_content--sticky lg:w-96 md:w-56 sm:w-full sticky_content--grid bg-${service.id}`}
+                    className={`sticky_content sticky_content--sticky lg:w-96 sm:w-full sticky_content--grid bg-${service.id}`}
                 >
                     <img className="sticky_content__img text-black my-4" src={service.image} />
-                    <h2 className="sticky_content__title">
+                    <h2 className="sticky_content__title spotlight-text">
                         {service.title}
                     </h2>
                     <p className="sticky_content__text sticky_content__text--left text-meta">
