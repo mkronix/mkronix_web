@@ -101,16 +101,6 @@ const App = () => {
               <LabelCard title="+30" description="Happiest Customers" />
               <LabelCard title="100%" description="Quality" />
             </div>
-
-            <div className="fadeOutAnimation bg-card-bg px-6 pt-3 rounded-lg shadow-lg flex flex-col justify-between ">
-              <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Responsive Web</h3>
-              <img src={responsiveImage} alt="Responsive Web" className="w-[500px] h-[300px] mt-4 rounded-md object-cover" />
-            </div>
-
-            <div className="fadeOutAnimation bg-card-bg px-6 pt-3 rounded-lg shadow-lg flex flex-col justify-between">
-              <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Quality Code</h3>
-              <img src={simpleCode} alt="Simple and Efficient Code" className="w-[500px] h-[300px] rounded-md mt-4 object-cover" />
-            </div>
           </div>
         </section>
         <section className="md:px-10 flex justify-center pb-4">
