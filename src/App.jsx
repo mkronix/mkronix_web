@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
@@ -13,9 +13,12 @@ import ServiceCard from './components/ServiceCard/ServiceCard';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import { dummyImages } from './data/dummyImages';
 import MarqueeText from './components/marquetext/MarqueeText';
+import StickyCard from './components/StickyCard/StickyCard';
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
+  const containerRef = useRef(null);
+  const cardsRef = useRef([]);
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1, // Smoother scrolling with gradual motion
@@ -68,7 +71,7 @@ const App = () => {
   return (
     <>
       <div className='bg-black'>
-        <section className="px-10 py-12">
+        <section className="px-10 pt-12 pb-0">
           <h2 className="lg:text-[96px] md:text-[60px] sm:text-[48px] text-[36px] lg:leading-[100px]
           md:leading-[80px] sm:leading-[60px] leading-[40px] font-bold font-antic text-white md:mb-8 mb-4">
             Success-Driven Design for Ambitious Leaders
@@ -81,13 +84,7 @@ const App = () => {
             <MarqueeText />
           </div>
         </section>
-        <section className="md:px-10 flex justify-center pb-4">
-          <div className="fadeOutAnimation grid grid-cols-2 max-sm:grid-cols-1 gap-3 px-8">
-            {services.map((service) => (
-              <ServiceCard key={service.id} title={service.title} description={service.description} img={service.image} />
-            ))}
-          </div>
-        </section>
+        <StickyCard />
         <section className="md:px-10 flex justify-center pb-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-8">
             <div className="fadeOutAnimation max-w-[660px] wfull bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
