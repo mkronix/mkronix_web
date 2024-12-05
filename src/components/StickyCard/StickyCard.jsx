@@ -16,9 +16,6 @@ const StickyCard = () => {
         const lenis = new Lenis({
             lerp: 0.2,
             smoothWheel: true,
-            duration: 1.5,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-
         });
         const scrollFn = (time) => {
             lenis.raf(time);
@@ -76,10 +73,11 @@ const StickyCard = () => {
             <div ref={triggerRef}>
                 <div
                     ref={sectionRef}
-                    className="flex h-screen w-[400vw] relative"
+                    className="flex w-[400vw] relative"
                 >
                     {services.map((service) => (
                         <div className="flex h-screen gap-10 px-4 w-screen items-center justify-center">
+                            {/* card */}
                             <div
                                 key={service.id}
                                 className={`sticky_content sticky_content--sticky lg:w-96 w-[90%] bg-${service.id}`}
