@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.menu_marquee__inner {
+  animation: menu_marquee 15s linear infinite;
+  will-change: transform;
+}
+
+@keyframes menu_marquee {
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

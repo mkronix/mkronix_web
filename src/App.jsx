@@ -1,75 +1,45 @@
-import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-import Cursor from './components/Cursor/Cursor';
-import { services } from './data/services';
-import responsiveImage from './assets/img/responsive.png';
-import simpleCode from './assets/img/simpleCode 2.jpg';
+import React, { useEffect } from 'react';
 import creative from './assets/icon/creative.svg';
-import { projectCards } from './data/project';
+import Cursor from './components/Cursor/Cursor';
 import LabelCard from './components/LabelCard/LabelCard';
-import ServiceCard from './components/ServiceCard/ServiceCard';
-import ProjectCard from './components/ProjectCard/ProjectCard';
-import { dummyImages } from './data/dummyImages';
 import MarqueeText from './components/marquetext/MarqueeText';
+import ProjectCard from './components/ProjectCard/ProjectCard';
+import ScrollRevealText from './components/ScrollRevealText/ScrollRevealText';
 import StickyCard from './components/StickyCard/StickyCard';
+import Lenis from 'lenis';
+import { projectCards } from './data/project';
+import AnimatedSideMenu from './components/MenuMarquee/AnimatedSideMenu';
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
-  const containerRef = useRef(null);
-  const cardsRef = useRef([]);
-  useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.1, // Smoother scrolling with gradual motion
-      smoothWheel: true,
-      smoothTouch: true,
-    });
 
-    lenis.on('scroll', () => ScrollTrigger.update());
+  useEffect(() => {
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      lerp: 0.2,
+      smoothWheel: true,
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
 
     const scrollFn = (time) => {
       lenis.raf(time);
       requestAnimationFrame(scrollFn);
     };
+
     requestAnimationFrame(scrollFn);
 
-    const cards = document.querySelectorAll('.fadeOutAnimation');
-    cards.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          scale: 0.5,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 1.2,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 100%',
-            end: 'bottom 100%',
-            scrub: 1.5,  // Increase the scrub value for smoother, slower animations
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-    });
+    lenis.on('scroll', ScrollTrigger.update);
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       lenis.destroy();
     };
   }, []);
-
-
   return (
     <>
+      <AnimatedSideMenu />
       <div className='bg-black'>
         <section className="px-10 pt-12 pb-0">
           <h2 className="lg:text-[96px] md:text-[60px] sm:text-[48px] text-[36px] lg:leading-[100px]
@@ -87,33 +57,33 @@ const App = () => {
         <StickyCard />
         <section className="md:px-10 flex justify-center pb-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-8">
-            <div className="fadeOutAnimation max-w-[660px] wfull bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
+            <div className="max-w-[660px] wfull bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
               <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
               <img src={creative} className="w-24 h-24 self-center" alt="creative logo" />
-              <p className=" text-text-primary font-sans font-light lg:text-lg text-sm">
-                We are a passionate and dedicated designer and developer, specializing in creating unique and effective design solutions. With extensive experience in web, apps, and as well as UX/UI design, we have collaborated with companies of all types, both nationally and internationally, ensuring efficiency and flexibility in every project.
-              </p>
+              <ScrollRevealText className="text-text-primary font-sans font-light lg:text-lg text-sm">
+                We are a passionate and dedicated designer and developer, specializing in creating
+                unique and effective design solutions. With extensive experience in web, apps,
+                and as well as UX/UI design, we have collaborated with companies of all types,
+                both nationally and internationally, ensuring efficiency and flexibility in every project.
+              </ScrollRevealText>
+
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              <LabelCard title="+5" description="Years of Experience" />
-              <LabelCard title="+25" description="Successful Projects" />
-              <LabelCard title="+30" description="Happiest Customers" />
+              <LabelCard title="+3" description="Years of Experience" />
+              <LabelCard title="+20" description="Successful Projects" />
+              <LabelCard title="+15" description="Happiest Customers" />
               <LabelCard title="100%" description="Quality" />
             </div>
           </div>
         </section>
         <section className="md:px-10 flex justify-center pb-4">
-          <div className="fadeOutAnimation grid grid-cols-1 md:grid-cols-3 gap-3 px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-8">
             {projectCards.map((card,) => (
               <ProjectCard buttonText={card.buttonText} title={card.title} description={card.description} image={card.image} key={card.id} />
             ))}
           </div>
         </section>
-        <div className='md:p-10 px-10'>
-          <h4 className='md:w-2/3 w-full md:px-16 px-0 text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]'>Why exceptional design and user
-            experience are crucial for your business in today’s competitive market:</h4>
-        </div>
       </div>
       <Cursor />
     </>

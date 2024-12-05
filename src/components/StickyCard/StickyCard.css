@@ -1,11 +1,3 @@
-:root {
-  --color-bg-1: #75c939;
-  --color-bg-2: #43392f;
-  --color-bg-3: var(--color-bg-1);
-  --color-bg-4: var(--color-bg-2);
-  --color-bg-5: var(--color-bg-1);
-  --color-bg-6: var(--color-bg-2);
-}
 .sticky_content {
   padding: 1.5rem;
   display: flex;
@@ -14,20 +6,11 @@
   align-items: center;
   border-radius: 20px;
 }
+
 .sticky_content--sticky {
   position: sticky;
   top: 0;
-  --offset: 0px;
-  top: var(--offset);
-  height: calc(70vh - var(--offset));
-}
-
-.sticky_content--grid {
-  display: grid;
-  overflow: hidden;
-  align-content: center;
-  grid-template-areas: "sticky_content-img" "sticky_content-title" "sticky_content-text";
-  justify-items: center;
+  height: calc(60vh);
 }
 
 .sticky_content__img {
@@ -35,6 +18,7 @@
   width: 15%;
   height: auto;
 }
+
 .sticky_content__title {
   grid-area: sticky_content-title;
   letter-spacing: -0.095em;
@@ -59,20 +43,25 @@
 }
 
 .bg-1 {
-  background: #75c939;
+  background: #a7f56f;
 }
+
 .bg-2 {
-  background: #39bbc9;
+  background: #6fecfa;
 }
+
 .bg-3 {
-  background: #c9aa39;
+  background: #ffe37c;
 }
+
 .bg-4 {
-  background: #c0548f;
+  background: #ff86c9;
 }
+
 .bg-5 {
-  background: #c59d75;
+  background: #a7f56f;
 }
+
 .bg-6 {
-  background: #67d3a9;
+  background: #6fecfa;
 }

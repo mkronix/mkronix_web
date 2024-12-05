@@ -16,13 +16,13 @@ export const services = [
         description: "Your website is your digital business card. Using advanced codeless tools, I create sleek, functional, and user-friendly websites that deliver exceptional experiences with speed and efficiency."
     },
     {
-        id: 3,
+        id: 4,
         image: app,
         title: "App Design",
         description: "Apps are a gateway to the world. I design no-code apps that are visually appealing, highly functional, and built efficiently, ensuring both cost-effectiveness and a seamless user experience."
     },
     {
-        id: 4,
+        id: 6,
         image: webdev,
         title: "Web Development",
         description: "Web development powers your online presence. I specialize in building modern websites that are visually stunning, scalable, and secure, ensuring they meet the needs of today's fast-paced digital world."
