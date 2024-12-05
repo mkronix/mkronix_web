@@ -17,19 +17,19 @@ const AnimatedSideMenu = () => {
                     {/* Top Line */}
                     <span
                         onClick={() => setOpen(!open)}
-                        className={`absolute w-12 h-[2px] bg-white transition-all duration-500 ease-in-out ${open ? "rotate-45 translate-y-0" : "-translate-y-[8px]"
+                        className={`absolute w-10 h-[2px] bg-white transition-all duration-500 ease-in-out ${open ? "rotate-45 translate-y-0" : "-translate-y-[8px]"
                             }`}
                     />
                     {/* Middle Line */}
                     <span
                         onClick={() => setOpen(!open)}
-                        className={`absolute w-10 h-[2px] bg-white transition-all duration-500 ease-in-out ${open ? "opacity-0" : "opacity-100"
+                        className={`absolute w-8 h-[2px] bg-white transition-all duration-500 ease-in-out ${open ? "opacity-0" : "opacity-100"
                             }`}
                     />
                     {/* Bottom Line */}
                     <span
                         onClick={() => setOpen(!open)}
-                        className={`absolute w-12 h-[2px] bg-white transition-all duration-500 ease-in-out ${open ? "-rotate-45 translate-y-0" : "translate-y-[8px]"
+                        className={`absolute w-10 h-[2px] bg-white transition-all duration-500 ease-in-out ${open ? "-rotate-45 translate-y-0" : "translate-y-[8px]"
                             }`}
                     />
                 </div>
