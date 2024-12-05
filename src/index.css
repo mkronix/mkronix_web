@@ -61,3 +61,7 @@ button {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.sticky_content {
+  will-change: transform;
+}
