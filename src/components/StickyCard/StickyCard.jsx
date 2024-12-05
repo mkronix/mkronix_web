@@ -14,9 +14,11 @@ const StickyCard = () => {
     useEffect(() => {
         // Initialize Lenis for smooth scrolling
         const lenis = new Lenis({
-            lerp: 0.2,
+            lerp: 0.1, // Reduce the lerp for more gradual scrolling
             smoothWheel: true,
+            smoothTouch: true, // Ensure touch interactions are smooth
         });
+
         const scrollFn = (time) => {
             lenis.raf(time);
             requestAnimationFrame(scrollFn);
@@ -32,17 +34,18 @@ const StickyCard = () => {
             },
             {
                 translateX: "-300vw",
-                ease: "none",
+                ease: "power1.inOut", // Use a smoother easing function
                 duration: 1,
                 scrollTrigger: {
                     trigger: triggerRef.current,
                     start: "top top",
-                    end: "3000 top", // Ensure enough space for scroll
-                    scrub: 0.6,
+                    end: "3000 top",
+                    scrub: 1.5, // Increase scrub value
                     pin: true,
                 },
             }
         );
+
         // Scroll-triggered animations
         const sticky_contentElements = document.querySelectorAll('.sticky_content--sticky');
         sticky_contentElements.forEach((el, index) => {
@@ -96,25 +99,6 @@ const StickyCard = () => {
                 </div>
             </div>
         </section>
-        // <section className='flex flex-col items-center px-5 md:my-14 my-8 gap-4'>
-        //     {services.map((service) => (
-        //         <div
-        //             key={service.id}
-        //             style={{
-        //                 '--offset': `${service.id === 1 ? '0px' : `${Number(service.id)}rem`}`
-        //             }}
-        //             className={`sticky_content sticky_content--sticky lg:w-96 sm:w-full bg-${service.id}`}
-        //         >
-        //             <img className="sticky_content__img text-black my-4" src={service.image} />
-        //             <h2 className="sticky_content__title">
-        //                 {service.title}
-        //             </h2>
-        //             <ScrollRevealText className={"sticky_content__text"}>
-        //                 {service.description}
-        //             </ScrollRevealText>
-        //         </div>
-        //     ))}
-        // </section>
     );
 };
 

@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import creative from './assets/icon/creative.svg';
 import Cursor from './components/Cursor/Cursor';
 import LabelCard from './components/LabelCard/LabelCard';
@@ -11,32 +11,51 @@ import StickyCard from './components/StickyCard/StickyCard';
 import Lenis from 'lenis';
 import { projectCards } from './data/project';
 import AnimatedSideMenu from './components/MenuMarquee/AnimatedSideMenu';
+import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    // Initialize Lenis for smooth scrolling
-    const lenis = new Lenis({
-      lerp: 0.2,
-      smoothWheel: true,
-      duration: 1.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+    // Simulate preloader delay
+    const timeout = setTimeout(() => {
+      setLoading(false); // Hide loader when done
+    }, 4000); // Adjust time as needed (matches loader animation)
 
-    const scrollFn = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(scrollFn);
-    };
-
-    requestAnimationFrame(scrollFn);
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    return () => {
-      lenis.destroy();
-    };
+    return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      // Initialize Lenis for smooth scrolling
+      const lenis = new Lenis({
+        lerp: 0.2,
+        smoothWheel: true,
+        duration: 1.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+
+      const scrollFn = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(scrollFn);
+      };
+
+      requestAnimationFrame(scrollFn);
+
+      lenis.on('scroll', ScrollTrigger.update);
+
+      return () => {
+        lenis.destroy();
+      };
+    }
+  }, [loading]);
+
+  if (loading) {
+    return <ZeroToHundredLoader />; // Show loader during the loading phase
+  }
+
   return (
     <>
       <AnimatedSideMenu />
