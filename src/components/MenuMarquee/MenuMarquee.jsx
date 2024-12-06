@@ -69,7 +69,7 @@ const MenuItem = ({ linkText, marqueeTexts }) => {
 
     return (
         <div className="overflow-hidden text-center cursor-pointer relative border-b border-white" ref={menuItemRef}>
-            <span className="whitespace-nowrap md:text-[6vw] text-[10vw] leading-[1.2] uppercase text-center text-white font-medium" href="#">
+            <span className="whitespace-nowrap md:text-[6vw] text-[10vw] leading-[1.2] uppercase text-center text-white font-thin" href="#">
                 {linkText}
             </span>
             <div className="absolute top-0 left-0 overflow-hidden w-full h-full bg-black transform-[translate3d(0,101%,0)]" ref={marqueeRef}>

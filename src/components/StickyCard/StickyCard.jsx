@@ -3,8 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import React, { useEffect, useRef } from 'react';
 import { services } from '../../data/services';
-import './StickyCard.css';
-import ScrollRevealText from '../ScrollRevealText/ScrollRevealText';
+import ButtonBestia from '../ButtonBestia/ButtonBestia';
 gsap.registerPlugin(ScrollTrigger);
 
 const StickyCard = () => {
@@ -29,22 +28,21 @@ const StickyCard = () => {
 
         const pin = gsap.fromTo(
             sectionRef.current,
+            { translateX: 0 },
             {
-                translateX: 0,
-            },
-            {
-                translateX: "-300vw",
-                ease: "power1.inOut", // Use a smoother easing function
+                translateX: `-${services.length - 1}00vw`, // Dynamically calculate based on the number of services
+                ease: "power1.inOut",
                 duration: 1,
                 scrollTrigger: {
                     trigger: triggerRef.current,
                     start: "top top",
-                    end: "3000 top",
-                    scrub: 1.5, // Increase scrub value
+                    end: `+=${services.length * window.innerWidth}`, // Ensure the scroll duration matches the total width
+                    scrub: 1.5,
                     pin: true,
                 },
             }
         );
+
 
         // Scroll-triggered animations
         const sticky_contentElements = document.querySelectorAll('.sticky_content--sticky');
@@ -70,36 +68,36 @@ const StickyCard = () => {
     }, []);
 
     return (
-
-        <section className="relative overflow-hidden">
-            {/* Trigger Wrapper */}
-            <div ref={triggerRef}>
-                <div
-                    ref={sectionRef}
-                    className="flex w-[400vw] relative"
-                >
-                    {services.map((service) => (
-                        <div className="flex h-screen gap-10 px-4 w-screen items-center justify-center">
-                            {/* card */}
-                            <div
-                                key={service.id}
-                                className={`sticky_content sticky_content--sticky lg:w-96 w-[90%] bg-${service.id}`}
-                            >
-                                <img className="sticky_content__img text-black my-4" src={service.image} />
-                                <h2 className="sticky_content__title">
-                                    {service.title}
-                                </h2>
-                                <p className={"sticky_content__text"}>
+        <div ref={triggerRef}>
+            <div ref={sectionRef} className="overflow-hidden flex w-[400vw] relative">
+                {services.map((service) => (
+                    <div
+                        key={service.id}
+                        className="flex gap-10 p-10 w-screen items-center justify-center"
+                    >
+                        <ButtonBestia width="w-full" height="h-full">
+                            <div className="sticky_content--sticky grid md:grid-cols-2 grid-cols-1 gap-10 items-center justify-center px-4 md:px-10 py-6">
+                                <div className="flex flex-col items-center text-center md:text-left">
+                                    <img
+                                        className="my-4 w-96 h-56 rounded-lg"
+                                        src={service.image}
+                                        alt={service.title}
+                                    />
+                                    <h2 className="lg:text-4xl md:text-3xl text-2xl font-semibold mt-2">
+                                        {service.title}
+                                    </h2>
+                                </div>
+                                <p className="lg:text-xl md:text-lg text-base  text-justify md:text-left px-4 md:px-6">
                                     {service.description}
                                 </p>
                             </div>
-                        </div>
-                    ))}
-
-                </div>
+                        </ButtonBestia>
+                    </div>
+                ))}
             </div>
-        </section>
+        </div>
     );
+
 };
 
 export default StickyCard;
