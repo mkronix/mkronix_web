@@ -12,6 +12,7 @@ import Lenis from 'lenis';
 import { projectCards } from './data/project';
 import AnimatedSideMenu from './components/MenuMarquee/AnimatedSideMenu';
 import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
+import CardWithAnimationComponent from './components/CardWithAnimationComponent/CardWithAnimationComponent';
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
@@ -59,7 +60,7 @@ const App = () => {
   return (
     <>
       <AnimatedSideMenu />
-      <div className='bg-black'>
+      <main className='bg-black'>
         <section className="px-10 pt-12 pb-0">
           <h2 className="lg:text-[96px] md:text-[60px] sm:text-[48px] text-[36px] lg:leading-[100px]
           md:leading-[80px] sm:leading-[60px] leading-[40px] font-bold font-antic text-white md:mb-8 mb-4">
@@ -76,18 +77,19 @@ const App = () => {
         <StickyCard />
         <section className="md:px-10 flex justify-center pb-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-8">
-            <div className="max-w-[660px] wfull bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
-              <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
-              <img src={creative} className="w-24 h-24 self-center" alt="creative logo" />
-              <ScrollRevealText className="text-text-primary font-sans font-light lg:text-lg text-sm">
-                We are a passionate and dedicated designer and developer, specializing in creating
-                unique and effective design solutions. With extensive experience in web, apps,
-                and as well as UX/UI design, we have collaborated with companies of all types,
-                both nationally and internationally, ensuring efficiency and flexibility in every project.
-              </ScrollRevealText>
+            <CardWithAnimationComponent>
+              <div className="max-w-[660px] w-full h-full bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
+                <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
+                <img src={creative} className="w-24 h-24 self-center" alt="creative logo" />
+                <ScrollRevealText className="text-text-primary font-sans font-light lg:text-lg text-sm">
+                  We are a passionate and dedicated designer and developer, specializing in creating
+                  unique and effective design solutions. With extensive experience in web, apps,
+                  and as well as UX/UI design, we have collaborated with companies of all types,
+                  both nationally and internationally, ensuring efficiency and flexibility in every project.
+                </ScrollRevealText>
 
-            </div>
-
+              </div>
+            </CardWithAnimationComponent>
             <div className="grid grid-cols-2 gap-3">
               <LabelCard title="+3" description="Years of Experience" />
               <LabelCard title="+20" description="Successful Projects" />
@@ -103,7 +105,7 @@ const App = () => {
             ))}
           </div>
         </section>
-      </div>
+      </main>
       <Cursor />
     </>
   );

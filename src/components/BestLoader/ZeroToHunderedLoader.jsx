@@ -26,8 +26,7 @@ const ZeroToHundredLoader = () => {
     return (
         <div className="flex items-center justify-center h-screen w-screen bg-black">
             <div className="relative">
-                {/* SVG Circle Progress Bar */}
-                <svg
+                {/* <svg
                     viewBox="0 0 100 100"
                     className="transform -rotate-90 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] lg:w-[300px] lg:h-[300px]"
                 >
@@ -52,10 +51,10 @@ const ZeroToHundredLoader = () => {
                         strokeLinecap="round" // Rounded ends
                         className="transition-stroke duration-300 ease-linear"
                     />
-                </svg>
+                </svg> */}
 
                 {/* Percentage Text */}
-                <div className="absolute inset-0 flex items-center justify-center text-white text-opacity-60 text-4xl md:text-6xl lg:text-8xl font-bold">
+                <div className="absolute inset-0 flex items-center justify-center text-white lg:text-6xl text-4xl font-bold">
                     {percentage}%
                 </div>
             </div>
