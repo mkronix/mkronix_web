@@ -9,7 +9,8 @@ export const projectCards = [
         description:
             "I create custom designs from scratch, tailored to your company’s needs.",
         buttonText: "projects?",
-        image: website
+        image: website,
+        backround: 'bg-[#353c59]'
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ export const projectCards = [
         description:
             "Web development without writing code—faster and more efficient.",
         buttonText: "projects?",
-        image: uiux
+        image: uiux,
+        backround: 'bg-[#523559]'
     },
     {
         id: 3,
@@ -25,6 +27,7 @@ export const projectCards = [
         description:
             "App prototypes are designed following UX/UI methodology.",
         buttonText: "projects?",
-        image: app
+        image: app,
+        backround: 'bg-[#385935]'
     },
 ];
