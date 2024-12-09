@@ -1,18 +1,17 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
 import React, { useEffect, useState } from 'react';
 import creative from './assets/icon/creative.svg';
+import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
 import Cursor from './components/Cursor/Cursor';
 import LabelCard from './components/LabelCard/LabelCard';
 import MarqueeText from './components/marquetext/MarqueeText';
+import AnimatedSideMenu from './components/MenuMarquee/AnimatedSideMenu';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import ScrollRevealText from './components/ScrollRevealText/ScrollRevealText';
-import StickyCard from './components/StickyCard/StickyCard';
-import Lenis from 'lenis';
+import StackedCards from './components/StackedCards/StackedCards';
 import { projectCards } from './data/project';
-import AnimatedSideMenu from './components/MenuMarquee/AnimatedSideMenu';
-import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
-import CardWithAnimationComponent from './components/CardWithAnimationComponent/CardWithAnimationComponent';
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
@@ -74,34 +73,36 @@ const App = () => {
             <MarqueeText />
           </div>
         </section>
-        <StickyCard />
+        {/* <StickyCard /> */}
+        <StackedCards />
         <section className="md:px-10 flex justify-center pb-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-8">
-            <CardWithAnimationComponent>
-              <div className="max-w-[660px] w-full h-full bg-card-bg p-6 rounded-lg shadow-lg flex flex-col justify-around">
-                <h3 className="text-text-primary font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
-                <img src={creative} className="w-24 h-24 self-center" alt="creative logo" />
-                <ScrollRevealText className="text-text-primary font-sans font-light lg:text-lg text-sm">
-                  We are a passionate and dedicated designer and developer, specializing in creating
-                  unique and effective design solutions. With extensive experience in web, apps,
-                  and as well as UX/UI design, we have collaborated with companies of all types,
-                  both nationally and internationally, ensuring efficiency and flexibility in every project.
-                </ScrollRevealText>
+            {/* <CardWithAnimationComponent> */}
+            <div className="max-w-[660px] w-full h-full bg-[#9c9bbe] p-6 rounded-lg shadow-lg flex flex-col justify-around">
+              <h3 className="text-black font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
+              <img src={creative} className="w-24 h-24 self-center" alt="creative logo" />
+              <ScrollRevealText className="text-black font-sans font-light lg:text-lg text-sm">
+                We are a passionate and dedicated designer and developer, specializing in creating
+                unique and effective design solutions. With extensive experience in web, apps,
+                and as well as UX/UI design, we have collaborated with companies of all types,
+                both nationally and internationally, ensuring efficiency and flexibility in every project.
+              </ScrollRevealText>
 
-              </div>
-            </CardWithAnimationComponent>
+            </div>
+            {/* </CardWithAnimationComponent> */}
             <div className="grid grid-cols-2 gap-3">
-              <LabelCard title="+3" description="Years of Experience" />
-              <LabelCard title="+20" description="Successful Projects" />
-              <LabelCard title="+15" description="Happiest Customers" />
-              <LabelCard title="100%" description="Quality" />
+              <LabelCard title="+3" description="Years of Experience" background={'bg-[#e28181]'} />
+              <LabelCard title="+20" description="Successful Projects" background={'bg-violet-600'} />
+              <LabelCard title="+15" description="Happiest Customers" background={'bg-blue-500'} />
+              <LabelCard title="100%" description="Quality" background={'bg-teal-600'} />
             </div>
           </div>
         </section>
-        <section className="md:px-10 flex justify-center pb-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-8">
+        <section className="flex justify-center pb-4 md:px-10">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-8"> */}
+          <div className="grid grid-cols-1 gap-3 w-full lg:px-14 px-6">
             {projectCards.map((card,) => (
-              <ProjectCard buttonText={card.buttonText} title={card.title} description={card.description} image={card.image} key={card.id} />
+              <ProjectCard buttonText={card.buttonText} background={card.backround} title={card.title} description={card.description} image={card.image} key={card.id} />
             ))}
           </div>
         </section>
