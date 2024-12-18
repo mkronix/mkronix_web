@@ -62,7 +62,7 @@ const App = () => {
       <main className='bg-black'>
         <section className="px-10 pt-12 pb-0">
           <h2 className="lg:text-[96px] md:text-[60px] sm:text-[48px] text-[36px] lg:leading-[100px]
-          md:leading-[80px] sm:leading-[60px] leading-[40px] font-bold font-antic text-white md:mb-8 mb-4">
+          md:leading-[80px] sm:leading-[60px] leading-[40px] font-bold font-antic text-white">
             Success-Driven Design for Ambitious Leaders
           </h2>
           <p className="lg:text-[42px] md:text-[32px] sm:text-[24px] text-[20px] font-light font-sans text-white lg:leading-[100px] md:leading-[80px] sm:leading-[60px] leading-[40px]">
