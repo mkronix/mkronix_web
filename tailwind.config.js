@@ -9,6 +9,7 @@ module.exports = {
         'bg-secondary': '#000000',
         'text-primary': '#FFFFFF',
         'card-bg': '#1C1C1C',
+        'parrot': "#D5FF3F",
       },
       fontFamily: {
         'sora': ['Sora', 'sans-serif'],
