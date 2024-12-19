@@ -5,6 +5,9 @@ import React, { useEffect, useState } from 'react';
 import crown from './assets/icon/crown.svg';
 import globe from './assets/icon/globe.svg';
 import ellipse from './assets/icon/three-ellipse.svg';
+import seo from './assets/icon/seo.svg';
+import design from './assets/icon/design.svg';
+import speaker from './assets/icon/speaker.svg';
 import scaleGraph from './assets/img/scale-graph.png';
 import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
 import Cursor from './components/Cursor/Cursor';
@@ -14,23 +17,24 @@ import { dummyImages } from './data/dummyImages';
 import StatsSection from './components/StatsSection/StatsSection';
 import BoxesLayer from './components/BoxesLayer/BoxesLayer';
 import WorkFlowCard from './components/WorkFlowCard/WorkFlowCard';
+import IconWithButton from './components/IconWithButton/IconWithButton';
+import ServiceReveal from './components/ServiceReveal/ServiceReveal';
+import Footer from './components/Footer/Footer';
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate preloader delay
     const timeout = setTimeout(() => {
-      setLoading(false); // Hide loader when done
-    }, 4000); // Adjust time as needed (matches loader animation)
+      setLoading(false);
+    }, 4000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
     if (!loading) {
-      // Initialize Lenis for smooth scrolling
       const lenis = new Lenis({
         lerp: 0.2,
         smoothWheel: true,
@@ -54,7 +58,7 @@ const App = () => {
   }, [loading]);
 
   if (loading) {
-    return <ZeroToHundredLoader />; // Show loader during the loading phase
+    return <ZeroToHundredLoader />;
   }
 
   const textMarqueData = [
@@ -96,7 +100,6 @@ const App = () => {
             We design <span className="text-black px-2 rounded-md bg-parrot font-sans">brands</span>{" "}
             that transform visions into thriving businesses.
           </p>
-
         </div>
         <div className="md:col-span-3 flex justify-center h-[100px] md:h-[500px] lg:h-[600px] overflow-hidden">
           <div className='md:block hidden'>
@@ -112,43 +115,47 @@ const App = () => {
       </section>
       <section className='relative h-[275px] md:h-[200px] w-full flex flex-col px-4 my-6'>
         <BoxesLayer />
-
         <div className='grid md:grid-cols-12 grid-cols-12 gap-4 items-center'>
-          {/* World Class Agency Button */}
           <div className='md:col-span-4 col-span-9 flex justify-center items-center'>
-            <button className='max-md:pl-3 px-4 border border-white/80 text-white/80 text-xs md:text-xl w-max h-12 rounded-full flex items-center justify-center md:gap-3'>
-              <img src={globe} alt="globe icon" className='w-5 h-5 md:w-6 md:h-6' />
-              <span className='font-thin'>World Class Agency</span>
-            </button>
-            <button className='max-md:pl-3 px-4 border border-white/80 text-white/80 text-xs md:text-xl w-max h-12 rounded-full flex items-center justify-center md:gap-3'>
-              <img src={crown} alt="crown icon" className='w-5 h-5 md:w-6 md:h-6' />
-              <span className='font-thin'>2024 Best Agency</span>
-            </button>
+            <IconWithButton icon={globe} text={'World Class Agency'} />
+            <IconWithButton icon={crown} text={'2024 Best Agency'} />
           </div>
-          {/* Horizontal Line */}
           <div className='md:col-span-6 col-span-12 flex max-md:order-4 justify-center items-center relative'>
             <span className='absolute top-[-2px] left-0 h-[5px] w-[5px] rounded-full bg-white/80'></span>
             <div className='h-[1px] bg-white/60 w-full'></div>
             <span className='absolute top-[-2px] right-0 h-[5px] w-[5px] rounded-full bg-white/80'></span>
           </div>
-
-          {/* Ellipse Image */}
           <div className='md:col-span-2 col-span-3 flex justify-center items-center'>
             <img src={ellipse} alt="ellipse icon" className='md:w-40 md:h-14' />
           </div>
         </div>
         <StatsSection />
       </section>
-
-      <section className='realative h-[950px] md:h-[400px] w-full grid md:grid-cols-3 grid-cols-1 gap-4 md:p-10 p-4'>
+      <section className='realative md:h-[400px] w-full grid md:grid-cols-3 grid-cols-1 gap-4 md:p-10 p-4'>
         <WorkFlowCard number={'01'} description={'We conduct research to understand your brand’s values and market position. By blending creativity with strategy, we define a clear direction that ensures a cohesive and effective brand presence across all touchpoints.'} title={'Research & Strategy'} onClick={() => { }} />
         <WorkFlowCard number={'02'}
           title={'Design Process'}
           description={'In this phase, we bring the strategy to life through creative design. We focus on crafting visually appealing elements that reflect your brand’s identity, ensuring each design is functional and aligned with your business goals.'} onClick={() => { }} />
         <WorkFlowCard number={'03'} description={'Once the design is approved, we deliver all necessary assets and ensure smooth implementation across platforms. Payment is processed, and we guarantee a seamless transition, ensuring complete satisfaction with the final product.'} title={'Deliver & Payment'} onClick={() => { }} />
       </section>
+      <section className='relative max-md:pb-8 px-4 my-6'>
+        <div className='flex justify-between md:items-center max-md:flex-col'>
+          <div className='flex flex-col justify-center md:w-2/3'>
+            <h2 className='font-bold font-antic text-dynamic-h2 text-white/80'>OUR SERVICES</h2>
+            <p className='font-light font-sans text-xs sm:text-base lg:text-xl text-white/60'>We design brands that transform visions into thriving businesses.</p>
+          </div>
+          <div className='max-md:hidden flex flex-wrap items-center md:w-1/3 '>
+            <IconWithButton icon={globe} text={'UI/UX'} border={'border-white/90'} color={'text-white/90'} />
+            <IconWithButton icon={design} text={'Design & Development'} border={'border-white/40'} color={'text-white/40'} />
+            <IconWithButton icon={speaker} text={'Branding & Marketing'} border={'border-white/40'} color={'text-white/40'} />
+            <IconWithButton icon={seo} text={'Startup'} border={'border-white/40'} color={'text-white/40'} />
 
+          </div>
+        </div>
+        <ServiceReveal />
+      </section>
       <section className='h-screen'></section>
+      <Footer />
       <Cursor />
     </main>
   );
