@@ -111,7 +111,7 @@ const ServiceReveal = () => {
                         />
                     )}
 
-                    <span className={`md:w-1/6 ${activeImage ? 'text-white/80' : 'text-white/30'} text-xl sm:text-2xl `}>{image.id}</span>
+                    <span className={`md:w-1/6 ${activeImage ? 'text-white/80' : 'text-white/50'} text-xl sm:text-2xl font-bold `}>{image.id}</span>
                     <div className="flex items-center max-md:justify-between md:gap-5 max-md:w-full">
                         <h2
                             className={`newFont uppercase md:text-5xl sm:text-2xl text-base font-semibold sm:py-6 py-2 leading-[100%] relative transition-colors ${activeImage?.id === image?.id

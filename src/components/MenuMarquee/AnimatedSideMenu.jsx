@@ -8,14 +8,14 @@ const AnimatedSideMenu = () => {
             {/* Menu Button */}
             <button
                 onClick={() => setOpen(!open)}
-                className="fixed z-50 right-1 md:top-1"
+                className="fixed z-50 right-1 md:right-1/2"
             >
-                <div className="relative bg-transparent border-none cursor-pointer flex justify-start">
+                <div className="relative text-white bg-transparent border-none cursor-pointer flex justify-start">
                     <svg
                         className="w-12"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 10 10"
-                        stroke="#D5FF3F"
+                        stroke="currentColor"
                         strokeWidth=".2"
                         fill="rgba(0,0,0,0)"
                         strokeLinecap="round"
@@ -67,7 +67,7 @@ const AnimatedSideMenu = () => {
                     } z-20 flex max-md:flex-col max-md:justify-around`}
             >
                 {/* Left Menu */}
-                <div className="md:w-[55%] max-md:h-1/2 md:p-8 p-3 md:bg-parrot bg-black max-md:text-parrot flex flex-col justify-around">
+                <div className="md:w-[55%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-white flex flex-col justify-around">
                     <div>
                         {/* Menu Links */}
                         <nav className="text-3xl grid md:grid-cols-1 grid-cols-2 font-antic sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
@@ -89,11 +89,11 @@ const AnimatedSideMenu = () => {
                 </div>
 
                 {/* Right Section */}
-                <div className="md:w-[45%] md:bg-black bg-parrot md:text-parrot text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
+                <div className="md:w-[45%] md:bg-black bg-white md:text-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
                     <div>
                         <h2 className="text-3xl md:font-thin mb-4">Got an idea?</h2>
                         <p className="font-antic max-md:font-bold text-4xl md:text-5xl mb-6">Let’s craft <br /> brilliant together!</p>
-                        <button className="border border-black md:border-parrot px-10 py-1 text-lg  rounded-full transition w-max">
+                        <button className="border border-black md:border-white px-10 py-1 text-lg  rounded-full transition w-max">
                             Get In touch
                         </button>
                     </div>

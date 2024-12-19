@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-parrot text-black">
+        <footer className="bg-white text-black">
             <div className="max-w-screen-xl h-96 flex justify-center items-center flex-col mx-auto px-4 py-12 text-center">
                 <div className="flex justify-center items-center space-x-2">
                     <svg width="45" height="40" viewBox="0 0 45 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,10 +22,10 @@ const Footer = () => {
                     <button className="border-2 border-black text-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white">Follow us</button>
                 </div>
             </div>
-            <div className="bg-black text-parrot py-6">
+            <div className="bg-black text-white py-6">
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
                     <h2 className="text-2xl font-bold">Mkronix</h2>
-                    <nav className="mt-4 flex md:justify-center max-md:flex-col space-y-4 md:space-x-8">
+                    <nav className="flex md:justify-center items-baseline max-md:flex-col space-y-4 md:space-x-8">
                         <a href="#home" className="">Home</a>
                         <a href="#services" className="">Services</a>
                         <a href="#project" className="">Project</a>
