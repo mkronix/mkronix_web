@@ -65,3 +65,7 @@ button {
 .sticky_content {
   will-change: transform;
 }
+
+.splide__slide {
+  width: max-content !important;
+}

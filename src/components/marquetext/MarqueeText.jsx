@@ -2,12 +2,10 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/splide/dist/css/splide.min.css';
 import React from 'react';
-import { dummyImages } from '../../data/dummyImages';
-import './MarqueeText.css';
 
-const MarqueeText = ({ direction, speed, isReverse, isMobile }) => {
-    // Reverse images if isReverse is true
-    const images = isReverse ? [...dummyImages].reverse() : dummyImages;
+const MarqueeText = ({ direction, speed, isMobile, imageData, textData, className }) => {
+    // Choose the data to render based on what is passed
+    const data = imageData || textData || [];
 
     return (
         <div className="flex justify-center">
@@ -23,21 +21,32 @@ const MarqueeText = ({ direction, speed, isReverse, isMobile }) => {
                     pagination: false,
                     arrows: false,
                     direction: direction,
-                    height: isMobile ? '100px' : '600px',
+                    height: isMobile ? '50px' : '600px',
                     autoScroll: {
-                        speed: speed ? speed : 1,
+                        speed: speed || 1,
                     },
                 }}
                 extensions={{ AutoScroll }}
+                className={className}
             >
-                {images.map((image, index) => (
-                    <SplideSlide key={index} className={`${isMobile ? 'm-0 flex items-center gap-2' : 'm-[0.65rem]'}`}>
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`Image ${index}`}
-                            className={`object-cover ${isMobile ? 'w-32 mx-2' : ''}`}
-                        />
+                {data.map((item, index) => (
+                    <SplideSlide
+                        key={index}
+                        className={`w-max ${isMobile ? 'm-0 flex items-center gap-2' : 'm-[0.65rem]'}`}
+                    >
+                        {imageData ? (
+                            // Render image if imageData is passed
+                            <img
+                                src={item}
+                                alt={`Image ${index}`}
+                                className={`object-cover ${isMobile ? 'w-32 mx-2' : ''}`}
+                            />
+                        ) : (
+                            // Render text if textData is passed
+                            <span className="text-black text-3xl md:text-4xl font-bold mx-6">
+                                {item}
+                            </span>
+                        )}
                     </SplideSlide>
                 ))}
             </Splide>
