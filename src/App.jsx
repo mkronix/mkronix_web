@@ -8,7 +8,7 @@ import ellipse from './assets/icon/three-ellipse.svg';
 import seo from './assets/icon/seo.svg';
 import design from './assets/icon/design.svg';
 import speaker from './assets/icon/speaker.svg';
-import scaleGraph from './assets/img/scale-graph.png';
+import scaleGraph from './assets/icon/graph.svg';
 import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
 import Cursor from './components/Cursor/Cursor';
 import MarqueeText from './components/marquetext/MarqueeText';
@@ -20,6 +20,7 @@ import WorkFlowCard from './components/WorkFlowCard/WorkFlowCard';
 import IconWithButton from './components/IconWithButton/IconWithButton';
 import ServiceReveal from './components/ServiceReveal/ServiceReveal';
 import Footer from './components/Footer/Footer';
+import HowItWorks from './components/HowItWorks/HowItWorks';
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
@@ -80,24 +81,24 @@ const App = () => {
 
   return (
     <main className='bg-black relative font-antic'>
-      <div className='fixed top-2 left-2 flex font-bold uppercase text-2xl md:text-4xl'>
-        <h2 className='text-white/80'>M</h2><h2 className='text-parrot'>K</h2><h2 className='text-white/70'>ronix</h2>
+      <div className='fixed top-2 z-50 left-2 md:left-1/2 flex font-bold uppercase text-2xl'>
+        <h2 className='text-white/80'>M</h2><h2 className='text-white'>K</h2><h2 className='text-white/70'>ronix</h2>
       </div>
       <AnimatedSideMenu />
       <section className="relative md:pt-20 pt-12 max-md:px-2 grid grid-cols-1 md:grid-cols-12 h-screen">
         <BoxesLayer />
-        <div className="h-[40px] md:h-[400px] lg:h-[500px] md:col-span-1 flex md:flex-col justify-around md:items-center text-white/80 italic font-irish">
+        <div className="h-[20px] md:h-[400px] lg:h-[500px] md:col-span-1 flex md:flex-col justify-around md:items-center text-white/80 ">
           <p className="md:rotate-90  md:tracking-[0.4em] tracking-[0.1em] text-xl md:font-bold">DESIGNING</p>
           <p className="md:rotate-90  md:tracking-[0.4em] tracking-[0.1em] text-xl md:font-bold">&</p>
           <p className="md:rotate-90  md:tracking-[0.4em] tracking-[0.1em] text-xl md:font-bold">DEVELOPMENT</p>
         </div>
-        <div className={`h-[480px] md:h-[600px] lg:h-[700px] max-md:px-3 flex max-md:gap-5 flex-col max-md:justify-start max-md:items-center md:col-span-8 relative`}>
-          <img src={scaleGraph} alt="" className="absolute p-4 top-0 left-0 object-fill w-full h-full" />
+        <div className={`h-[450px] md:h-[600px] lg:h-[700px] max-md:px-3 flex max-md:gap-5 flex-col max-md:justify-start max-md:items-center md:col-span-8 relative`}>
+          <img src={scaleGraph} alt="" className="absolute top-0 left-0 h-[90%]" />
           <h2 className="font-bold font-antic text-white/80 leading-[1.2] text-dynamic-h2">
             Success-Driven Design for Ambitious Leaders
           </h2>
           <p className="font-light font-sans text-white/70 leading-dynamic-p text-dynamic-p">
-            We design <span className="text-black px-2 rounded-md bg-parrot font-sans">brands</span>{" "}
+            We design <span className="text-black px-2 rounded-md bg-white font-sans">brands</span>{" "}
             that transform visions into thriving businesses.
           </p>
         </div>
@@ -111,10 +112,9 @@ const App = () => {
         </div>
       </section>
       <section className='relative h-[50px] md:h-[100px] overflow-hidden'>
-        <MarqueeText textData={textMarqueData} className={'bg-parrot'} direction={'rtl'} speed={0.5} key={'mobile--text-marquee'} isMobile={true} />
+        <MarqueeText textData={textMarqueData} className={'bg-white'} direction={'rtl'} speed={0.5} key={'mobile--text-marquee'} isMobile={true} />
       </section>
       <section className='relative h-[275px] md:h-[200px] w-full flex flex-col px-4 my-6'>
-        <BoxesLayer />
         <div className='grid md:grid-cols-12 grid-cols-12 gap-4 items-center'>
           <div className='md:col-span-4 col-span-9 flex justify-center items-center'>
             <IconWithButton icon={globe} text={'World Class Agency'} />
@@ -154,7 +154,9 @@ const App = () => {
         </div>
         <ServiceReveal />
       </section>
-      <section className='h-screen'></section>
+      <section>
+        <HowItWorks />
+      </section>
       <Footer />
       <Cursor />
     </main>
