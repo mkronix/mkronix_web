@@ -8,11 +8,11 @@ const AnimatedSideMenu = () => {
             {/* Menu Button */}
             <button
                 onClick={() => setOpen(!open)}
-                className="fixed z-50 right-4 top-4"
+                className="fixed z-50 right-1 md:top-1"
             >
                 <div className="relative bg-transparent border-none cursor-pointer flex justify-start">
                     <svg
-                        className="w-16"
+                        className="w-12"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 10 10"
                         stroke="#D5FF3F"
@@ -69,9 +69,6 @@ const AnimatedSideMenu = () => {
                 {/* Left Menu */}
                 <div className="md:w-[55%] max-md:h-1/2 md:p-8 p-3 md:bg-parrot bg-black max-md:text-parrot flex flex-col justify-around">
                     <div>
-                        {/* Logo */}
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl md:font-bold  mb-4 md:mb-10">Mkronix</h1>
-
                         {/* Menu Links */}
                         <nav className="text-3xl grid md:grid-cols-1 grid-cols-2 font-antic sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
                             <a href="#" className="block">Home</a>
