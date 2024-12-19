@@ -11,6 +11,13 @@ module.exports = {
         'card-bg': '#1C1C1C',
         'parrot': "#D5FF3F",
       },
+      fontSize: {
+        'dynamic-h2': 'clamp(2rem, 6vw, 4.375rem)',
+        'dynamic-p': 'clamp(1.5rem, 3.5vw, 4.5rem)',
+      },
+      lineHeight: {
+        'dynamic-p': 'clamp(1.5rem, 7vw, 6rem)',
+      },
       fontFamily: {
         'sora': ['Sora', 'sans-serif'],
         'arizona': ['Arizona', 'sans-serif'],

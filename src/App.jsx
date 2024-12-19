@@ -2,17 +2,11 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import React, { useEffect, useState } from 'react';
-import creative from './assets/icon/creative.svg';
 import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
 import Cursor from './components/Cursor/Cursor';
-import LabelCard from './components/LabelCard/LabelCard';
 import MarqueeText from './components/marquetext/MarqueeText';
 import AnimatedSideMenu from './components/MenuMarquee/AnimatedSideMenu';
-import ProjectCard from './components/ProjectCard/ProjectCard';
-import ScrollRevealText from './components/ScrollRevealText/ScrollRevealText';
-import StackedCards from './components/StackedCards/StackedCards';
-import { projectCards } from './data/project';
-
+import scaleGraph from './assets/img/scale-graph.png';
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
@@ -57,58 +51,40 @@ const App = () => {
   }
 
   return (
-    <>
+    <main className='bg-black relative'>
       <AnimatedSideMenu />
-      <main className='bg-black'>
-        <section className="px-10 pt-12 pb-0">
-          <h2 className="lg:text-[96px] md:text-[60px] sm:text-[48px] text-[36px] lg:leading-[100px]
-          md:leading-[80px] sm:leading-[60px] leading-[40px] font-bold font-antic text-white">
+      <section className="relative md:pt-12 pt-6 max-md:px-2 grid grid-cols-12 h-screen">
+        <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_34px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+        <div className="md:h-[100px] lg:h-[500px] md:col-span-1 col-span-12 flex flex-col justify-center md:justify-around items-center text-white/40">
+          <p className="md:rotate-90 tracking-wide text-xl font-bold">DESIGNING</p>
+          <p className="md:rotate-90 tracking-wide text-xl font-bold">&</p>
+          <p className="md:rotate-90 tracking-wide text-xl font-bold">DEVELOPMENT</p>
+        </div>
+        <div className={`md:h-[500px] lg:h-[700px] flex flex-col max-md:justify-center max-md:items-center md:col-span-8 col-span-12 relative`}>
+          <img src={scaleGraph} alt="" className="absolute p-4 top-0 left-0 object-fill w-full h-full" />
+          <h2 className="font-bold font-antic text-white/60 leading-[1.2] text-dynamic-h2">
             Success-Driven Design for Ambitious Leaders
           </h2>
-          <p className="lg:text-[42px] md:text-[32px] sm:text-[24px] text-[20px] font-light font-sans text-white lg:leading-[100px] md:leading-[80px] sm:leading-[60px] leading-[40px]">
-            We design <span className="text-black px-2 rounded-md bg-white font-sans">brands</span>{" "}
+          <p className="font-light font-sans text-white/50 leading-dynamic-p text-dynamic-p">
+            We design <span className="text-black px-2 rounded-md bg-parrot font-sans">brands</span>{" "}
             that transform visions into thriving businesses.
           </p>
-          <div className="overflow-hidden w-full h-44 relative my-5">
-            <MarqueeText />
-          </div>
-        </section>
-        {/* <StickyCard /> */}
-        <StackedCards />
-        <section className="md:px-10 flex justify-center pb-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-8">
-            {/* <CardWithAnimationComponent> */}
-            <div className="max-w-[660px] w-full h-full bg-[#9c9bbe] p-6 rounded-lg shadow-lg flex flex-col justify-around">
-              <h3 className="text-black font-antic lg:text-4xl md:text-3xl text-2xl leading-[40px]">Blending Creativity with Functionality</h3>
-              <img src={creative} className="w-24 h-24 self-center" alt="creative logo" />
-              <ScrollRevealText className="text-black font-sans font-light lg:text-lg text-sm">
-                We are a passionate and dedicated designer and developer, specializing in creating
-                unique and effective design solutions. With extensive experience in web, apps,
-                and as well as UX/UI design, we have collaborated with companies of all types,
-                both nationally and internationally, ensuring efficiency and flexibility in every project.
-              </ScrollRevealText>
 
-            </div>
-            {/* </CardWithAnimationComponent> */}
-            <div className="grid grid-cols-2 gap-3">
-              <LabelCard title="+3" description="Years of Experience" background={'bg-[#e28181]'} />
-              <LabelCard title="+20" description="Successful Projects" background={'bg-violet-600'} />
-              <LabelCard title="+15" description="Happiest Customers" background={'bg-blue-500'} />
-              <LabelCard title="100%" description="Quality" background={'bg-teal-600'} />
-            </div>
+        </div>
+        <div className="md:col-span-3 col-span-12 flex justify-center md:h-[400px] lg:h-[600px] overflow-hidden">
+          <div className='md:block hidden'>
+            <MarqueeText direction={'ttb'} speed={10} />
           </div>
-        </section>
-        <section className="flex justify-center pb-4 md:px-10">
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-8"> */}
-          <div className="grid grid-cols-1 gap-3 w-full lg:px-14 px-6">
-            {projectCards.map((card,) => (
-              <ProjectCard buttonText={card.buttonText} background={card.backround} title={card.title} description={card.description} image={card.image} key={card.id} />
-            ))}
+          <div className='md:hidden block'>
+            <MarqueeText direction={'rtl'} speed={0.5} isMobile={true} />
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+      <section className='relative h-screen'>
+        <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_34px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+      </section>
       <Cursor />
-    </>
+    </main>
   );
 };
 
