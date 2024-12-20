@@ -31,15 +31,9 @@ const HowItWorks = () => {
     ];
 
     return (
-        <div className="bg-black text-white px-6 md:px-16 lg:px-24 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="max-md:pb-8 px-4 my-6 text-white">
+            <div className="grid grid-cols-">
                 <h2 className="text-dynamic-h2 uppercase font-bold">How it works</h2>
-                <div className='flex flex-col justify-center gap-3'>
-                    <p className="text-lg md:text-2xl text-white/60">
-                        Manage your experience from start to finish, from integrations to registration and from interactive stage elements to post-event data, it’s all here.
-                    </p>
-                    <IconWithButton border={'border-white/80'} color={'text-white/80'} text={'Learn More'} icon={diamond} />
-                </div>
             </div>
             <div className="space-y-12 mt-10 md:mt-20 mb-4">
                 {steps.map((step, index) => (
