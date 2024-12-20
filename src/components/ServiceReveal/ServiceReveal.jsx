@@ -1,26 +1,51 @@
 'use client';
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-const images = [
+import MenuMarquee, { MenuItem } from '../MenuMarquee/MenuMarquee';
+const data = [
     {
         id: 1,
         src: 'https://images.unsplash.com/photo-1682806816936-c3ac11f65112?q=80&w=1274&auto=format&fit=crop',
-        alt: 'Web Design & Development',
+        text: 'Web Design & Development',
+        marqueeTexts: [
+            "Innovative Design ✨",
+            "Crafting Experiences 🎨",
+            "Digital Brilliance 💡",
+            "Elevate Your Brand 🚀",
+        ],
     },
     {
         id: 2,
         src: 'https://images.unsplash.com/photo-1681063762354-d542c03bbfc5?q=80&w=1274&auto=format&fit=crop',
-        alt: 'App Design & Development',
+        text: 'App Design & Development',
+        marqueeTexts: [
+            "Creative UI/UX Design 🎨",
+            "Web Design & Development 🌐",
+            "App Design & Development 📱",
+            "Custom Digital Solutions 🔧",
+        ],
     },
     {
         id: 3,
         src: 'https://images.unsplash.com/photo-1679640034489-a6db1f096b70?q=80&w=1274&auto=format&fit=crop',
-        alt: 'Ui/Ux Design',
+        text: 'Ui/Ux Design',
+        marqueeTexts: [
+            "Award-Winning Designs 🏆",
+            "Cutting-Edge Applications 💻",
+            "Scalable Web Platforms 📈",
+            "User-Centered Innovations 🌟",
+        ],
     },
     {
         id: 4,
         src: 'https://images.unsplash.com/photo-1679482451632-b2e126da7142?q=80&w=1274&auto=format&fit=crop',
-        alt: 'Graphic Design',
+        text: 'Graphic Design',
+        marqueeTexts: [
+            "Award-Winning Designs 🏆",
+            "Cutting-Edge Applications 💻",
+            "Scalable Web Platforms 📈",
+            "User-Centered Innovations 🌟",
+        ],
     },
 ];
 const ServiceReveal = () => {
@@ -92,11 +117,12 @@ const ServiceReveal = () => {
             setActiveImage(null);
         }, 300);
     }, []);
+
     return (
         <div
             className="relative w-full min-h-fit mt-4 flex flex-col gap-4"
             onMouseLeave={handleMouseLeave}>
-            {images.map((image) => (
+            {data.map((image) => (
                 <div
                     key={image.id}
                     className={`md:p-4 cursor-pointer relative flex items-center justify-start gap-4`}
@@ -105,20 +131,18 @@ const ServiceReveal = () => {
                     {isSmallScreen && (
                         <img
                             src={image?.src}
-                            className="sm:w-32 sm:h-20 w-full h-32 object-cover rounded-md"
-                            alt="mobileImg"
+                            className="w-20 h-20 object-cover rounded-md"
+                            alt={image?.text}
                         />
                     )}
 
-                    <span className={`md:w-1/6 ${activeImage ? 'text-white/80' : 'text-white/50'} text-xl sm:text-2xl font-bold `}>{image.id}</span>
-                    <div className="flex items-center max-md:justify-between md:gap-5 max-md:w-full">
-                        <h2
-                            className={`newFont uppercase md:text-5xl sm:text-2xl text-base font-semibold sm:py-6 py-2 leading-[100%] relative transition-colors ${activeImage?.id === image?.id
-                                ? 'mix-blend-difference text-white/90 z-10'
-                                : 'text-white/50'
-                                }`}>
-                            {image.alt}
-                        </h2>
+                    <div
+                        className={`h-[1px] bg-white/30 absolute top-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'
+                            }`}
+                    />
+                    <span className={`text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold `}>{image.id}</span>
+                    <div className="flex items-center w-full">
+                        <MenuItem linkText={image.text} marqueeTexts={image.marqueeTexts} />
                     </div>
                     <div
                         className={`h-[1px] bg-white/30 absolute bottom-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'

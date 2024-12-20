@@ -35,7 +35,7 @@ const HowItWorks = () => {
             <div className="grid grid-cols-">
                 <h2 className="text-dynamic-h2 uppercase font-bold">How it works</h2>
             </div>
-            <div className="space-y-12 mt-10 md:mt-20 mb-4">
+            <div className="space-y-12 md:mt-20 mb-4">
                 {steps.map((step, index) => (
                     <div
                         key={index}
@@ -46,7 +46,7 @@ const HowItWorks = () => {
                                 {step.step}
                             </h4>
                             <div className='flex items-center gap-4'>
-                                <h3 className="text-6xl font-bold mb-4">{step.title}</h3>
+                                <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4">{step.title}</h3>
                                 <img src={arrowUp} className='w-6 h-6' alt="" />
                             </div>
                             <p className="text-white/60">{step.description}</p>
