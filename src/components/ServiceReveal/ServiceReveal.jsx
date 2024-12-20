@@ -1,5 +1,4 @@
 'use client';
-import halfArrow from "../../assets/icon/half-arrow.svg";
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 const images = [
@@ -95,12 +94,12 @@ const ServiceReveal = () => {
     }, []);
     return (
         <div
-            className="relative w-full min-h-fit mt-4"
+            className="relative w-full min-h-fit mt-4 flex flex-col gap-4"
             onMouseLeave={handleMouseLeave}>
             {images.map((image) => (
                 <div
                     key={image.id}
-                    className={`md:p-4 cursor-pointer relative flex max-md:flex-col items-center justify-start gap-4`}
+                    className={`md:p-4 cursor-pointer relative flex items-center justify-start gap-4`}
                     onMouseEnter={() => handleImageHover(image)}>
 
                     {isSmallScreen && (
@@ -120,13 +119,6 @@ const ServiceReveal = () => {
                                 }`}>
                             {image.alt}
                         </h2>
-                        <button
-                            className={`block p-3 md:p-4 rounded-full transition-all duration-300 ease-out ${activeImage?.id === image?.id
-                                ? 'mix-blend-difference bg-white/20 text-black z-10'
-                                : ''
-                                }`}>
-                            <img src={halfArrow} className="w-5 h-5 md:w-8 md:h-8" />
-                        </button>
                     </div>
                     <div
                         className={`h-[1px] bg-white/30 absolute bottom-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'
