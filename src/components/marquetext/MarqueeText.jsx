@@ -21,7 +21,7 @@ const MarqueeText = ({ direction, speed, isMobile, imageData, textData, classNam
                     pagination: false,
                     arrows: false,
                     direction: direction,
-                    height: isMobile ? '50px' : '600px',
+                    height: isMobile ? '40px' : '600px',
                     autoScroll: {
                         speed: speed || 1,
                     },
@@ -39,11 +39,11 @@ const MarqueeText = ({ direction, speed, isMobile, imageData, textData, classNam
                             <img
                                 src={item}
                                 alt={`Image ${index}`}
-                                className={`object-cover ${isMobile ? 'w-32 mx-2' : ''}`}
+                                className={`object-cover ${isMobile ? 'w-16 mx-2' : ''}`}
                             />
                         ) : (
                             // Render text if textData is passed
-                            <span className="text-black text-3xl md:text-4xl font-bold mx-6">
+                            <span className="text-black text-xl sm:text-2xl font-bold mx-6">
                                 {item}
                             </span>
                         )}

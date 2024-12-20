@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import "./MenuMarque.css";
-import star from '../../assets/icon/star.svg'
+import "./MenuItem.css";
 // Utility functions
 const closestEdge = (x, y, w, h) => {
     const topEdgeDist = distMetric(x, y, w / 2, 0);
@@ -18,7 +17,7 @@ const distMetric = (x, y, x2, y2) => {
 };
 
 // Menu Item Component
-const MenuItem = ({ linkText, marqueeTexts }) => {
+export const MenuItem = ({ linkText, marqueeTexts }) => {
     const menuItemRef = useRef(null);
     const marqueeRef = useRef(null);
     const marqueeInnerRef = useRef(null);
@@ -68,8 +67,8 @@ const MenuItem = ({ linkText, marqueeTexts }) => {
 
 
     return (
-        <div className="overflow-hidden text-center cursor-pointer relative border-b border-white" ref={menuItemRef}>
-            <span className="whitespace-nowrap md:text-[6vw] text-[10vw] leading-[1.2] uppercase text-center text-white font-thin" href="#">
+        <div className="overflow-hidden cursor-pointer relative w-full" ref={menuItemRef}>
+            <span className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin" href="#">
                 {linkText}
             </span>
             <div className="absolute top-0 left-0 overflow-hidden w-full h-full bg-black transform-[translate3d(0,101%,0)]" ref={marqueeRef}>
@@ -77,7 +76,7 @@ const MenuItem = ({ linkText, marqueeTexts }) => {
                     <div className="h-full w-[fit-content] items-center flex relative gap-4 menu_marquee__inner">
                         {marqueeTexts.map((text, index) => (
                             <React.Fragment key={index}>
-                                <span className="whitespace-nowrap md:text-[6vw] text-[10vw] leading-[1.2] uppercase text-center text-white font-thin">
+                                <span className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin">
                                     {text}
                                 </span>
                             </React.Fragment>
@@ -91,47 +90,7 @@ const MenuItem = ({ linkText, marqueeTexts }) => {
 };
 
 // Main Menu Component
-const MenuMarquee = () => {
-    const menuItems = [
-        {
-            linkText: "Home 🏡",
-            marqueeTexts: [
-                "Innovative Design ✨",
-                "Crafting Experiences 🎨",
-                "Digital Brilliance 💡",
-                "Elevate Your Brand 🚀",
-            ],
-        },
-        {
-            linkText: "Services 🛠️",
-            marqueeTexts: [
-                "Creative UI/UX Design 🎨",
-                "Web Design & Development 🌐",
-                "App Design & Development 📱",
-                "Custom Digital Solutions 🔧",
-            ],
-        },
-        {
-            linkText: "Projects 🏗️",
-            marqueeTexts: [
-                "Award-Winning Designs 🏆",
-                "Cutting-Edge Applications 💻",
-                "Scalable Web Platforms 📈",
-                "User-Centered Innovations 🌟",
-            ],
-        },
-        {
-            linkText: "Contact Us 📞",
-            marqueeTexts: [
-                "Collaborate With Us 🤝",
-                "Let’s Build Together 🛠️",
-                "Tailored Solutions 🎯",
-                "Transform Your Vision 🔮",
-            ],
-        },
-    ];
-
-
+const MenuMarquee = ({ menuItems }) => {
 
     return (
         <div className="flex flex-col w-full relative justify-center h-full">
@@ -139,7 +98,7 @@ const MenuMarquee = () => {
                 {menuItems.map((item, index) => (
                     <MenuItem
                         key={index}
-                        linkText={item.linkText}
+                        linkText={item.text}
                         marqueeTexts={item.marqueeTexts}
                     />
                 ))}

@@ -16,7 +16,7 @@ module.exports = {
         'dynamic-p': 'clamp(1.5rem, 3.5vw, 4.5rem)',
       },
       lineHeight: {
-        'dynamic-p': 'clamp(1.5rem, 7vw, 6rem)',
+        'dynamic-p': 'clamp(1.5rem, 4.5vw, 6rem)',
       },
       fontFamily: {
         'sora': ['Sora', 'sans-serif'],

@@ -8,7 +8,7 @@ const AnimatedSideMenu = () => {
             {/* Menu Button */}
             <button
                 onClick={() => setOpen(!open)}
-                className="fixed z-50 right-1 md:right-1/2"
+                className="fixed z-50 right-1"
             >
                 <div className="relative text-white bg-transparent border-none cursor-pointer flex justify-start">
                     <svg
