@@ -1,0 +1,16 @@
+{
+    "short_name": "Mkronix",
+    "name": "Mkronix | Digital Solutions",
+    "icons": [
+      {
+        "src": "/assets/logo.ico",
+        "type": "image/x-icon",
+        "sizes": "64x64"
+    }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#000000"
+  }
+  
