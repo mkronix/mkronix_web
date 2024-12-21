@@ -9,10 +9,10 @@ import HorizontalScrollSection from './components/HorizontalScrollSection/Horizo
 import HowItWorks from './components/HowItWorks/HowItWorks';
 import Services from './components/ServiceSection/ServiceSection';
 import StatsSection from './components/StatsSection/StatsSection';
+import Testimonals from './components/Testimonals/Testimonals';
 import TextRevealByWord from './components/TextRevealByWord/TextRevealByWord';
 import useLoading from './hooks/useLoading';
 import useSmoothScroll from './hooks/useSmoothScroll';
-import Testimonals from './components/Testimonals/Testimonals';
 const App = () => {
   const loading = useLoading(2000);
   useSmoothScroll(loading)

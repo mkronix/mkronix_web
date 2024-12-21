@@ -1,29 +1,11 @@
 import React from 'react'
-import MarqueeText from '../marquetext/MarqueeText'
+import BoxesLayer from '../BoxesLayer/BoxesLayer'
 import { FlipWords } from '../FlipWords/FlipWords'
 import { TypewriterEffectSmooth } from '../TypewriterEffect/TypewriterEffect'
-import BoxesLayer from '../BoxesLayer/BoxesLayer'
+import { VelocityScroll } from '../VelocityScroll/VelocityScroll'
 
 const HeroSection = () => {
-
-
-    const textMarqueData = [
-        "WEB DESIGN",
-        "●",
-        "UI/UX DESIGN",
-        "●",
-        "APPLICATIONS",
-        "●",
-        "GRAPHICS",
-        "●",
-        "BRANDING",
-        "●",
-        "LOGO",
-        "●",
-        "MARKETING",
-        "●"
-    ]
-
+    const textMarqueData = "WEB DESIGN ● UI/UX DESIGN ● APPLICATIONS ● GRAPHICS ● BRANDING ● LOGO ● MARKETING ●"
     const words = [
         "brand",
         "business",
@@ -77,13 +59,8 @@ const HeroSection = () => {
                         backfaceVisibility: 'hidden',
                     }}
                 >
-                    <MarqueeText
-                        textData={textMarqueData}
-                        className="bg-white"
-                        direction="rtl"
-                        speed={0.3}
-                        key="mobile--text-marquee-1"
-                        isMobile={true}
+                    <VelocityScroll text={textMarqueData} className={'bg-white h-16 text-4xl'}
+                        default_velocity={1}
                     />
                 </div>
 
@@ -94,13 +71,8 @@ const HeroSection = () => {
                         backfaceVisibility: 'hidden',
                     }}
                 >
-                    <MarqueeText
-                        textData={textMarqueData}
-                        className="bg-white"
-                        direction="ltr"
-                        speed={0.7}
-                        key="mobile--text-marquee-2"
-                        isMobile={true}
+                    <VelocityScroll text={textMarqueData} className={'bg-white h-16 text-4xl'}
+                        default_velocity={-1}
                     />
                 </div>
 
