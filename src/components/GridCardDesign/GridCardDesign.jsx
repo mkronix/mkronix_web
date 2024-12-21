@@ -6,7 +6,7 @@ export default function GridCardDesign({
     description }) {
     return (
         <div
-            className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-6 rounded-3xl overflow-hidden">
+            className="relative z-30 bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-6 rounded-3xl overflow-hidden">
             <Grid size={20} />
             <div className=''>
                 <p className="text-dynamic-p font-bold text-white">{title}<span className="text-dynamic-p">+</span></p>
@@ -72,7 +72,7 @@ export function GridPattern({
                     {squares.map(([x, y]) => (
                         <rect
                             strokeWidth="0"
-                            key={`${x}-${y}`}
+                            key={`${patternId}-${x}-${y}-${Math.random()}`}
                             width={width + 1}
                             height={height + 1}
                             x={x * width}

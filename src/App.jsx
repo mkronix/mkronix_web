@@ -16,6 +16,7 @@ import StatsSection from './components/StatsSection/StatsSection';
 import { TypewriterEffectSmooth } from './components/TypewriterEffect/TypewriterEffect';
 import WorkFlowCard from './components/WorkFlowCard/WorkFlowCard';
 import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
+import ProjectSection from './components/ProjectSection/ProjectSection';
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
@@ -115,7 +116,7 @@ const App = () => {
       <AnimatedSideMenu />
       <section className="relative md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
         <BoxesLayer />
-        <div className={`max-md:px-3 flex max-md:gap-5 flex-col relative`}>
+        <div className={`max-md:px-3 flex flex-col relative`}>
           <TypewriterEffectSmooth words={typeText} className='text-white' />
           <p className="relative z-10 font-light font-sans flex gap-2 text-white/70 leading-dynamic-p text-dynamic-p items-center">
             Your <FlipWords words={words} className={'text-white'} /> deserves better.
@@ -124,8 +125,14 @@ const App = () => {
             Stand out with a digital presence they’ll always remember
           </p>
         </div>
-        <div className="flex my-20 flex-col items-center gap-4 ">
-          <div className="transform rotate-[-5deg]">
+        <div className="flex my-28 flex-col items-center gap-0 md:gap-4">
+          <div
+            className="transform md:rotate-[-9deg] rotate-[-20deg] will-change-transform"
+            style={{
+              transformStyle: 'preserve-3d',
+              backfaceVisibility: 'hidden',
+            }}
+          >
             <MarqueeText
               textData={textMarqueData}
               className="bg-white"
@@ -136,17 +143,23 @@ const App = () => {
             />
           </div>
 
-          {/* Second marquee with rotation */}
-          <div className="transform rotate-[5deg]">
+          <div
+            className="transform md:rotate-[9deg] rotate-[20deg] will-change-transform"
+            style={{
+              transformStyle: 'preserve-3d',
+              backfaceVisibility: 'hidden',
+            }}
+          >
             <MarqueeText
               textData={textMarqueData}
               className="bg-white"
-              direction="rtl"
+              direction="ltr"
               speed={0.7}
               key="mobile--text-marquee-2"
               isMobile={true}
             />
           </div>
+
         </div>
       </section>
       <section className='relative md:h-[50vh] w-full flex flex-col px-4 my-6'>
@@ -157,12 +170,13 @@ const App = () => {
       <section>
         <Testimonals />
       </section>
-      <section className='realative md:h-[400px] w-full grid md:grid-cols-3 grid-cols-1 gap-4 md:p-10 p-4'>
+      <section className='realative md:h-[400px] w-full place-items-center grid md:grid-cols-3 grid-cols-1 gap-4 md:p-10 p-4'>
         <WorkFlowCard
           number={'01'}
           title={'Research & Strategy'}
           description={'We explore your brand’s values and market position, blending creativity and strategy to establish a cohesive, impactful presence across all touchpoints.'}
           onClick={() => { }}
+          animationSpeed={3}
         />
 
         <WorkFlowCard
@@ -170,6 +184,7 @@ const App = () => {
           title={'Design Process'}
           description={'Transforming strategy into creative designs, we craft visually appealing elements reflecting your brand’s identity while ensuring functionality and alignment with business goals.'}
           onClick={() => { }}
+          animationSpeed={3}
         />
 
         <WorkFlowCard
@@ -177,9 +192,9 @@ const App = () => {
           title={'Deliver & Payment'}
           description={'Approved designs are delivered with assets, ensuring smooth implementation and a seamless transition, guaranteeing satisfaction with the final product upon payment.'}
           onClick={() => { }}
+          animationSpeed={3}
         />
       </section>
-
       <section className='relative max-md:pb-8 px-4 my-6'>
         <div className='flex justify-between md:items-center max-md:flex-col'>
           <div className='flex flex-col justify-center md:w-2/3'>
@@ -190,6 +205,9 @@ const App = () => {
       </section>
       <section className='relative'>
         <HowItWorks />
+      </section>
+      <section>
+        <ProjectSection />
       </section>
       <Footer />
       <Cursor />

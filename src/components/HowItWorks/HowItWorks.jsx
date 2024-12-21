@@ -38,8 +38,15 @@ const HowItWorks = () => {
                 {steps.map((step, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col gap-10 md:flex-row items-center`}
+                        className={`flex flex-col gap-10 md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center`}
                     >
+                        <div className="md:w-4/6 overflow-hidden w-full relative rounded-full h-24 md:h-44">
+                            <img
+                                src={step.image}
+                                alt={step.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                         <div className="md:w-2/6 px-4 mt-8 md:mt-0">
                             <h4 className="text-base font-semibold text-white/50 mb-2">
                                 {step.step}
@@ -51,13 +58,6 @@ const HowItWorks = () => {
                             <ScrollRevealText>
                                 {step.description}
                             </ScrollRevealText>
-                        </div>
-                        <div className="md:w-4/6 overflow-hidden w-full relative rounded-full h-24 md:h-44">
-                            <img
-                                src={step.image}
-                                alt={step.title}
-                                className="w-full h-full object-cover"
-                            />
                         </div>
                     </div>
                 ))}

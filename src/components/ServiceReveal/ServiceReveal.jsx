@@ -1,11 +1,14 @@
 'use client';
-
-import React, { useState, useRef, useCallback, useEffect } from 'react';
-import MenuMarquee, { MenuItem } from '../MenuMarquee/MenuMarquee';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { MenuItem } from '../MenuMarquee/MenuMarquee';
+import web from '../../assets/img/web.jpg'
+import app from '../../assets/img/app.jpg'
+import uiux from '../../assets/img/uiux.jpg'
+import grapic from '../../assets/img/grapic.jpg'
 const data = [
     {
         id: 1,
-        src: 'https://images.unsplash.com/photo-1682806816936-c3ac11f65112?q=80&w=1274&auto=format&fit=crop',
+        src: web,
         text: 'Web Design & Development',
         marqueeTexts: [
             "Innovative Design ✨",
@@ -16,7 +19,7 @@ const data = [
     },
     {
         id: 2,
-        src: 'https://images.unsplash.com/photo-1681063762354-d542c03bbfc5?q=80&w=1274&auto=format&fit=crop',
+        src: app,
         text: 'App Design & Development',
         marqueeTexts: [
             "Creative UI/UX Design 🎨",
@@ -27,7 +30,7 @@ const data = [
     },
     {
         id: 3,
-        src: 'https://images.unsplash.com/photo-1679640034489-a6db1f096b70?q=80&w=1274&auto=format&fit=crop',
+        src: uiux,
         text: 'Ui/Ux Design',
         marqueeTexts: [
             "Award-Winning Designs 🏆",
@@ -38,7 +41,7 @@ const data = [
     },
     {
         id: 4,
-        src: 'https://images.unsplash.com/photo-1679482451632-b2e126da7142?q=80&w=1274&auto=format&fit=crop',
+        src: grapic,
         text: 'Graphic Design',
         marqueeTexts: [
             "Award-Winning Designs 🏆",
@@ -125,7 +128,7 @@ const ServiceReveal = () => {
             {data.map((image) => (
                 <div
                     key={image.id}
-                    className={`md:p-4 cursor-pointer relative flex items-center justify-start gap-4`}
+                    className={`md:p-4 cursor-pointer relative flex items-center justify-center gap-4`}
                     onMouseEnter={() => handleImageHover(image)}>
 
                     {isSmallScreen && (
@@ -136,18 +139,18 @@ const ServiceReveal = () => {
                         />
                     )}
 
-                    <div
+                    {/* <div
                         className={`h-[1px] bg-white/30 absolute top-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'
                             }`}
-                    />
-                    <span className={`text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold `}>{image.id}</span>
+                    /> */}
+                    {/* <span className={`text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold `}>{image.id}</span> */}
                     <div className="flex items-center w-full">
                         <MenuItem linkText={image.text} marqueeTexts={image.marqueeTexts} />
                     </div>
-                    <div
+                    {/* <div
                         className={`h-[1px] bg-white/30 absolute bottom-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'
                             }`}
-                    />
+                    /> */}
                 </div>
             ))}
             {!isSmallScreen && activeImage && (

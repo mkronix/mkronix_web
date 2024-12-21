@@ -10,6 +10,7 @@ export const CardSpotlight = ({
     radius = 350,
     color = "#262626",
     className,
+    animationSpeed = 3,
     ...props
 }) => {
     const mouseX = useMotionValue(0);
@@ -31,7 +32,7 @@ export const CardSpotlight = ({
     return (
         (<div
             className={cn(
-                "group/spotlight p-6 rounded-md relative border border-neutral-800 dark:border-neutral-800",
+                "group/spotlight p-12 md:p-6 rounded-md relative border border-neutral-800 dark:border-neutral-800",
                 className
             )}
             onMouseMove={handleMouseMove}
@@ -52,7 +53,7 @@ export const CardSpotlight = ({
                 }}>
                 {isHovering && (
                     <CanvasRevealEffect
-                        animationSpeed={3}
+                        animationSpeed={animationSpeed}
                         containerClassName="bg-transparent absolute inset-0 pointer-events-none"
                         colors={[
                             [0, 206, 235],
