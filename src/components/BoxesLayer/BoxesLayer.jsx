@@ -16,3 +16,5 @@ const BoxesLayer = ({ gridColor = '#242323cc', gridSize = '25px 24px' }) => {
 };
 
 export default BoxesLayer;
+
+

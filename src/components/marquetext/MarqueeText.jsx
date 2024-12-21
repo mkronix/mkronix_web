@@ -15,9 +15,8 @@ const MarqueeText = ({ direction, speed, isMobile, imageData, textData, classNam
                     type: 'loop',
                     drag: 'free',
                     focus: 'center',
+
                     autoHeight: true,
-                    perPage: 3,
-                    gap: 0,
                     pagination: false,
                     arrows: false,
                     direction: direction,
