@@ -57,7 +57,7 @@ const LampContainer = ({
                 <div
                     className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
                 <div
-                    className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-white opacity-50 blur-3xl"></div>
+                    className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-white opacity-50 blur-[130px]"></div>
                 <motion.div
                     initial={{ width: "8rem" }}
                     whileInView={{ width: "16rem" }}
@@ -77,9 +77,9 @@ const LampContainer = ({
                     }}
                     className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-white/40 "></motion.div>
                 <div
-                    className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-black"></div>
+                    className="absolute inset-auto z-40 h-32 md:h-44 w-full -translate-y-[12.5rem] bg-black"></div>
             </div>
-            <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
+            <div className="relative z-50 flex -translate-y-56 flex-col items-center px-5">
                 <motion.div
                     initial={{ opacity: 0.5, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
