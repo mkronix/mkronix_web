@@ -3,6 +3,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import React, { useEffect, useState } from 'react';
 import AnimatedSideMenu from './components/AnimatedSideMenu/AnimatedSideMenu';
+import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
 import BoxesLayer from './components/BoxesLayer/BoxesLayer';
 import Cursor from './components/Cursor/Cursor';
 import { FlipWords } from './components/FlipWords/FlipWords';
@@ -11,12 +12,15 @@ import HowItWorks from './components/HowItWorks/HowItWorks';
 import { Testimonals } from './components/InfiniteMovingCards/InfiniteMovingCards';
 import LampContainer from './components/LampContainer/LampContainer';
 import MarqueeText from './components/marquetext/MarqueeText';
+import MorphingText from './components/MorphingText/MorphingText';
+import ProjectSection from './components/ProjectSection/ProjectSection';
+import { RetroGrid } from './components/RetroGrid/RetroGrid';
 import ServiceReveal from './components/ServiceReveal/ServiceReveal';
 import StatsSection from './components/StatsSection/StatsSection';
 import { TypewriterEffectSmooth } from './components/TypewriterEffect/TypewriterEffect';
 import WorkFlowCard from './components/WorkFlowCard/WorkFlowCard';
-import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
-import ProjectSection from './components/ProjectSection/ProjectSection';
+import HorizontalScrollSection from './components/HorizontalScrollSection/HorizontalScrollSection';
+import TextRevealByWord from './components/TextRevealByWord/TextRevealByWord';
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
@@ -204,11 +208,18 @@ const App = () => {
         <ServiceReveal />
       </section>
       <section className='relative'>
+        <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+          <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#bdbdbd] via-[#ffffff] to-[#5e5e5e] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
+            <p>How It Works?</p>
+          </span>
+
+          <RetroGrid />
+        </div>
         <HowItWorks />
       </section>
-      <section>
-        <ProjectSection />
-      </section>
+      {/* <ProjectSection /> */}
+      <TextRevealByWord text=" Our Best Project" />
+      <HorizontalScrollSection />
       <Footer />
       <Cursor />
     </main>

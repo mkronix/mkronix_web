@@ -4,6 +4,7 @@ import p1 from '../../assets/img/p3.jpg';
 import p2 from '../../assets/img/p4.jpg';
 import p3 from '../../assets/img/p5.png';
 import ScrollRevealText from '../ScrollRevealText/ScrollRevealText';
+import MorphingText from '../MorphingText/MorphingText';
 const HowItWorks = () => {
     const steps = [
         {
@@ -31,14 +32,11 @@ const HowItWorks = () => {
 
     return (
         <div className="max-md:pb-8 px-4 my-6 text-white">
-            <div className="grid grid-cols-">
-                <h2 className="text-dynamic-h2 uppercase font-bold">How it works</h2>
-            </div>
             <div className="space-y-12 md:mt-20 mb-4">
                 {steps.map((step, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col gap-10 md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center`}
+                        className={`flex gap-10 flex-col-reverse md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center`}
                     >
                         <div className="md:w-4/6 overflow-hidden w-full relative rounded-full h-24 md:h-44">
                             <img
