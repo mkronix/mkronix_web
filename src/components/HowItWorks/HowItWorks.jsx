@@ -1,10 +1,9 @@
 import React from 'react';
+import arrowUp from '../../assets/icon/arrow-up.svg';
 import p1 from '../../assets/img/p3.jpg';
 import p2 from '../../assets/img/p4.jpg';
 import p3 from '../../assets/img/p5.png';
-import arrowUp from '../../assets/icon/arrow-up.svg';
-import diamond from '../../assets/icon/diamond.svg';
-import IconWithButton from '../IconWithButton/IconWithButton';
+import ScrollRevealText from '../ScrollRevealText/ScrollRevealText';
 const HowItWorks = () => {
     const steps = [
         {
@@ -49,7 +48,9 @@ const HowItWorks = () => {
                                 <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4">{step.title}</h3>
                                 <img src={arrowUp} className='w-6 h-6' alt="" />
                             </div>
-                            <p className="text-white/60">{step.description}</p>
+                            <ScrollRevealText>
+                                {step.description}
+                            </ScrollRevealText>
                         </div>
                         <div className="md:w-4/6 overflow-hidden w-full relative rounded-full h-24 md:h-44">
                             <img
