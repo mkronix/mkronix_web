@@ -24,14 +24,12 @@ const Footer = () => {
             </div>
             <div className="bg-black text-white py-6">
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
-                    <h2 className="text-2xl font-bold">Mkronix</h2>
-                    <nav className="flex md:justify-center items-baseline max-md:flex-col space-y-4 md:space-x-8">
+                    <h2 className="text-3xl md:text-4xl font-bold">Mkronix</h2>
+                    <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">
                         <a href="#home" className="">Home</a>
                         <a href="#services" className="">Services</a>
                         <a href="#project" className="">Project</a>
                         <a href="#about" className="">About Us</a>
-                        <a href="#blog" className="">Blog</a>
-                        <a href="#contact" className="">Contact</a>
                     </nav>
                 </div>
             </div>

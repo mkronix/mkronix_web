@@ -2,11 +2,13 @@ import React from "react";
 import halfArrow from "../../assets/icon/half-arrow.svg";
 import { CardSpotlight } from "../CardSpotlight/CardSpotlight";
 
-const WorkFlowCard = ({ number, title, description, onClick }) => {
+const WorkFlowCard = ({ number, title, description, onClick, animationSpeed }) => {
     return (
-        <CardSpotlight className={`w-[350px] max-md:w-full
+        <div className={`w-[350px] max-md:w-full h-full
+            p-12 md:p-6 rounded-md relative border border-neutral-800 dark:border-neutral-800
       animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] transition-colors
-        `}>
+        `}
+        >
             <div
                 className="text-white
                 h-full rounded-lg flex flex-col justify-center hover:cursor-pointer group"
@@ -31,7 +33,7 @@ const WorkFlowCard = ({ number, title, description, onClick }) => {
                     />
                 </div>
             </div>
-        </CardSpotlight>
+        </div>
     );
 };
 

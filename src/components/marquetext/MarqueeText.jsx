@@ -1,54 +1,69 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import '@splidejs/splide/dist/css/splide.min.css';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-const MarqueeText = ({ direction, speed, isMobile, imageData, textData, className }) => {
-    // Choose the data to render based on what is passed
-    const data = imageData || textData || [];
+const MarqueeText = ({ direction, speed, isMobile, textData, className }) => {
+    const marqueeRef = useRef(null);
+    const [scrolling, setScrolling] = useState(false);
+
+    // Create a duplicate of the textData to make it "infinite"
+    const duplicatedTextData = [...textData, ...textData, ...textData, ...textData]; // Duplicate the text for seamless scrolling
+
+    useEffect(() => {
+        const marqueeElement = marqueeRef.current;
+
+        const scrollMarquee = () => {
+            if (marqueeElement) {
+                const contentWidth = marqueeElement.scrollWidth;
+                let currentTransform = parseFloat(getComputedStyle(marqueeElement).transform.split(',')[4]) || 0;
+
+                if (scrolling) {
+                    if (direction === 'rtl') {
+                        currentTransform -= speed;
+                    } else {
+                        currentTransform += speed;
+                    }
+
+                    // If we've reached the end of the first set, reset the position
+                    if (currentTransform <= -contentWidth / 2) {
+                        currentTransform = 0;
+                    } else if (currentTransform >= 0) {
+                        currentTransform = -contentWidth / 2;
+                    }
+
+                    // Apply the new position using transform: translateX
+                    marqueeElement.style.transform = `translateX(${currentTransform}px)`;
+
+                    // Request the next animation frame
+                    requestAnimationFrame(scrollMarquee);
+                }
+            }
+        };
+
+        // Start the animation
+        setScrolling(true);
+        requestAnimationFrame(scrollMarquee);
+
+        // Cleanup
+        return () => setScrolling(false);
+    }, [direction, speed]);
 
     return (
-        <div className="flex justify-center">
-            <Splide
-                id="splide"
-                options={{
-                    type: 'loop',
-                    drag: 'free',
-                    focus: 'center',
-
-                    autoHeight: true,
-                    pagination: false,
-                    arrows: false,
-                    direction: direction,
-                    height: isMobile ? '40px' : '600px',
-                    autoScroll: {
-                        speed: speed || 1,
-                    },
+        <div
+            className={`flex justify-center overflow-hidden ${className} whitespace-nowrap ${isMobile ? 'h-10' : 'h-16'}`}
+        >
+            <div
+                ref={marqueeRef}
+                className="flex items-center px-4 transform-[translateX(0)] transition-transform duration-0s linear"
+                style={{
+                    transform: 'translateX(0)',
+                    transition: 'transform 0s linear',
                 }}
-                extensions={{ AutoScroll }}
-                className={className}
             >
-                {data.map((item, index) => (
-                    <SplideSlide
-                        key={index}
-                        className={`w-max ${isMobile ? 'm-0 flex items-center gap-2' : 'm-[0.65rem]'}`}
-                    >
-                        {imageData ? (
-                            // Render image if imageData is passed
-                            <img
-                                src={item}
-                                alt={`Image ${index}`}
-                                className={`object-cover ${isMobile ? 'w-16 mx-2' : ''}`}
-                            />
-                        ) : (
-                            // Render text if textData is passed
-                            <span className="text-black text-xl sm:text-2xl font-bold mx-6">
-                                {item}
-                            </span>
-                        )}
-                    </SplideSlide>
+                {duplicatedTextData.map((text, index) => (
+                    <span key={index} className="text-black text-xl sm:text-2xl font-bold mx-6">
+                        {text}
+                    </span>
                 ))}
-            </Splide>
+            </div>
         </div>
     );
 };
