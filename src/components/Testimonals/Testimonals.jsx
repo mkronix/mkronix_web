@@ -1,3 +1,4 @@
+import CommonHeaderText from "../CommonHeaderText/CommonHeaderText";
 import { InfiniteMovingCards } from "../InfiniteMovingCards/InfiniteMovingCards";
 
 const testimonials = [
@@ -33,10 +34,12 @@ const testimonials = [
 ];
 const Testimonals = () => {
     return (
-        <section
-            className="h-[40rem] rounded-md px-4 flex gap-10 flex-col antialiased justify-center relative overflow-hidden">
-            <h3 className="text-white text-dynamic-h2">Loved & trusted</h3>
-            <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+        <section>
+            <CommonHeaderText text={'Some Friendly Words'} />
+            <div
+                className="h-[40rem] rounded-md px-4 flex gap-10 flex-col antialiased justify-center relative overflow-hidden">
+                <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+            </div>
         </section>
     );
 }

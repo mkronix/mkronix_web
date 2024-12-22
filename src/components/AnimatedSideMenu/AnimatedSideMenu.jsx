@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AnimatedSideMenu = () => {
     const [open, setOpen] = useState(false);
@@ -23,9 +24,8 @@ const AnimatedSideMenu = () => {
 
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
-                // Ensure the header is visible if scrolling stops
                 setShowHeader(true);
-            }, 300); // Adjust delay to match desired responsiveness
+            }, 300);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -52,13 +52,13 @@ const AnimatedSideMenu = () => {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 z-50 w-full p-1 flex justify-between items-center transition-transform duration-500 ${showHeader ? "translate-y-0 max-md:bg-black/20 backdrop-blur-2xl" : "-translate-y-full"
+                className={`fixed top-0 left-0 z-50 w-full p-1 flex justify-between items-center transition-transform duration-500 ${showHeader ? "translate-y-0 " : "-translate-y-full"
                     }`}
             >
                 <div className="p-2 rounded-md flex font-bold uppercase text-2xl">
-                    <h2 className="max-md:text-white/60">M</h2>
-                    <h2 className="max-md:text-white">K</h2>
-                    <h2 className="max-md:text-white/50">ronix</h2>
+                    <h2 className=" text-white/60">M</h2>
+                    <h2 className="text-white">K</h2>
+                    <h2 className="text-white/50">ronix</h2>
                 </div>
                 <button
                     onClick={() => setOpen(!open)}
@@ -121,12 +121,10 @@ const AnimatedSideMenu = () => {
                     <div className="flex justify-between items-center h-4/5">
                         {/* Menu Links */}
                         <nav className="text-3xl grid md:grid-cols-1 grid-cols-2 font-antic sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
-                            <a href="#" className="block">Home</a>
-                            <a href="#" className="block">Services</a>
-                            <a href="#" className="block">Projects</a>
-                            <a href="#" className="block">About Us</a>
-                            <a href="#" className="block">Blog</a>
-                            <a href="#" className="block">Contact</a>
+                            <Link to="/" className="block">Home</Link>
+                            <Link to="/service" className="block">Service</Link>
+                            <Link to="/project" className="block">Projects</Link>
+                            <Link to="/contact" className="block">Contact Us</Link>
                         </nav>
                     </div>
                     {/* Social Links */}
@@ -141,14 +139,14 @@ const AnimatedSideMenu = () => {
                     <div>
                         <h2 className="text-3xl md:font-thin mb-4">Got an idea?</h2>
                         <p className="font-antic max-md:font-bold text-4xl md:text-5xl mb-6">Let’s craft <br /> brilliant together!</p>
-                        <button className="border border-black md:border-white px-10 py-1 text-lg rounded-full transition w-max">
+                        <Link to="/contact" className="border border-black md:border-white px-10 py-1 text-lg rounded-full transition w-max">
                             Get In touch
-                        </button>
+                        </Link>
                     </div>
                     {/* Footer Links */}
                     <div className="md:absolute font-antic max-md:font-bold bottom-8 text-sm space-x-4">
-                        <a href="#">Terms & Conditions</a>
-                        <a href="#">Privacy Policy</a>
+                        <Link to="/terms-and-conditions">Terms & Conditions</Link>
+                        <Link to="/privacy-policy">Privacy Policy</Link>
                     </div>
                 </div>
             </div>
