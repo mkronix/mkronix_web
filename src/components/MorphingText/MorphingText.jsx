@@ -94,11 +94,11 @@ const Texts = ({ texts }) => {
     return (
         <>
             <span
-                className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+                className="absolute inset-x-0 top-0 m-auto inline-block w-full text-white"
                 ref={text1Ref}
             />
             <span
-                className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+                className="absolute inset-x-0 top-0 m-auto inline-block w-full text-white"
                 ref={text2Ref}
             />
         </>
