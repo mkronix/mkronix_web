@@ -1,43 +1,54 @@
-import React from 'react';
-import AboutUs from './components/AboutUs/AboutUs';
-import AnimatedSideMenu from './components/AnimatedSideMenu/AnimatedSideMenu';
-import ZeroToHundredLoader from './components/BestLoader/ZeroToHunderedLoader';
-import Cursor from './components/Cursor/Cursor';
-import Footer from './components/Footer/Footer';
-import HeroSection from './components/HeroSection/HeroSection';
-import HorizontalScrollSection from './components/HorizontalScrollSection/HorizontalScrollSection';
-import HowItWorks from './components/HowItWorks/HowItWorks';
-import MorphingText from './components/MorphingText/MorphingText';
-import Services from './components/ServiceSection/ServiceSection';
-import StatsSection from './components/StatsSection/StatsSection';
-import Testimonals from './components/Testimonals/Testimonals';
-import useLoading from './hooks/useLoading';
-import useSmoothScroll from './hooks/useSmoothScroll';
+import React, { useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import CloudTransition from "./components/CloudTransition/CloudTransition";
+import useSmoothScroll from "./hooks/useSmoothScroll";
+import Projects from "./pages/Project";
+import Home from "./pages/home";
+import Service from "./pages/service";
+import Contact from "./pages/contact";
+import AnimatedSideMenu from "./components/AnimatedSideMenu/AnimatedSideMenu";
+import Footer from "./components/Footer/Footer";
+import Cursor from "./components/Cursor/Cursor";
+import ZeroToHundredLoader from "./components/BestLoader/ZeroToHunderedLoader";
+import useLoading from "./hooks/useLoading";
+
 const App = () => {
   const loading = useLoading(2000);
-  useSmoothScroll(loading)
+  useSmoothScroll(false);
+  const location = useLocation();
+  const [isAnimating, setIsAnimating] = useState(false);
 
+  useEffect(() => {
+    setIsAnimating(true);
+    const animationTimeout = setTimeout(() => setIsAnimating(false), 2000);
+    return () => clearTimeout(animationTimeout);
+  }, [location]);
+
+  // Conditional rendering logic for loading
   if (loading) {
     return <ZeroToHundredLoader />;
   }
 
   return (
-    <main className='bg-black relative font-antic'>
-      <AnimatedSideMenu />
-      <HeroSection />
-      <StatsSection />
-      <Testimonals />
-      <AboutUs />
-      <Services />
-      <HowItWorks />
-      <section className='h-screen flex'>
-        <MorphingText texts={['Our Best Project']} className={'text-white text-4xl md:text-5xl'} />
-      </section>
-      <HorizontalScrollSection />
-      <Footer />
-      <Cursor />
-    </main>
+    <>
+      {/* Cloud Transition Layer */}
+      {isAnimating && <CloudTransition isActive={isAnimating} />}
+
+      {/* Main Content */}
+      <main className={`bg-black font-antic relative min-h-screen ${isAnimating ? "pointer-events-none" : ""}`}>
+        <AnimatedSideMenu />
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+        <Cursor />
+      </main>
+    </>
   );
 };
 
 export default App;
+

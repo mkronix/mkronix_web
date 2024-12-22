@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -26,10 +27,10 @@ const Footer = () => {
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
                     <h2 className="text-3xl md:text-4xl font-bold">Mkronix</h2>
                     <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">
-                        <a href="#home" className="">Home</a>
-                        <a href="#services" className="">Services</a>
-                        <a href="#project" className="">Project</a>
-                        <a href="#about" className="">About Us</a>
+                        <Link to="/" className="">Home</Link>
+                        <Link to="/service" className="">Services</Link>
+                        <Link to="/project" className="">Project</Link>
+                        <Link to="/contact" className="">Contact Us</Link>
                     </nav>
                 </div>
             </div>

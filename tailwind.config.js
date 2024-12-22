@@ -29,6 +29,8 @@ module.exports = {
       },
       "animation": {
         shimmer: "shimmer 2s linear infinite",
+        "cloud-in": "cloudIn 2s ease-in-out forwards",
+        "cloud-out": "cloudOut 2s ease-in-out forwards",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
@@ -41,6 +43,19 @@ module.exports = {
             "backgroundPosition": "-200% 0"
           }
         },
+        cloudIn: {
+          "0%": { transform: "scale(1)", opacity: "0.5" },
+          "25%": { transform: "scale(2)", opacity: "0.7" },
+          "50%": { transform: "scale(3)", opacity: "0.9" },
+          "100%": { transform: "scale(5)", opacity: "1" },
+        },
+        cloudOut: {
+          "0%": { transform: "scale(5)", opacity: "1" },
+          "25%": { transform: "scale(3)", opacity: "0.9" },
+          "50%": { transform: "scale(2)", opacity: "0.7" },
+          "100%": { transform: "scale(1)", opacity: "0" },
+        },
+
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",

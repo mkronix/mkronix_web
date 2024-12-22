@@ -1,7 +1,7 @@
 import React from "react";
 import halfArrow from "../../assets/icon/half-arrow.svg";
 
-const WorkFlowCard = ({ number, title, description, onClick, animationSpeed }) => {
+const WorkFlowCard = ({ number, title, description, onClick }) => {
     return (
         <div className={`w-[350px] max-md:w-full h-full
             p-12 md:p-6 rounded-md relative border border-neutral-800 
@@ -14,15 +14,19 @@ const WorkFlowCard = ({ number, title, description, onClick, animationSpeed }) =
                 onClick={onClick}
             >
                 {/* Step Number */}
-                <div className="absolute top-4 left-4 text-white/90 text-lg lg:text-xl">{number}</div>
+                {number && (
+                    <div className="absolute top-4 left-4 text-white/90 text-lg lg:text-xl">{number}</div>
+                )}
 
                 {/* Title */}
                 <h3 className="text-2xl md:text-3xl font-semibold mb-3">{title}</h3>
 
                 {/* Description */}
-                <p className="text-white/70 text-base mb-6">
-                    {description}
-                </p>
+                {description && (
+                    <p className="text-white/70 text-base mb-6">
+                        {description}
+                    </p>
+                )}
                 {/* Arrow */}
                 <div className="absolute bottom-4 right-4">
                     <img

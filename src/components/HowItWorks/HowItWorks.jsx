@@ -1,9 +1,9 @@
 import React from 'react';
 import arrowUp from '../../assets/icon/arrow-up.svg';
-import p1 from '../../assets/img/p3.jpg';
-import p2 from '../../assets/img/p4.jpg';
+import p1 from '../../assets/img/p1.jpg';
+import p2 from '../../assets/img/p2.jpg';
 import p3 from '../../assets/img/p5.png';
-import { RetroGrid } from '../RetroGrid/RetroGrid';
+import CommonHeaderText from '../CommonHeaderText/CommonHeaderText';
 import ScrollRevealText from '../ScrollRevealText/ScrollRevealText';
 const HowItWorks = () => {
     const steps = [
@@ -32,14 +32,9 @@ const HowItWorks = () => {
 
     return (
         <section className='relative'>
-            <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
-                <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#bdbdbd] via-[#ffffff] to-[#5e5e5e] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
-                    <p>How It Works?</p>
-                </span>
-                <RetroGrid />
-            </div>
+            <CommonHeaderText text='How It Works' />
             <div className="max-md:pb-8 px-4 my-6 text-white">
-                <div className="space-y-12 md:mt-20 mb-4">
+                <div className="flex flex-col gap-20 md:mt-20 mb-4">
                     {steps.map((step, index) => (
                         <div
                             key={index}
