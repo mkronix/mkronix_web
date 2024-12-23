@@ -13,10 +13,8 @@ const AnimatedSideMenu = () => {
             const currentScroll = window.scrollY;
 
             if (currentScroll > lastScroll) {
-                // Scrolling down
                 setShowHeader(false);
             } else if (currentScroll < lastScroll || currentScroll === 0) {
-                // Scrolling up or at the top
                 setShowHeader(true);
             }
 
@@ -117,10 +115,10 @@ const AnimatedSideMenu = () => {
                     } z-20 flex max-md:flex-col max-md:justify-around`}
             >
                 {/* Left Menu */}
-                <div className="md:w-[55%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-white flex flex-col">
-                    <div className="flex justify-between items-center h-4/5">
+                <div className="md:w-[50%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-white/60 flex flex-col">
+                    <div className="flex items-center h-full">
                         {/* Menu Links */}
-                        <nav className="text-3xl grid md:grid-cols-1 grid-cols-2 font-antic sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
+                        <nav className="h-full place-content-center max-md:tracking-widest font-monu-bold text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
                             <Link to="/" className="block">Home</Link>
                             <Link to="/service" className="block">Service</Link>
                             <Link to="/project" className="block">Projects</Link>
@@ -128,25 +126,20 @@ const AnimatedSideMenu = () => {
                         </nav>
                     </div>
                     {/* Social Links */}
-                    <div className="space-x-4 max-md:place-self-end font-antic md:font-bold text-sm max-md:my-6">
+                    <div className="space-x-4 max-md:font-bold text-lg md:tracking-wider">
                         <a href="#">LinkedIn</a>
                         <a href="#">Instagram</a>
                         <a href="#">Facebook</a>
                     </div>
                 </div>
                 {/* Right Section */}
-                <div className="md:w-[45%] md:bg-black bg-white md:text-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
+                <div className="md:w-[50%] md:bg-black bg-white md:text-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
                     <div>
                         <h2 className="text-3xl md:font-thin mb-4">Got an idea?</h2>
                         <p className="font-antic max-md:font-bold text-4xl md:text-5xl mb-6">Let’s craft <br /> brilliant together!</p>
                         <Link to="/contact" className="border border-black md:border-white px-10 py-1 text-lg rounded-full transition w-max">
                             Get In touch
                         </Link>
-                    </div>
-                    {/* Footer Links */}
-                    <div className="md:absolute font-antic max-md:font-bold bottom-8 text-sm space-x-4">
-                        <Link to="/terms-and-conditions">Terms & Conditions</Link>
-                        <Link to="/privacy-policy">Privacy Policy</Link>
                     </div>
                 </div>
             </div>

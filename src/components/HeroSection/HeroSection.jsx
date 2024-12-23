@@ -44,10 +44,10 @@ const HeroSection = () => {
             <BoxesLayer />
             <div className={`max-md:px-3 flex flex-col relative`}>
                 <TypewriterEffectSmooth words={typeText} className='text-white' />
-                <p className="relative z-10 font-light font-sans flex gap-2 text-white/70 leading-dynamic-p text-dynamic-p items-center">
+                <p className="relative my-4 z-10 font-light flex gap-2 text-white/70 leading-dynamic-p text-dynamic-p items-center">
                     Your <FlipWords words={words} className={'text-white'} /> deserves better.
                 </p>
-                <p className="relative z-10 font-light font-sans flex text-white/70 leading-dynamic-p text-dynamic-p">
+                <p className="relative z-10 font-light flex text-white/70 leading-dynamic-p text-dynamic-p">
                     Stand out with a digital presence they’ll always remember
                 </p>
             </div>

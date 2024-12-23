@@ -5,6 +5,7 @@ import p2 from '../../assets/img/p2.jpg';
 import p3 from '../../assets/img/p5.png';
 import CommonHeaderText from '../CommonHeaderText/CommonHeaderText';
 import ScrollRevealText from '../ScrollRevealText/ScrollRevealText';
+import GradientFillButton from '../GenerativeFillButton/GenerativeFillButton';
 const HowItWorks = () => {
     const steps = [
         {
@@ -53,7 +54,9 @@ const HowItWorks = () => {
                                 </h4>
                                 <div className='flex items-center gap-4'>
                                     <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4">{step.title}</h3>
-                                    <img src={arrowUp} className='w-6 h-6' alt="" />
+                                    <GradientFillButton>
+                                        <img src={arrowUp} className='w-6 h-6' alt="" />
+                                    </GradientFillButton>
                                 </div>
                                 <ScrollRevealText>
                                     {step.description}
