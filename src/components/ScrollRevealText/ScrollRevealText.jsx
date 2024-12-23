@@ -12,13 +12,12 @@ const ScrollRevealText = ({ children, className }) => {
         const el = textRef.current;
         const characters = el.querySelectorAll(".char");
 
-        // Apply GSAP animation to each character
         gsap.fromTo(
             characters,
             { opacity: 0.3 },
             {
                 opacity: 1,
-                stagger: 0.05, // Delay between each character animation
+                stagger: 0.05,
                 scrollTrigger: {
                     trigger: el,
                     start: "top 80%", // Start animation when top of the element hits 80% of viewport
@@ -43,7 +42,7 @@ const ScrollRevealText = ({ children, className }) => {
                 style={{ display: "inline-block", whiteSpace: "pre" }} // Preserve spacing
             >
                 {word.split("").map((char, i) => (
-                    <span key={i} className="char inline-block">
+                    <span key={i} className="char inline-block text-lg md:text-xl">
                         {char}
                     </span>
                 ))}

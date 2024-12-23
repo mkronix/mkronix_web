@@ -5,6 +5,7 @@ import web from '../../assets/img/web.jpg'
 import app from '../../assets/img/app.jpg'
 import uiux from '../../assets/img/uiux.jpg'
 import grapic from '../../assets/img/grapic.jpg'
+import GradientFillButton from '../GenerativeFillButton/GenerativeFillButton';
 const data = [
     {
         id: 1,
@@ -138,19 +139,10 @@ const ServiceReveal = () => {
                             alt={image?.text}
                         />
                     )}
-
-                    {/* <div
-                        className={`h-[1px] bg-white/30 absolute top-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'
-                            }`}
-                    /> */}
                     {/* <span className={`text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold `}>{image.id}</span> */}
                     <div className="flex items-center w-full">
                         <MenuItem linkText={image.text} marqueeTexts={image.marqueeTexts} />
                     </div>
-                    {/* <div
-                        className={`h-[1px] bg-white/30 absolute bottom-0 left-0 transition-all duration-300 ease-linear ${activeImage?.id === image?.id ? 'w-full' : 'w-0'
-                            }`}
-                    /> */}
                 </div>
             ))}
             {!isSmallScreen && activeImage && (

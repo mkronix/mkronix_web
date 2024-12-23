@@ -2,29 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Sora";
-  src: url("/fonts/Sora.ttf");
-}
-
-@font-face {
-  font-family: "Arizona";
-  src: url("/fonts/Arizonia.ttf");
-}
-
-@font-face {
-  font-family: "Oswald";
-  src: url("/fonts/Oswald.ttf");
-}
 
 @font-face {
   font-family: "Monument-bold";
   src: url("/fonts/Monument-Ultrabold.otf");
-}
-
-@font-face {
-  font-family: "Monument";
-  src: url("/fonts/MonumentExtended.otf");
 }
 
 @font-face {
@@ -48,6 +29,7 @@
 image {
   cursor: none !important;
 }
+
 body {
   background: #000000;
   cursor: none;
@@ -59,14 +41,7 @@ body {
 button {
   cursor: none;
 }
+
 ::-webkit-scrollbar {
   display: none;
-}
-
-.sticky_content {
-  will-change: transform;
-}
-
-.splide__slide {
-  width: max-content !important;
 }
