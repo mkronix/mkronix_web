@@ -43,11 +43,11 @@ const HeroSection = () => {
         <section className="relative md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
             <BoxesLayer />
             <div className={`max-md:px-3 flex flex-col relative`}>
-                <TypewriterEffectSmooth words={typeText} className='text-white' />
-                <p className="relative my-4 z-10 font-light flex gap-2 text-white/70 leading-dynamic-p text-dynamic-p items-center">
+                <TypewriterEffectSmooth words={typeText} className='text-white hover:text-white/50 transition-all duration-500' />
+                <div className="relative my-4 z-10 font-light flex gap-2 text-white/70 hover:text-white/50 transition-all duration-500 leading-dynamic-p text-dynamic-p items-center">
                     Your <FlipWords words={words} className={'text-white'} /> deserves better.
-                </p>
-                <p className="relative z-10 font-light flex text-white/70 leading-dynamic-p text-dynamic-p">
+                </div>
+                <p className="relative z-10 font-light flex text-white/90 hover:text-white/50 transition-all duration-500 leading-dynamic-p text-dynamic-p">
                     Stand out with a digital presence they’ll always remember
                 </p>
             </div>

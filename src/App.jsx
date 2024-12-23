@@ -22,7 +22,7 @@ const App = () => {
     <>
 
       {/* Main Content */}
-      <main className={`bg-black font-antic relative min-h-screen ${isAnimating ? "pointer-events-none" : ""}`}>
+      <main className={`bg-black font-antic relative min-h-screen`}>
         <AnimatedSideMenu />
         <Routes location={location}>
           <Route path="/" element={<Home />} />
