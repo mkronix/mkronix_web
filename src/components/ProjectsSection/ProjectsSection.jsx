@@ -45,10 +45,6 @@ const projects = [
         src: p11,
         title: "Artistic Workspace Layout",
     },
-    {
-        noSrc: true,
-        title: "More Projects",
-    },
 ];
 
 const ProjectsSection = () => {
@@ -83,7 +79,7 @@ const ProjectsSection = () => {
     }, []);
 
     return (
-        <section className="relative overflow-hidden">
+        <section id='project' className="relative overflow-hidden">
             <CommonHeaderText text="Our Best Projects" />
             <div ref={triggerRef} className="h-screen">
                 <div
@@ -98,15 +94,11 @@ const ProjectsSection = () => {
                         >
 
                             <div className="grid grid-cols-1 p-6 place-content-center">
-                                {project.noSrc ? (
-                                    <WorkFlowCard title={project.title} />
-                                ) : (
-                                    <img
-                                        src={project.src}
-                                        className="w-full h-auto object-cover rounded-lg"
-                                        alt={project.title}
-                                    />
-                                )}
+                                <img
+                                    src={project.src}
+                                    className="w-full h-auto object-cover rounded-lg"
+                                    alt={project.title}
+                                />
                             </div>
                         </div>
                     ))}

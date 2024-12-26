@@ -40,7 +40,7 @@ const HeroSection = () => {
         },
     ];
     return (
-        <section className="relative md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
+        <section id='home' className="relative md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
             <BoxesLayer />
             <div className={`max-md:px-3 flex flex-col relative`}>
                 <TypewriterEffectSmooth words={typeText} className='text-white hover:text-white/50 transition-all duration-500' />

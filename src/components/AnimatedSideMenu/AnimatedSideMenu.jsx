@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const AnimatedSideMenu = () => {
     const [open, setOpen] = useState(false);
     const [showHeader, setShowHeader] = useState(true);
     const [lastScroll, setLastScroll] = useState(0);
-
+    const svgRef = useRef(null);
     useEffect(() => {
         let scrollTimeout;
-
         const handleScroll = () => {
             const currentScroll = window.scrollY;
 
@@ -25,28 +24,23 @@ const AnimatedSideMenu = () => {
                 setShowHeader(true);
             }, 300);
         };
-
         window.addEventListener("scroll", handleScroll);
-
         return () => {
             clearTimeout(scrollTimeout);
             window.removeEventListener("scroll", handleScroll);
         };
     }, [lastScroll]);
 
-    useEffect(() => {
-        if (open) {
-            document.documentElement.classList.add("no-scroll");
-            console.log('scrolling disabled')
-        } else {
-            document.documentElement.classList.remove("no-scroll");
-            console.log('scrolling enabled')
+    const handleCloseMenu = () => {
+        setOpen(false);
+        if (svgRef.current) {
+            const reverseAnimation = svgRef.current.querySelector("#reverse");
+            if (reverseAnimation) {
+                reverseAnimation.beginElement();
+            }
         }
-        return () => {
-            // Cleanup to prevent leftover styles
-            document.documentElement.classList.remove("no-scroll");
-        };
-    }, [open]);
+    };
+
     return (
         <>
             <header
@@ -63,6 +57,7 @@ const AnimatedSideMenu = () => {
                     className="relative text-white bg-transparent border-none cursor-pointer flex justify-start focus:outline-none"
                 >
                     <svg
+                        ref={svgRef}
                         className="w-12"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 10 10"
@@ -118,26 +113,46 @@ const AnimatedSideMenu = () => {
                 <div className="md:w-[50%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-white/60 flex flex-col">
                     <div className="flex items-center h-full">
                         {/* Menu Links */}
-                        <nav className="h-full place-content-center max-md:tracking-widest font-monu-bold text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
-                            <Link to="/" className="block">Home</Link>
-                            <Link to="/service" className="block">Service</Link>
-                            <Link to="/project" className="block">Projects</Link>
-                            <Link to="/contact" className="block">Contact Us</Link>
+                        <nav className="h-full place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
+                            <Link to="/#home" className="block" onClick={handleCloseMenu}>
+                                Home
+                            </Link>
+                            <Link to="/#service" className="block" onClick={handleCloseMenu}>
+                                Service
+                            </Link>
+                            <Link to="/#project" className="block" onClick={handleCloseMenu}>
+                                Projects
+                            </Link>
+                            <Link to="/#contact" className="block" onClick={handleCloseMenu}>
+                                Contact Us
+                            </Link>
                         </nav>
                     </div>
                     {/* Social Links */}
                     <div className="space-x-4 max-md:font-bold text-lg md:tracking-wider">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
+                        <a href="#" onClick={handleCloseMenu}>
+                            LinkedIn
+                        </a>
+                        <a href="#" onClick={handleCloseMenu}>
+                            Instagram
+                        </a>
+                        <a href="#" onClick={handleCloseMenu}>
+                            Facebook
+                        </a>
                     </div>
                 </div>
                 {/* Right Section */}
                 <div className="md:w-[50%] md:bg-black bg-white md:text-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
                     <div>
                         <h2 className="text-3xl md:font-thin mb-4">Got an idea?</h2>
-                        <p className="font-antic max-md:font-bold text-4xl md:text-5xl mb-6">Let’s craft <br /> brilliant together!</p>
-                        <Link to="/contact" className="border border-black md:border-white px-10 py-1 text-lg rounded-full transition w-max">
+                        <p className="font-antic max-md:font-bold text-4xl md:text-5xl mb-6">
+                            Let’s craft <br /> brilliant together!
+                        </p>
+                        <Link
+                            to="/contact"
+                            className="border border-black md:border-white px-10 py-1 text-lg rounded-full transition w-max"
+                            onClick={handleCloseMenu}
+                        >
                             Get In touch
                         </Link>
                     </div>

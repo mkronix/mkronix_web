@@ -17,7 +17,7 @@ const distMetric = (x, y, x2, y2) => {
 };
 
 // Menu Item Component
-export const MenuItem = ({ linkText, marqueeTexts }) => {
+export const MenuItem = ({ linkText, marqueeTexts, justifyContent }) => {
     const menuItemRef = useRef(null);
     const marqueeRef = useRef(null);
     const marqueeInnerRef = useRef(null);
@@ -67,7 +67,7 @@ export const MenuItem = ({ linkText, marqueeTexts }) => {
 
 
     return (
-        <div className="overflow-hidden cursor-pointer relative w-full" ref={menuItemRef}>
+        <div className={`overflow-hidden cursor-pointer relative w-full flex justify-${justifyContent}`} ref={menuItemRef}>
             <span className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin" href="#">
                 {linkText}
             </span>
