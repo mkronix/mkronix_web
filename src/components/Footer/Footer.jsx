@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-white text-black">
+        <footer id='contact' className="bg-white text-black">
             <div className="max-w-screen-xl h-96 flex justify-center items-center flex-col mx-auto px-4 py-12 text-center">
                 <div className="flex justify-center items-center space-x-2">
                     <svg width="45" height="40" viewBox="0 0 45 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,17 +20,16 @@ const Footer = () => {
                 <h1 className="mt-4 text-4xl md:text-5xl font-extrabold">LET'S DISCUSS YOUR IDEAS</h1>
                 <div className="mt-6 flex justify-center space-x-4">
                     <button className="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800">Connect Now</button>
-                    <button className="border-2 border-black text-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white">Follow us</button>
                 </div>
             </div>
             <div className="bg-black text-white py-6">
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
                     <h2 className="text-3xl md:text-4xl font-bold">Mkronix</h2>
                     <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">
-                        <Link to="/" className="">Home</Link>
-                        <Link to="/service" className="">Services</Link>
-                        <Link to="/project" className="">Project</Link>
-                        <Link to="/contact" className="">Contact Us</Link>
+                        <Link to="/#home" className="">Home</Link>
+                        <Link to="/#service" className="">Services</Link>
+                        <Link to="/#project" className="">Project</Link>
+                        <Link to="/#contact" className="">Contact Us</Link>
                     </nav>
                 </div>
             </div>

@@ -17,6 +17,7 @@ const data = [
             "Digital Brilliance 💡",
             "Elevate Your Brand 🚀",
         ],
+        place: "start",
     },
     {
         id: 2,
@@ -28,6 +29,7 @@ const data = [
             "App Design & Development 📱",
             "Custom Digital Solutions 🔧",
         ],
+        place: "center",
     },
     {
         id: 3,
@@ -39,17 +41,7 @@ const data = [
             "Scalable Web Platforms 📈",
             "User-Centered Innovations 🌟",
         ],
-    },
-    {
-        id: 4,
-        src: grapic,
-        text: 'Graphic Design',
-        marqueeTexts: [
-            "Award-Winning Designs 🏆",
-            "Cutting-Edge Applications 💻",
-            "Scalable Web Platforms 📈",
-            "User-Centered Innovations 🌟",
-        ],
+        place: "end",
     },
 ];
 const ServiceReveal = () => {
@@ -141,7 +133,7 @@ const ServiceReveal = () => {
                     )}
                     {/* <span className={`text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold `}>{image.id}</span> */}
                     <div className="flex items-center w-full">
-                        <MenuItem linkText={image.text} marqueeTexts={image.marqueeTexts} />
+                        <MenuItem justifyContent={isSmallScreen ? 'start' : image.place} linkText={image.text} marqueeTexts={image.marqueeTexts} />
                     </div>
                 </div>
             ))}

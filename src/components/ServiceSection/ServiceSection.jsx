@@ -4,7 +4,7 @@ import CommonHeaderText from '../CommonHeaderText/CommonHeaderText';
 
 const Services = () => {
     return (
-        <section className='relative max-md:pb-8 px-4 my-6'>
+        <section id='service' className='relative max-md:pb-8 px-4 my-6'>
             <CommonHeaderText text='Our Services' />
             <ServiceReveal />
         </section>
