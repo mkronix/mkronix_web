@@ -19,7 +19,7 @@ export const TypewriterEffectSmooth = ({
             (<div className="flex gap-2 md:gap-4 items-center max-md:flex-wrap">
                 {wordsArray.map((word, idx) => {
                     return (
-                        (<div key={`word-${idx}`} className="inline-block">
+                        (<h2 key={`word-${idx}`} className="inline-block">
                             {word.text.map((char, index) => (
                                 <span
                                     key={`char-${index}`}
@@ -27,7 +27,7 @@ export const TypewriterEffectSmooth = ({
                                     {char}
                                 </span>
                             ))}
-                        </div>)
+                        </h2>)
                     );
                 })}
             </div>)

@@ -1,49 +1,8 @@
 'use client';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { MenuItem } from '../MenuMarquee/MenuMarquee';
-import web from '../../assets/img/web.jpg'
-import app from '../../assets/img/app.jpg'
-import uiux from '../../assets/img/uiux.jpg'
-import grapic from '../../assets/img/grapic.jpg'
-import GradientFillButton from '../GenerativeFillButton/GenerativeFillButton';
-const data = [
-    {
-        id: 1,
-        src: web,
-        text: 'Web Design & Development',
-        marqueeTexts: [
-            "Innovative Design ✨",
-            "Crafting Experiences 🎨",
-            "Digital Brilliance 💡",
-            "Elevate Your Brand 🚀",
-        ],
-        place: "start",
-    },
-    {
-        id: 2,
-        src: app,
-        text: 'App Design & Development',
-        marqueeTexts: [
-            "Creative UI/UX Design 🎨",
-            "Web Design & Development 🌐",
-            "App Design & Development 📱",
-            "Custom Digital Solutions 🔧",
-        ],
-        place: "center",
-    },
-    {
-        id: 3,
-        src: uiux,
-        text: 'Ui/Ux Design',
-        marqueeTexts: [
-            "Award-Winning Designs 🏆",
-            "Cutting-Edge Applications 💻",
-            "Scalable Web Platforms 📈",
-            "User-Centered Innovations 🌟",
-        ],
-        place: "end",
-    },
-];
+import serviceData from '../../data/servicesection';
+
 const ServiceReveal = () => {
     const [activeImage, setActiveImage] = useState(null);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -118,7 +77,7 @@ const ServiceReveal = () => {
         <div
             className="relative w-full min-h-fit mt-4 flex flex-col gap-4"
             onMouseLeave={handleMouseLeave}>
-            {data.map((image) => (
+            {serviceData.map((image) => (
                 <div
                     key={image.id}
                     className={`md:p-4 cursor-pointer relative flex items-center justify-center gap-4`}

@@ -19,11 +19,11 @@ const StaggeredText = ({ className, words, delay }) => {
     };
 
     return (
-        <div ref={ref} className="flex justify-center">
+        <h1 ref={ref} className="flex justify-center">
             <AnimatePresence>
                 {isInView &&
                     letters.map((letter, i) => (
-                        <motion.h1
+                        <motion.span
                             key={i}
                             variants={pullupVariant}
                             initial="initial"
@@ -36,10 +36,10 @@ const StaggeredText = ({ className, words, delay }) => {
                             )}
                         >
                             {letter === " " ? <span>&nbsp;</span> : letter}
-                        </motion.h1>
+                        </motion.span>
                     ))}
             </AnimatePresence>
-        </div>
+        </h1>
     );
 };
 

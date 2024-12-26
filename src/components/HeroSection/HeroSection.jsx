@@ -3,42 +3,10 @@ import BoxesLayer from '../BoxesLayer/BoxesLayer'
 import { FlipWords } from '../FlipWords/FlipWords'
 import { TypewriterEffectSmooth } from '../TypewriterEffect/TypewriterEffect'
 import { VelocityScroll } from '../VelocityScroll/VelocityScroll'
+import { textMarqueData, typeText, words } from '../../data/herosection'
 
 const HeroSection = () => {
-    const textMarqueData = "WEB DESIGN ● UI/UX DESIGN ● APPLICATIONS ● GRAPHICS ● BRANDING ● LOGO ● MARKETING ●"
-    const words = [
-        "brand",
-        "business",
-        "products",
-        "services",
-    ]
 
-    const typeText = [
-        {
-            text: "Lost",
-        },
-        {
-            text: "in",
-        },
-        {
-            text: "the",
-        },
-        {
-            text: "noise?",
-        },
-        {
-            text: "It’s",
-        },
-        {
-            text: "Time",
-        },
-        {
-            text: "to",
-        },
-        {
-            text: "Stand Out."
-        },
-    ];
     return (
         <section id='home' className="relative md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
             <BoxesLayer />

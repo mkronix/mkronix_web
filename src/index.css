@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@font-face {
-  font-family: "Monument-bold";
-  src: url("/fonts/Monument-Ultrabold.otf");
-}
-
-@font-face {
-  font-family: "Irish";
-  src: url("/fonts/IrishGrover.ttf");
-}
-
 @font-face {
   font-family: "Antic";
   src: url("/fonts/AnticDidone-Regular.ttf");

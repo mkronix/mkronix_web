@@ -37,7 +37,7 @@ const ScrollRevealText = ({ children, className }) => {
     // Split text into words and characters, preserving spacing
     const splitText = (text) =>
         text.split(" ").map((word, index) => (
-            <span
+            <h6
                 key={index}
                 style={{ display: "inline-block", whiteSpace: "pre" }} // Preserve spacing
             >
@@ -47,7 +47,7 @@ const ScrollRevealText = ({ children, className }) => {
                     </span>
                 ))}
                 <span className="char inline-block">&nbsp;</span>
-            </span>
+            </h6>
         ));
 
     return (

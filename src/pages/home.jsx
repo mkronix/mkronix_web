@@ -26,7 +26,6 @@ const Home = () => {
         <>
             <SEO
                 title="MkRonix | Futuristic Digital Solutions - Home"
-                description="Explore MkRonix's homepage, featuring cutting-edge web design, animations, and seamless user experiences."
             />
             <HeroSection />
             <StatsSection />

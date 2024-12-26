@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
             <div className="bg-black text-white py-6">
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold">Mkronix</h2>
+                    <h1 className="text-3xl md:text-4xl font-bold">Mkronix</h1>
                     <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">
                         <Link to="/#home" className="">Home</Link>
                         <Link to="/#service" className="">Services</Link>
