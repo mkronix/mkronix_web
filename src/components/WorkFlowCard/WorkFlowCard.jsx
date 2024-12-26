@@ -13,21 +13,15 @@ const WorkFlowCard = ({ number, title, description, onClick }) => {
                 h-full rounded-lg flex flex-col justify-center hover:cursor-pointer group"
                 onClick={onClick}
             >
-                {/* Step Number */}
                 {number && (
-                    <div className="absolute top-4 left-4 text-white/90 text-lg lg:text-xl">{number}</div>
+                    <span className="absolute top-4 left-4 text-white/90 text-lg lg:text-xl">{number}</span>
                 )}
-
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-semibold mb-3">{title}</h3>
-
-                {/* Description */}
+                <h1 className="text-2xl md:text-3xl font-semibold mb-3">{title}</h1>
                 {description && (
                     <p className="text-white/70 text-base mb-6">
                         {description}
                     </p>
                 )}
-                {/* Arrow */}
                 <div className="absolute bottom-4 right-4">
                     <img
                         src={halfArrow}

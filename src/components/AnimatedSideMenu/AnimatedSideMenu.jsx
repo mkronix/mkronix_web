@@ -106,7 +106,7 @@ const AnimatedSideMenu = () => {
                 </button>
             </header>
             <div
-                className={`fixed inset-0 text-black transition-transform duration-1000 ${open ? "translate-x-0" : "-translate-x-full"
+                className={`fixed inset-0 text-black bg-black transition-transform duration-1000 ${open ? "translate-x-0" : "-translate-x-full"
                     } z-20 flex max-md:flex-col max-md:justify-around`}
             >
                 {/* Left Menu */}
@@ -128,7 +128,7 @@ const AnimatedSideMenu = () => {
                             </Link>
                         </nav>
                     </div>
-                    {/* Social Links */}
+                    {/* // Social Links
                     <div className="space-x-4 max-md:font-bold text-lg md:tracking-wider">
                         <a href="#" onClick={handleCloseMenu}>
                             LinkedIn
@@ -139,7 +139,7 @@ const AnimatedSideMenu = () => {
                         <a href="#" onClick={handleCloseMenu}>
                             Facebook
                         </a>
-                    </div>
+                    </div> */}
                 </div>
                 {/* Right Section */}
                 <div className="md:w-[50%] md:bg-black bg-white md:text-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
@@ -150,7 +150,7 @@ const AnimatedSideMenu = () => {
                         </p>
                         <Link
                             to="/contact"
-                            className="border border-black md:border-white px-10 py-1 text-lg rounded-full transition w-max"
+                            className="border border-black md:border-white px-4 py-2 text-lg rounded-full transition w-max"
                             onClick={handleCloseMenu}
                         >
                             Get In touch

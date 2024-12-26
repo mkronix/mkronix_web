@@ -13,8 +13,6 @@ module.exports = {
         'dynamic-p': 'clamp(2rem, 4.5vw, 6rem)',
       },
       fontFamily: {
-        'monu-bold': ['Monument-bold', 'sans-serif'],
-        'irish': ['Irish'],
         'antic': ['Antic', 'sans-serif'],
       },
       "animation": {

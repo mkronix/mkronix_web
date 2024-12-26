@@ -67,18 +67,18 @@ export const MenuItem = ({ linkText, marqueeTexts, justifyContent }) => {
 
 
     return (
-        <div className={`overflow-hidden cursor-pointer relative w-full flex justify-${justifyContent}`} ref={menuItemRef}>
-            <span className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin" href="#">
+        <div className={`overflow-hidden cursor-pointer relative w-full flex ${justifyContent}`} ref={menuItemRef}>
+            <h1 className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin" href="#">
                 {linkText}
-            </span>
+            </h1>
             <div className="absolute top-0 left-0 overflow-hidden w-full h-full bg-black transform-[translate3d(0,101%,0)]" ref={marqueeRef}>
                 <div className="h-full w-full transform-[translate3d(0,-101%,0)]" ref={marqueeInnerRef}>
                     <div className="h-full w-[fit-content] items-center flex relative gap-4 menu_marquee__inner">
                         {marqueeTexts.map((text, index) => (
                             <React.Fragment key={index}>
-                                <span className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin">
+                                <h2 className="whitespace-nowrap text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-center text-white font-thin">
                                     {text}
-                                </span>
+                                </h2>
                             </React.Fragment>
                         ))}
 

@@ -9,7 +9,7 @@ export default function GridCardDesign({
             className="relative z-30 bg-gradient-to-b from-neutral-900 to-neutral-950 p-6 rounded-3xl overflow-hidden">
             <Grid size={20} />
             <div className=''>
-                <p className="text-dynamic-p font-bold text-white">{title}<span className="text-dynamic-p">+</span></p>
+                <h3 className="text-dynamic-p font-bold text-white">{title}+</h3>
                 <p className="md:text-xl">{description}</p>
             </div>
         </div>
