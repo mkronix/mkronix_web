@@ -114,18 +114,18 @@ const AnimatedSideMenu = () => {
                     <div className="flex items-center h-full">
                         {/* Menu Links */}
                         <nav className="h-full font-raleway-extra-bold  place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
-                            <Link to="/#home" className="block" onClick={handleCloseMenu}>
+                            <a to="/#home" className="block" onClick={handleCloseMenu}>
                                 Home
-                            </Link>
-                            <Link to="/#service" className="block" onClick={handleCloseMenu}>
+                            </a>
+                            <a to="/#service" className="block" onClick={handleCloseMenu}>
                                 Service
-                            </Link>
-                            <Link to="/#project" className="block" onClick={handleCloseMenu}>
+                            </a>
+                            <a to="/#project" className="block" onClick={handleCloseMenu}>
                                 Projects
-                            </Link>
-                            <Link to="/#contact" className="block" onClick={handleCloseMenu}>
+                            </a>
+                            <a to="/#contact" className="block" onClick={handleCloseMenu}>
                                 Contact Us
-                            </Link>
+                            </a>
                         </nav>
                     </div>
                     {/* // Social Links
@@ -148,13 +148,13 @@ const AnimatedSideMenu = () => {
                         <p className="font-raleway-bold max-md:font-bold text-4xl md:text-5xl mb-6">
                             Let’s craft <br /> brilliant together!
                         </p>
-                        <Link
-                            to="/contact"
+                        <a
+                            to="#"
                             className="border border-black md:border-white px-4 py-2 text-lg rounded-full transition w-max"
                             onClick={handleCloseMenu}
                         >
                             Get In touch
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
