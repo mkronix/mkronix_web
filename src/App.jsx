@@ -13,6 +13,8 @@ import Missions from './components/Mission/Mission'
 import Services from './components/ServiceSection/ServiceSection'
 import StatsSection from './components/StatsSection/StatsSection'
 import Testimonals from './components/Testimonals/Testimonals'
+import RainBowCursor from "./components/RainbowCursor/RainbowCursor";
+
 const App = () => {
   const loading = useLoading(2000);
   useSmoothScroll(false);
@@ -24,7 +26,8 @@ const App = () => {
     <>
 
       {/* Main Content */}
-      <main className={`bg-black font-raleway-regular relative min-h-screen`}>
+      <main className={`bg-black h-[100dvh] font-raleway-regular relative `}>
+        <RainBowCursor />
         <AnimatedSideMenu />
         <HeroSection />
         <FloatingTestimonals />
@@ -35,7 +38,6 @@ const App = () => {
         <HowItWorks />
         <Missions />
         <Footer />
-        <Cursor />
       </main>
     </>
   );

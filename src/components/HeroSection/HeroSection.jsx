@@ -8,9 +8,9 @@ import { textMarqueData, typeText, words } from '../../data/herosection'
 const HeroSection = () => {
 
     return (
-        <section id='home' className="relative md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
+        <section id='home' className="relative z-10 pointer-events-none  md:pt-20 pt-12 max-md:px-2 px-5 flex flex-col overflow-hidden h-screen">
             <BoxesLayer />
-            <div className={`max-md:px-3 flex flex-col relative`}>
+            <div className={`max-md:px-3 flex flex-col`}>
                 <TypewriterEffectSmooth words={typeText} className='text-off-white hover:text-off-white transition-all duration-500' />
                 <div className="relative my-4 z-10 font-light flex gap-2 text-off-white hover:text-off-white transition-all duration-500 leading-dynamic-p text-dynamic-p items-center">
                     Your <FlipWords words={words} className={'text-off-white'} /> deserves better.
