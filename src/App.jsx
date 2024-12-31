@@ -13,7 +13,6 @@ import Missions from './components/Mission/Mission'
 import Services from './components/ServiceSection/ServiceSection'
 import StatsSection from './components/StatsSection/StatsSection'
 import Testimonals from './components/Testimonals/Testimonals'
-
 const App = () => {
   const loading = useLoading(2000);
   useSmoothScroll(false);
