@@ -19,10 +19,10 @@ const Footer = () => {
                 </div>
                 <h1 className="mt-4 text-4xl md:text-5xl font-extrabold">LET'S DISCUSS YOUR IDEAS</h1>
                 <div className="mt-6 flex justify-center space-x-4">
-                    <button className="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800">Connect Now</button>
+                    <button className="bg-black text-off-white px-6 py-2 rounded-full font-medium hover:bg-gray-800">Connect Now</button>
                 </div>
             </div>
-            <div className="bg-black text-white py-6">
+            <div className="bg-black text-off-white py-6">
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
                     <h1 className="text-3xl md:text-4xl font-bold">Mkronix</h1>
                     <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">

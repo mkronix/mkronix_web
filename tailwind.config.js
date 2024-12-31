@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "off-white": "#F0EEE6",
+        "brown-text": "#3D3929",
+      },
       fontSize: {
         'dynamic-h2': 'clamp(2rem, 6vw, 4.375rem)',
         'dynamic-p': 'clamp(1.5rem, 3.5vw, 4.5rem)',
@@ -14,6 +18,9 @@ module.exports = {
       },
       fontFamily: {
         'antic': ['Antic', 'sans-serif'],
+        'raleway-bold': ['Raleway-bold', 'sans-serif'],
+        'raleway-extra-bold': ['Raleway-extra-bold', 'sans-serif'],
+        'raleway-regular': ['Raleway-regular', 'sans-serif'],
       },
       "animation": {
         shimmer: "shimmer 2s linear infinite",

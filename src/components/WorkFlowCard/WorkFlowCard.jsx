@@ -9,16 +9,16 @@ const WorkFlowCard = ({ number, title, description, onClick }) => {
         `}
         >
             <div
-                className="text-white
+                className="text-off-white
                 h-full rounded-lg flex flex-col justify-center hover:cursor-pointer group"
                 onClick={onClick}
             >
                 {number && (
-                    <span className="absolute top-4 left-4 text-white/90 text-lg lg:text-xl">{number}</span>
+                    <span className="absolute top-4 left-4 text-off-white text-lg lg:text-xl">{number}</span>
                 )}
                 <h1 className="text-2xl md:text-3xl font-semibold mb-3">{title}</h1>
                 {description && (
-                    <p className="text-white/70 text-base mb-6">
+                    <p className="text-off-white text-base mb-6">
                         {description}
                     </p>
                 )}

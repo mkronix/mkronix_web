@@ -48,13 +48,13 @@ const AnimatedSideMenu = () => {
                     }`}
             >
                 <div className="p-2 rounded-md flex font-bold uppercase text-2xl">
-                    <h2 className=" text-white/60">M</h2>
-                    <h2 className="text-white">K</h2>
-                    <h2 className="text-white/50">ronix</h2>
+                    <h2 className=" text-off-white">M</h2>
+                    <h2 className="text-off-white">K</h2>
+                    <h2 className="text-off-white">ronix</h2>
                 </div>
                 <button
                     onClick={() => setOpen(!open)}
-                    className="relative text-white bg-transparent border-none cursor-pointer flex justify-start focus:outline-none"
+                    className="relative text-off-white bg-transparent border-none cursor-pointer flex justify-start focus:outline-none"
                 >
                     <svg
                         ref={svgRef}
@@ -110,10 +110,10 @@ const AnimatedSideMenu = () => {
                     } z-20 flex max-md:flex-col max-md:justify-around`}
             >
                 {/* Left Menu */}
-                <div className="md:w-[50%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-white/60 flex flex-col">
+                <div className="md:w-[50%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-off-white flex flex-col">
                     <div className="flex items-center h-full">
                         {/* Menu Links */}
-                        <nav className="h-full place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
+                        <nav className="h-full font-raleway-extra-bold  place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
                             <Link to="/#home" className="block" onClick={handleCloseMenu}>
                                 Home
                             </Link>
@@ -142,10 +142,10 @@ const AnimatedSideMenu = () => {
                     </div> */}
                 </div>
                 {/* Right Section */}
-                <div className="md:w-[50%] md:bg-black bg-white md:text-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
+                <div className="md:w-[50%] md:bg-black bg-white md:text-off-white text-black flex flex-col justify-around max-md:h-2/3 md:justify-center md:p-8 p-3 relative">
                     <div>
                         <h2 className="text-3xl md:font-thin mb-4">Got an idea?</h2>
-                        <p className="font-antic max-md:font-bold text-4xl md:text-5xl mb-6">
+                        <p className="font-raleway-bold max-md:font-bold text-4xl md:text-5xl mb-6">
                             Let’s craft <br /> brilliant together!
                         </p>
                         <Link

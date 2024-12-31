@@ -1,16 +1,13 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import AnimatedSideMenu from "./components/AnimatedSideMenu/AnimatedSideMenu";
 import ZeroToHundredLoader from "./components/BestLoader/ZeroToHunderedLoader";
-import Cursor from "./components/Cursor/Cursor";
-import Footer from "./components/Footer/Footer";
 import useLoading from "./hooks/useLoading";
 import useSmoothScroll from "./hooks/useSmoothScroll";
-import Projects from "./pages/Project";
-import Contact from "./pages/contact";
-import Home from "./pages/home";
-import Service from "./pages/service";
-
+const Home = lazy(() => import("./pages/Home"));
+const Contact = lazy(() => import("./pages/contact"));
+const Service = lazy(() => import("./pages/service"));
+const Projects = lazy(() => import("./pages/Project"));
 const App = () => {
   const loading = useLoading(2000);
   useSmoothScroll(false);
@@ -22,7 +19,7 @@ const App = () => {
     <>
 
       {/* Main Content */}
-      <main className={`bg-black font-antic relative min-h-screen`}>
+      <main className={`bg-black font-raleway-regular relative min-h-screen`}>
         <AnimatedSideMenu />
         <Routes location={location}>
           <Route path="/" element={<Home />} />
