@@ -20,7 +20,7 @@ const ZeroToHundredLoader = () => {
         <div className="flex items-center justify-center h-screen w-screen bg-black">
             <div className="relative">
                 {/* Percentage Text */}
-                <div className="absolute font-mono inset-0 flex items-center justify-center text-white lg:text-6xl text-5xl font-bold">
+                <div className="absolute font-mono inset-0 flex items-center justify-center text-off-white lg:text-6xl text-5xl font-bold">
                     {percentage}%
                 </div>
             </div>
