@@ -26,10 +26,10 @@ const Footer = () => {
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
                     <h1 className="text-3xl md:text-4xl font-bold">Mkronix</h1>
                     <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">
-                        <Link to="/#home" className="">Home</Link>
-                        <Link to="/#service" className="">Services</Link>
-                        <Link to="/#project" className="">Project</Link>
-                        <Link to="/#contact" className="">Contact Us</Link>
+                        <a to="/#home" className="">Home</a>
+                        <a to="/#service" className="">Services</a>
+                        <a to="/#project" className="">Project</a>
+                        <a to="/#contact" className="">Contact Us</a>
                     </nav>
                 </div>
             </div>
