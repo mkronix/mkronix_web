@@ -4,7 +4,7 @@ import AnimatedSideMenu from "./components/AnimatedSideMenu/AnimatedSideMenu";
 import ZeroToHundredLoader from "./components/BestLoader/ZeroToHunderedLoader";
 import useLoading from "./hooks/useLoading";
 import useSmoothScroll from "./hooks/useSmoothScroll";
-const Home = lazy(() => import("./pages/Home"));
+import Home from "./pages/Home";
 const Contact = lazy(() => import("./pages/contact"));
 const Service = lazy(() => import("./pages/service"));
 const Projects = lazy(() => import("./pages/Project"));
