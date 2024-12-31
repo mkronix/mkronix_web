@@ -79,7 +79,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section id='service'>
+        <section id='service' className='relative z-10'>
             <MainService />
             <ServiceSection />
         </section>
@@ -371,7 +371,7 @@ const ServiceSection = () => {
     return (
         <div
             ref={spaceVehicles}
-            className="bg-white w-[99.6vw] h-fit flex  justify-center items-center"
+            className="bg-white w-[99.6vw] h-fit flex justify-center items-center"
         >
             <div className="PAGE-2 w-full   flex relative justify-center bg-black p-2  space-x-2">
                 <div className="LEFT w-[50vw] flex flex-col space-y-5 p-5 h-fit text-off-white">

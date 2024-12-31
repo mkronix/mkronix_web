@@ -79,7 +79,7 @@ If you’re looking to stand out, inspire trust, we’re the team to make it hap
     });
     return (
         <>
-            <div className=" relative w-[99.6vw] h-[400vh] bg-black">
+            <div className=" relative z-10 pointer-events-none w-[99.6vw] h-[400vh] ">
                 <div className="flex flex-col items-center relative  space-y-[100px] h-full  w-full">
                     <div className="HEADING-TEXT0 mt-[100px]  py-8 overflow-hidden flex  items-center justify-center w-[80vw] ml-[1vw]  space-x-[190px] h-fit p-2">
                         <h1 className=" text-off-white text-8xl font-heading2 tracking-widest ">
@@ -201,7 +201,7 @@ const FocalImage = () => {
     return (
         <div
             ref={containerRef}
-            className="relative  w-[99.6vw] flex justify-center -mt-[80vh] h-[110vh]"
+            className="relative z-10 pointer-events-none  w-[99.6vw] flex justify-center -mt-[80vh] h-[110vh]"
         >
             <div className="relative overflow-x-hidden flex items-center  h-[100vh] w-[99.6vw] space-x-0">
                 <div
@@ -445,11 +445,11 @@ const CosmoNauts = () => {
     return (
         <div
             ref={missionsContainer}
-            className="w-[99.6vw]  flex items-center justify-center bg-black h-[135vh]"
+            className="w-[99.6vw]  realative z-10 pointer-events-none flex items-center justify-center h-[135vh]"
         >
             <div
                 ref={planetsRef}
-                className="relative  flex items-start  bg-black  overflow-hidden justify-center py-[100px]  w-[99.6vw] h-[135vh]"
+                className="relative  flex items-start justify-center py-[100px]  w-[99.6vw] h-[135vh]"
             >
                 <div
                     style={{ zIndex: "999" }}

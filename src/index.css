@@ -6,14 +6,17 @@
   font-family: "Antic";
   src: url("/fonts/AnticDidone-Regular.ttf");
 }
+
 @font-face {
   font-family: "Raleway-bold";
   src: url("/fonts/Raleway-Bold.ttf");
 }
+
 @font-face {
   font-family: "Raleway-extra-bold";
   src: url("/fonts/Raleway-ExtraBold.ttf");
 }
+
 @font-face {
   font-family: "Raleway-regular";
   src: url("/fonts/Raleway-Regular.ttf");
@@ -24,23 +27,13 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.5 ease;
-  cursor: none;
-}
-
-image {
-  cursor: none !important;
 }
 
 body {
   background: #000000;
-  cursor: none;
   user-select: none;
   margin: 0;
   padding: 0;
-}
-
-button {
-  cursor: none;
 }
 
 ::-webkit-scrollbar {

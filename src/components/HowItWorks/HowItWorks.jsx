@@ -6,7 +6,7 @@ import ScrollRevealText from '../ScrollRevealText/ScrollRevealText';
 const HowItWorks = () => {
 
     return (
-        <section className='relative'>
+        <section className='relative z-10 pointer-events-none'>
             <CommonHeaderText text='How It Works' />
             <div className="max-md:pb-8 px-4 my-6 text-off-white">
                 <div className="flex flex-col gap-20 md:mt-20 mb-4">
