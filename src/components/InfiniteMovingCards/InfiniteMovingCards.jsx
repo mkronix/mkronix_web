@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
-
 export const InfiniteMovingCards = ({
     items,
     direction = "left",
@@ -67,27 +66,11 @@ export const InfiniteMovingCards = ({
                 )}>
                 {items.map((item, idx) => (
                     <li
-                        className="w-[350px] max-w-full relative rounded-tr-2xl flex-shrink-0 border-t border-r border-t-white border-r-white px-8 py-6 md:w-[450px]"
+                        className="w-[350px] max-w-full relative rounded-tr-2xl flex-shrink-0  px-8 py-6 md:w-[450px]"
                         key={item.name}>
-                        <blockquote>
-                            <div
-                                aria-hidden="true"
-                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"></div>
-                            <p
-                                className=" relative z-20 text-lg md:text-2xl leading-[1.6] text-off-white font-normal">
-                                {item.quote}
-                            </p>
-                            <div className="relative z-20 mt-6 flex flex-row items-center">
-                                <div className="flex flex-col gap-1">
-                                    <h2 className="text-lg leading-[1.6] text-off-white font-normal">
-                                        {item.name}
-                                    </h2>
-                                    <h3 className=" text-lg leading-[1.6] text-off-white font-normal">
-                                        {item.title}
-                                    </h3>
-                                </div>
-                            </div>
-                        </blockquote>
+                        <img src={item.img} alt="testimonial by clients"
+                            className="w-full h-full object-cover rounded-tr-2xl"
+                        />
                     </li>
                 ))}
             </ul>

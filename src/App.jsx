@@ -26,11 +26,10 @@ const App = () => {
     <>
 
       {/* Main Content */}
-      <main className={`bg-black h-[100dvh] font-raleway-regular relative `}>
+      <main className={`bg-black font-raleway-regular relative `}>
         <RainBowCursor />
-        <AnimatedSideMenu />
+        {/* <AnimatedSideMenu /> */}
         <HeroSection />
-        <FloatingTestimonals />
         <StatsSection />
         <Testimonals />
         <AboutUs />
