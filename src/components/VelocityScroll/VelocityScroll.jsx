@@ -81,7 +81,7 @@ export function VelocityScroll({
                 className="w-full overflow-hidden whitespace-nowrap"
                 ref={containerRef}
             >
-                <motion.div className={cn("flex justify-center items-center font-bold ", className)} style={{ x }}>
+                <motion.div className={cn("flex justify-center items-center ", className)} style={{ x }}>
                     {Array.from({ length: repetitions }).map((_, i) => (
                         <h2 key={i} ref={i === 0 ? textRef : null}>
                             {children}{" "}

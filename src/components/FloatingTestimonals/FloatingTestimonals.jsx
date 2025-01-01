@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -19,8 +19,7 @@ const FloatingTestimonals = () => {
     const Image3 = useRef(null);
     const Image4 = useRef(null);
     const Image5 = useRef(null);
-    const Image6 = useRef(null);
-    const Images = [Image1, Image2, Image3, Image4, Image5, Image6];
+    const Images = [Image1, Image2, Image3, Image4, Image5];
 
     const handleMouseMove = (e) => {
         const xMove = e.clientX;
@@ -58,12 +57,6 @@ const FloatingTestimonals = () => {
             duration: 1,
             ease: "back.out(4)",
         });
-        gsap.to(Image6.current, {
-            x: -xMove * 0.07,
-            y: -yMove * 0.06,
-            duration: 1,
-            ease: "back.out(4)",
-        });
     };
     const handleMouseLeave = (e) => {
         gsap.to(Image1.current, {
@@ -96,19 +89,14 @@ const FloatingTestimonals = () => {
             duration: 3.5,
             ease: "elastic.out(1.2,0.2)",
         });
-        gsap.to(Image6.current, {
-            x: 0,
-            y: 0,
-            duration: 3.5,
-            ease: "elastic.out(1.2,0.2)",
-        });
     };
 
-    useGSAP(() => {
+    useEffect(() => {
+        if (!plane.current) return;
+
         const spreadImages = gsap.timeline({
             scrollTrigger: {
                 trigger: plane.current,
-
                 start: "top 10%",
             },
         });
@@ -121,18 +109,17 @@ const FloatingTestimonals = () => {
                 {
                     scale: 0.9,
                     opacity: 1,
-
                     rotate: newPos.rotate,
                     top: newPos.top,
                     left: newPos.left,
                     ease: "sine.in",
                     duration: 0.5,
-
                     stagger: 2,
                 }
             );
         });
-    });
+    }, []);
+
     const handleImageEnter = (p) => {
         if (opened === false) {
             gsap.to(`.IMAGE-${p} `, {
@@ -239,12 +226,11 @@ const FloatingTestimonals = () => {
     };
 
     const originalPos = [
-        { top: 0, left: 270, rotate: 3, width: "350px", height: "300px" },
-        { top: 600, left: 1220, rotate: -6, width: "350px", height: "300px" },
-        { top: 0, left: 1220, rotate: -2, width: "450px", height: "250px" },
-        { top: 620, left: 300, rotate: 3, width: "400px", height: "300px" },
-        { top: 240, left: 480, rotate: 0, width: "300px", height: "300px" },
-        { top: 340, left: 900, rotate: 3, width: "250px", height: "350px" },
+        { top: 0, left: "15%", rotate: 3, width: "300px", height: "300px" },
+        { top: 400, left: "75%", rotate: -6, width: "300px", height: "300px" },
+        { top: 0, left: "75%", rotate: -2, width: "300px", height: "300px" },
+        { top: 400, left: "25%", rotate: 3, width: "300px", height: "300px" },
+        { top: 240, left: "50%", rotate: 0, width: "400px", height: "400px" },
     ];
 
     return (
@@ -252,14 +238,14 @@ const FloatingTestimonals = () => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             ref={plane}
-            className="bg-black  overflow-hidden bg-center bg-cover relative w-[99.6vw] h-[150vh] flex items-center justify-center"
+            className="relative w-[99.6vw] h-[120vh] flex items-center justify-center"
         >
             <div
                 style={{ zIndex: 999, display: "none" }}
                 className=" OVERLAY h-[100vh] w-[99.6vw]   bg-stone-500 fixed top-0 left-0 "
             ></div>
 
-            <div className="GALLERY-CONTAINER    w-[100%] h-[80%] relative flex items-center justify-center ">
+            <div className="GALLERY-CONTAINER w-[100%] h-[80%] relative flex items-center justify-center ">
                 <div
                     onMouseEnter={() => handleImageEnter(1)}
                     onMouseLeave={() => handleImageLeave(1)}
@@ -438,42 +424,6 @@ const FloatingTestimonals = () => {
                             August 16, 2050
                         </h1>
                     </div>
-                </div>{" "}
-                <div
-                    onMouseEnter={() => handleImageEnter(6)}
-                    onMouseLeave={() => handleImageLeave(6)}
-                    onClick={() => handleImageClick(6)}
-                    ref={Image6}
-                    style={{ zIndex: "1" }}
-                    className="IMAGE-CONTAINER  opacity-0 IMAGE-6 group cursor-pointer absolute flex flex-col items-center justify-center     translate-y-[50%] translate-x-[-50%] left-1/2 w-[250px] h-[350px]  overflow-hidden   rounded-3xl    border-white"
-                >
-                    <img
-                        loading="lazy"
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                        className={`cursor-pointer  transition-all duration-150 ease-in `}
-                        src={p3}
-                        alt=""
-                    />
-                    <div
-                        className={`w-full py-2 px-5 space-y-3  text-white  ${opened && imageText == 6
-                            ? "h-[120px] py-6 bg-black/90"
-                            : "bg-black/60 h-[80px]"
-                            } absolute bottom-0 flex flex-col  items-center justify-center`}
-                    >
-                        {opened && imageText === 6 && (
-                            <h1 className="font-heading1  text-lg  z-50 ">
-                                Opened pathways to new star systems, initiating the exploration
-                                of exoplanets with Earth-like conditions
-                            </h1>
-                        )}
-                        <h1 className="font-heading2 text text-sm tracking-widest z-50 ">
-                            July 23, 2060
-                        </h1>
-                    </div>
                 </div>
             </div>
         </div>
@@ -481,3 +431,5 @@ const FloatingTestimonals = () => {
 };
 
 export default FloatingTestimonals;
+
+

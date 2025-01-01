@@ -9,7 +9,7 @@ const StatsSection = () => {
             <LampContainer>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center my-8 text-off-white relative">
                     {statsData.map((stat, index) => (
-                        <MagneticButton bgColor='bg-transparent' textColor='text-off-white'>
+                        <MagneticButton key={index} bgColor='bg-transparent' textColor='text-off-white'>
                             <GridCardDesign title={stat.title} description={stat.description} />
                         </MagneticButton>
                     ))}

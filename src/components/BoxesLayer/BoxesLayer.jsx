@@ -3,7 +3,7 @@ import React from 'react';
 const BoxesLayer = ({ gridColor = '#242323cc', gridSize = '25px 24px' }) => {
     return (
         <div
-            className={`absolute bottom-0 left-0 right-0 top-0 z-0`}
+            className={`absolute bottom-0 left-0 right-0 top-0 z-0 pointer-events-none`}
             style={{
                 backgroundImage: `linear-gradient(to right, ${gridColor} 1px, transparent 1px), 
                                   linear-gradient(to bottom, ${gridColor} 1px, transparent 1px)`,

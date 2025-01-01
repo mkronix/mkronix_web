@@ -2,80 +2,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
-import { default as app } from '../../assets/img/app.png';
-import graphic from "../../assets/img/grapic.png";
-import mainImage from "../../assets/img/grapic.png";
-import uiux from "../../assets/img/uiux.png";
-import { default as branding, default as web } from "../../assets/img/web.jpg";
+import app from '../../assets/img/appDev.png';
+import { default as graphic, default as mainImage } from "../../assets/img/grapicDesign.png";
+import uiux from "../../assets/img/ui-ux.png";
 gsap.registerPlugin(ScrollTrigger);
 
-const services = [
-    {
-        name: "Web Design & Development",
-        purpose: "Creating responsive and visually appealing websites",
-        tools: "HTML, CSS, JavaScript, React, Tailwind CSS",
-        projectsCompleted: 56,
-        ongoingProjects: 12,
-        notableWorks: [
-            "E-commerce Platform",
-            "Portfolio Websites",
-        ],
-        overview:
-            "We specialize in crafting user-friendly and dynamic websites tailored to your business needs. Our focus on responsive design and seamless functionality ensures a great user experience across all devices.",
-    },
-    {
-        name: "UI/UX Design",
-        purpose: "Designing intuitive and engaging user experiences",
-        tools: "Figma, Adobe XD, Sketch",
-        projectsCompleted: 82,
-        ongoingProjects: 15,
-        notableWorks: [
-            "Mobile App Wireframes",
-            "User-Centric Dashboard Design",
-        ],
-        overview:
-            "Our UI/UX design services are geared towards delivering designs that resonate with users. We focus on creating interfaces that are not only visually appealing but also ensure effortless navigation and interaction.",
-    },
-    {
-        name: "App Design & Development",
-        purpose: "Building robust and scalable mobile applications",
-        tools: "React Native, Flutter, Swift, Kotlin",
-        projectsCompleted: 45,
-        ongoingProjects: 10,
-        notableWorks: [
-            "Fitness Tracking App",
-            "On-Demand Delivery App",
-        ],
-        overview:
-            "From concept to deployment, we design and develop mobile apps that drive engagement and deliver value. Our expertise ensures seamless integration, smooth performance, and user satisfaction.",
-    },
-    {
-        name: "Branding & Identity Design",
-        purpose: "Creating memorable brand identities",
-        tools: "Adobe Illustrator, Photoshop, Canva",
-        projectsCompleted: 37,
-        ongoingProjects: 8,
-        notableWorks: [
-            "Brand Logo Creation",
-            "Comprehensive Brand Guidelines",
-        ],
-        overview:
-            "We help businesses establish a strong brand identity by crafting unique logos, visual elements, and brand guidelines. Our designs ensure your brand stands out in the competitive market.",
-    },
-    {
-        name: "Graphic Design",
-        purpose: "Delivering impactful visual content",
-        tools: "Adobe Photoshop, Illustrator, Canva",
-        projectsCompleted: 94,
-        ongoingProjects: 22,
-        notableWorks: [
-            "Social Media Campaigns",
-            "Marketing Collateral",
-        ],
-        overview:
-            "Our graphic design services include creating stunning visuals for various platforms. Whether it’s social media posts, brochures, or promotional banners, we bring your ideas to life with creative excellence.",
-    },
-];
+import web from '../../assets/img/webDesign.png';
+import services from "../../data/servicesection";
+
+
 
 const Services = () => {
     return (
@@ -359,9 +294,8 @@ const ServiceSection = () => {
                 scrollTrigger: {
                     trigger: spaceVehicles.current,
                     start: "top 5%",
-                    end: "+=3150",
-
-                    scrub: true,
+                    end: "+=2150",
+                    scrub: 1,
                 },
             }
         );
@@ -442,7 +376,7 @@ const ServiceSection = () => {
 
                 <div className="RIGHT w-[40vw]  relative ">
                     <div className="RIGHT-STICKY sticky top-0 w-full h-[100vh]    flex items-center justify-center">
-                        {[web, uiux, app, branding, graphic].map((src, index) => (
+                        {[web, uiux, app, graphic].map((src, index) => (
                             <div
                                 key={index}
                                 className="STICKY-IMAGE-CONTAINER sm:flex sm:flex-col items-center  justify-center  absolute h-[100vh] bg-black rounded-full overflow-hidden  "
