@@ -8,6 +8,7 @@ import app from '../../assets/img/appDev.png';
 import graphic from "../../assets/img/grapicDesign.png";
 import uiux from "../../assets/img/ui-ux.png";
 import web from '../../assets/img/webDesign.png';
+import { useGSAP } from "@gsap/react";
 const Services = () => {
     return (
         <section id='service' className='relative z-10'>
@@ -252,76 +253,6 @@ const MainService = () => {
 
 
 const ServiceSection = () => {
-    const spacecrafts = [
-        {
-            name: "Solaris Sentinel",
-            purpose: "Solar Defense and Observation",
-            engine: "Photon Fusion Propulsion",
-            totalFlights: 56,
-            totalReflights: 12,
-            totalLandings: 44,
-            notableMissions: [
-                "Solar Flare Prediction Program",
-                "Sun’s Corona Observation",
-            ],
-
-            overview:
-                "The Solaris Sentinel is engineered to operate close to the sun, analyzing and predicting solar activity. With a robust structure built to endure intense radiation, it has completed multiple successful reflights and landings, providing invaluable insights to protect Earth from solar disturbances.",
-        },
-        {
-            name: "Stellar Voyager",
-            purpose: "Deep Space Exploration",
-            engine: "Interstellar Drive System",
-            totalFlights: 82,
-            totalReflights: 15,
-            totalLandings: 60,
-            notableMissions: [
-                "The Beyond Neptune Expedition",
-                "Milky Way Boundary Exploration",
-            ],
-            overview:
-                "Designed for extensive journeys across our solar system and beyond, the Stellar Voyager has a history of successful deep-space missions. Its high reflight rate and reliable landing system make it a top choice for long-duration space exploration.",
-        },
-        {
-            name: "Nexus Explorer",
-            purpose: "Planetary Research and Surveying",
-            engine: "Dual-Ion Propulsion",
-            totalFlights: 45,
-            totalReflights: 10,
-            totalLandings: 40,
-            notableMissions: ["Mars Terrain Analysis", "Europa Subsurface Survey"],
-            overview:
-                "The Nexus Explorer is built for precision planetary surveys, gathering high-value samples and data. With an impressive track record of successful landings and multiple reflights, it is ideal for multi-planet missions within the solar system.",
-        },
-        {
-            name: "Excalibur",
-            purpose: "Heavy-Duty Transport and Resource Collection",
-            engine: "Quantum Core Reactor",
-            totalFlights: 37,
-            totalReflights: 8,
-            totalLandings: 30,
-            notableMissions: [
-                "Asteroid Mining Operation",
-                "Lunar Resource Retrieval",
-            ],
-            overview:
-                "Excalibur’s strength lies in its ability to transport large payloads from celestial bodies. Its Quantum Core Reactor offers efficient energy usage, allowing it to complete resource missions with a high landing success rate.",
-        },
-        {
-            name: "Celestium",
-            purpose: "Advanced Communication and Relay",
-            engine: "Plasma Wave Propulsion",
-            totalFlights: 94,
-            totalReflights: 22,
-            totalLandings: 50,
-            notableMissions: [
-                "Interstellar Relay Station Deployment",
-                "Planetary Communication Array",
-            ],
-            overview:
-                "As a key component of interplanetary communication, Celestium acts as a hub for long-distance signals. Its plasma wave propulsion provides quick positioning adjustments, while its high reflight and landing counts make it essential for maintaining continuous communication networks.",
-        },
-    ];
 
     const stickyImageAnimation = gsap.timeline();
     useGSAP(() => {
