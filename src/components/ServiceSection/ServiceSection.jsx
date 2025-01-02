@@ -73,13 +73,10 @@ const MainService = () => {
                 ease: "linear",
 
                 scrollTrigger: {
-                    trigger: ".PAGE-1", // or you can use document.body
-                    start: "top 50%", // start animation when bottom of the viewport reaches bottom of the page
+                    trigger: ".PAGE-1",
+                    start: "top 50%",
                     end: "bottom+=400",
                     scrub: true,
-
-                    // optional, adds a little more scroll range
-                    // optional, shows visual markers to debug
                     onEnter: () => {
                         mainImageAnimation.restart(true, false);
                     },
@@ -241,14 +238,6 @@ const MainService = () => {
                                 className="font-heading1 text-xl cursor-pointer hover:text-off-white hover:scale-110 transition-transform duration-75 tracking-wider text-off-white/40"
                             >
                                 App Design & Development{" "}
-                            </h1>
-                            <h1
-                                onMouseEnter={handleCursorEnter}
-                                onMouseLeave={handleCursorLeave}
-                                onClick={() => handlePageNavigation("S-4")}
-                                className="font-heading1 text-xl cursor-pointer hover:text-off-white hover:scale-110 transition-transform duration-75 tracking-wider text-off-white/40"
-                            >
-                                Branding{" "}
                             </h1>
                             <h1
                                 onMouseEnter={handleCursorEnter}

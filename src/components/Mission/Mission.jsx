@@ -2,9 +2,7 @@ import React, { useRef } from "react";
 import p1 from "../../assets/img/p3.png";
 import p2 from "../../assets/img/p4.png";
 import p3 from "../../assets/img/p5.png";
-import p4 from "../../assets/img/p6.png";
-import p5 from "../../assets/img/p7.png";
-import uiux from "../../assets/img/uiux.png";
+import uiux from "../../assets/img/ui-ux.png";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -13,7 +11,7 @@ import saturn from "../../assets/img/p1.jpg";
 import M2 from "../../assets/img/service.png";
 import M1 from "../../assets/img/service1.png";
 import M6 from "../../assets/img/service3.png";
-import spaceCraft from "../../assets/img/web.jpg";
+import spaceCraft from "../../assets/img/webDesign.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Missions = () => {

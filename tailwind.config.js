@@ -11,7 +11,7 @@ module.exports = {
       },
       fontSize: {
         'dynamic-h2': 'clamp(2rem, 6vw, 4.375rem)',
-        'dynamic-p': 'clamp(1.5rem, 3.5vw, 4.5rem)',
+        'dynamic-p': 'clamp(1.3rem, 3.5vw, 4.5rem)',
       },
       lineHeight: {
         'dynamic-p': 'clamp(2rem, 4.5vw, 6rem)',
