@@ -17,10 +17,10 @@ const FloatingTestimonials = () => {
     const Images = [Image1, Image2, Image3, Image4];
 
     const originalPos = [
-        { top: "0%", left: "10%", rotate: 3, width: "400px", height: "400px" },
-        { top: "10%", left: "40%", rotate: -6, width: "400px", height: "400px" },
-        { top: "40%", left: "22%", rotate: -2, width: "400px", height: "400px" },
-        { top: "40%", left: "60%", rotate: 3, width: "400px", height: "400px" },
+        { top: "10%", left: "10%", rotate: 0, scale: 1 },
+        { top: "10%", left: "55%", rotate: 0, scale: 1 },
+        { top: "55%", left: "10%", rotate: 0, scale: 1 },
+        { top: "55%", left: "55%", rotate: 0, scale: 1 },
     ];
 
     useEffect(() => {
@@ -49,32 +49,28 @@ const FloatingTestimonials = () => {
                 image.current,
                 { scale: 0.5, opacity: 0, rotateZ: 180 },
                 {
-                    scale: 0.9,
+                    scale: newPos.scale,
                     opacity: 1,
                     rotate: newPos.rotate,
                     top: newPos.top,
                     left: newPos.left,
                     ease: "power1.out",
                     duration: 1,
-                    stagger: 0.3,
                 }
             );
         });
     }, []);
 
-
     return (
         <div
             ref={plane}
-            className="relative z-10 h-screen flex items-center justify-center overflow-hidden"
+            className="relative z-10 h-screen grid grid-cols-2 gap-4 items-center justify-center overflow-hidden"
         >
             {originalPos.map((_, index) => (
                 <div
                     key={index}
                     ref={Images[index]}
-                    className={`absolute overflow-hidden
-                    md:w-[400px] md:h-[400px] w-52 h-52
-                        `}
+                    className="absolute overflow-hidden md:w-[300px] md:h-[300px] w-52 h-52"
                 >
                     <img
                         src={

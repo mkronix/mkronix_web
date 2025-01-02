@@ -1,6 +1,11 @@
+import app from '../assets/img/appDev.png';
+import graphic from "../assets/img/grapicDesign.png";
+import uiux from "../assets/img/ui-ux.png";
+import web from '../assets/img/webDesign.png';
 const services = [
     {
         name: "Web Design & Development",
+        image: web,
         purpose: "Creating responsive and visually appealing websites",
         tools: "HTML, CSS, JavaScript, React, Tailwind CSS",
         projectsCompleted: 56,
@@ -14,6 +19,7 @@ const services = [
     },
     {
         name: "UI/UX Design",
+        image: uiux,
         purpose: "Designing intuitive and engaging user experiences",
         tools: "Figma, Adobe XD, Sketch",
         projectsCompleted: 82,
@@ -27,6 +33,7 @@ const services = [
     },
     {
         name: "App Design & Development",
+        image: app,
         purpose: "Building robust and scalable mobile applications",
         tools: "React Native, Flutter, Swift, Kotlin",
         projectsCompleted: 45,
@@ -40,6 +47,7 @@ const services = [
     },
     {
         name: "Graphic Design",
+        image: graphic,
         purpose: "Delivering impactful visual content",
         tools: "Adobe Photoshop, Illustrator, Canva",
         projectsCompleted: 94,
