@@ -35,28 +35,31 @@ export const TypewriterEffectSmooth = ({
     };
 
     return (
-        (<div className={cn("flex space-x-1", className)}>
+        <div className={cn("flex space-x-1 max-w-screen", className)}>
             <motion.div
                 className="overflow-hidden"
                 initial={{
-                    width: "0%",
+                    clipPath: "inset(0% 100% 0% 0%)",
                 }}
                 whileInView={{
-                    width: "100%",
+                    clipPath: "inset(0% 0% 0% 0%)",
                 }}
                 transition={{
                     duration: 2,
                     ease: "linear",
                     delay: 1,
-                }}>
+                }}
+            >
                 <div
                     className="font-bold"
                     style={{
                         whiteSpace: "nowrap",
-                    }}>
+                    }}
+                >
                     {renderWords()}{" "}
                 </div>
             </motion.div>
-        </div>)
+        </div>
+
     );
 };

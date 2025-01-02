@@ -14,7 +14,6 @@ import Services from './components/ServiceSection/ServiceSection'
 import StatsSection from './components/StatsSection/StatsSection'
 import Testimonals from './components/Testimonals/Testimonals'
 import RainBowCursor from "./components/RainbowCursor/RainbowCursor";
-
 const App = () => {
   const loading = useLoading(2000);
   useSmoothScroll(false);
@@ -26,12 +25,12 @@ const App = () => {
     <>
 
       {/* Main Content */}
-      <main className={`bg-black font-raleway-regular relative `}>
+      <main className={`bg-black font-raleway-regular relative overflow-x-hidden `}>
         <RainBowCursor />
-        {/* <AnimatedSideMenu /> */}
+        <AnimatedSideMenu />
         <HeroSection />
-        <StatsSection />
         <Testimonals />
+        <StatsSection />
         <AboutUs />
         <Services />
         <HowItWorks />
