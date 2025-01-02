@@ -19,7 +19,7 @@ const Missions = () => {
         <div className="h-fit relative">
             <TextMask />
             <FocalImage />
-            <CosmoNauts />
+            {/* <CosmoNauts /> */}
         </div>
     );
 };
