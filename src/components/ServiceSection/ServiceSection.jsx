@@ -1,17 +1,13 @@
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
-import app from '../../assets/img/appDev.png';
-import { default as graphic, default as mainImage } from "../../assets/img/grapicDesign.png";
-import uiux from "../../assets/img/ui-ux.png";
+import mainImage from "../../assets/img/grapicDesign.png";
 gsap.registerPlugin(ScrollTrigger);
-
-import web from '../../assets/img/webDesign.png';
 import services from "../../data/servicesection";
-
-
-
+import app from '../../assets/img/appDev.png';
+import graphic from "../../assets/img/grapicDesign.png";
+import uiux from "../../assets/img/ui-ux.png";
+import web from '../../assets/img/webDesign.png';
 const Services = () => {
     return (
         <section id='service' className='relative z-10'>
@@ -63,7 +59,7 @@ const MainService = () => {
         };
     }, [showCursor]);
 
-    useGSAP(() => {
+    useEffect(() => {
         mainImageAnimation.fromTo(
             ".mainImage",
             { scale: 0.7 },
@@ -98,26 +94,25 @@ const MainService = () => {
             duration: 0.5,
             backgroundColor: "red",
         });
-    });
-    useGSAP(() => {
+    }, []);
+    useEffect(() => {
         const introText1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".HEADING-TEXT-S", // Ensure the first span comes into view
                 start: "top 50%",
                 end: "+=300",
+                scrub: true,
+                toggleActions: "play reverse play reverse",
             },
         });
         introText1.from(".HEADING-CHAR-S", {
             y: 200,
-
-            opacity: 0.5, // Move each character 200px to the right initially
+            opacity: 0.5,
             duration: 1.5,
             ease: "elastic.out(1,0.6)",
-
             stagger: 0.04,
-            // Stagger effect for smoother animation
         });
-    });
+    }, []);
     const handlePageNavigation = (componentId) => {
         const page = document.getElementById(componentId);
         if (page) {
@@ -242,7 +237,7 @@ const MainService = () => {
                             <h1
                                 onMouseEnter={handleCursorEnter}
                                 onMouseLeave={handleCursorLeave}
-                                onClick={() => handlePageNavigation("S-5")}
+                                onClick={() => handlePageNavigation("S-4")}
                                 className="font-heading1 text-xl cursor-pointer hover:text-off-white hover:scale-110 transition-transform duration-75 tracking-wider  text-off-white/40"
                             >
                                 Graphic Design{" "}
@@ -255,7 +250,78 @@ const MainService = () => {
     );
 };
 
+
 const ServiceSection = () => {
+    const spacecrafts = [
+        {
+            name: "Solaris Sentinel",
+            purpose: "Solar Defense and Observation",
+            engine: "Photon Fusion Propulsion",
+            totalFlights: 56,
+            totalReflights: 12,
+            totalLandings: 44,
+            notableMissions: [
+                "Solar Flare Prediction Program",
+                "Sun’s Corona Observation",
+            ],
+
+            overview:
+                "The Solaris Sentinel is engineered to operate close to the sun, analyzing and predicting solar activity. With a robust structure built to endure intense radiation, it has completed multiple successful reflights and landings, providing invaluable insights to protect Earth from solar disturbances.",
+        },
+        {
+            name: "Stellar Voyager",
+            purpose: "Deep Space Exploration",
+            engine: "Interstellar Drive System",
+            totalFlights: 82,
+            totalReflights: 15,
+            totalLandings: 60,
+            notableMissions: [
+                "The Beyond Neptune Expedition",
+                "Milky Way Boundary Exploration",
+            ],
+            overview:
+                "Designed for extensive journeys across our solar system and beyond, the Stellar Voyager has a history of successful deep-space missions. Its high reflight rate and reliable landing system make it a top choice for long-duration space exploration.",
+        },
+        {
+            name: "Nexus Explorer",
+            purpose: "Planetary Research and Surveying",
+            engine: "Dual-Ion Propulsion",
+            totalFlights: 45,
+            totalReflights: 10,
+            totalLandings: 40,
+            notableMissions: ["Mars Terrain Analysis", "Europa Subsurface Survey"],
+            overview:
+                "The Nexus Explorer is built for precision planetary surveys, gathering high-value samples and data. With an impressive track record of successful landings and multiple reflights, it is ideal for multi-planet missions within the solar system.",
+        },
+        {
+            name: "Excalibur",
+            purpose: "Heavy-Duty Transport and Resource Collection",
+            engine: "Quantum Core Reactor",
+            totalFlights: 37,
+            totalReflights: 8,
+            totalLandings: 30,
+            notableMissions: [
+                "Asteroid Mining Operation",
+                "Lunar Resource Retrieval",
+            ],
+            overview:
+                "Excalibur’s strength lies in its ability to transport large payloads from celestial bodies. Its Quantum Core Reactor offers efficient energy usage, allowing it to complete resource missions with a high landing success rate.",
+        },
+        {
+            name: "Celestium",
+            purpose: "Advanced Communication and Relay",
+            engine: "Plasma Wave Propulsion",
+            totalFlights: 94,
+            totalReflights: 22,
+            totalLandings: 50,
+            notableMissions: [
+                "Interstellar Relay Station Deployment",
+                "Planetary Communication Array",
+            ],
+            overview:
+                "As a key component of interplanetary communication, Celestium acts as a hub for long-distance signals. Its plasma wave propulsion provides quick positioning adjustments, while its high reflight and landing counts make it essential for maintaining continuous communication networks.",
+        },
+    ];
 
     const stickyImageAnimation = gsap.timeline();
     useGSAP(() => {
@@ -283,8 +349,9 @@ const ServiceSection = () => {
                 scrollTrigger: {
                     trigger: spaceVehicles.current,
                     start: "top 5%",
-                    end: "+=2150",
-                    scrub: 1,
+                    end: "+=3150",
+
+                    scrub: true,
                 },
             }
         );
@@ -294,62 +361,58 @@ const ServiceSection = () => {
     return (
         <div
             ref={spaceVehicles}
-            className="bg-white w-[99.6vw] h-fit flex justify-center items-center"
+            className="bg-white w-[99.6vw] h-fit flex  justify-center items-center"
         >
             <div className="PAGE-2 w-full   flex relative justify-center bg-black p-2  space-x-2">
-                <div className="LEFT w-[50vw] flex flex-col space-y-5 p-5 h-fit text-off-white">
+                <div className="LEFT w-[50vw]  flex flex-col space-y-5  p-5  h-fit text-white">
                     {services.map((item, index) => (
                         <div
                             key={index}
                             id={`S-${index + 1}`}
                             style={{ wordSpacing: "0.1vw" }}
-                            className="SERVICE h-[100vh] w-full flex flex-col space-y-5 border-b-[1px] border-white/10"
+                            className="SPACECRAFT-1 h-[100vh]  w-full flex flex-col space-y-5 border-b-[1px] border-white/10 "
                         >
                             <div className="flex flex-col">
                                 <h1
-                                    className={`font-heading2 sm:mt-[5vh] text-center sm:tracking-wider sm:text-5xl`}
+                                    className={`font-heading2   sm:mt-[5vh] text-center sm:tracking-wider sm:text-5xl`}
                                 >
                                     {item.name}
                                 </h1>
-                                <h1 className="font-heading1 text-xl text-center sm:mb-[5vh] tracking-tight">
+                                <h1 className="font-heading1 text-xl text-center sm:mb-[5vh] tracking-tight ">
                                     {item.purpose}
                                 </h1>
                             </div>
                             <div
                                 style={{ lineHeight: "1.5vw" }}
-                                className="sm:flex sm:flex-col items-start justify-center font-heading1 sm:space-y-5"
+                                className="sm:flex sm:flex-col  items-start justify-center font-heading1 sm:space-y-5"
                             >
-                                <h1 className="tracking-wider text-xl font-semibold">Overview</h1>
+                                <h1 className="tracking-wider  text-xl font-semibold">
+                                    Overview
+                                </h1>
                                 <p className="ml-5 sm:font-normal sm:text-md sm:tracking-wider">
                                     {item.overview}
                                 </p>
-                                <h1 className="sm:tracking-wider sm:text-xl sm:font-semibold">Tools</h1>
+                                <h1 className="sm:tracking-wider  sm:text-xl sm:font-semibold">
+                                    Tools
+                                </h1>
                                 <p className="ml-5 sm:font-normal sm:text-md sm:tracking-wider">
                                     {item.tools}
                                 </p>
-                                <h1 className="sm:tracking-wider sm:text-xl sm:font-semibold">
-                                    Notable Works
+                                <h1 className="sm:tracking-wider  sm:text-xl sm:font-semibold">
+                                    Notable Projects
                                 </h1>
                                 <ul className="list-disc pl-4">
-                                    {item.notableWorks.map((work, workIndex) => (
+                                    {item.notableWorks.map((item, index) => (
                                         <li
-                                            key={workIndex}
-                                            className="ml-5 sm:font-normal sm:text-md sm:tracking-wider"
+                                            key={index}
+                                            className="ml-5  sm:font-normal sm:text-md sm:tracking-wider"
                                         >
-                                            {work}
+                                            {item}
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="BOTTOM-STATS pt-10 border-b-[1px] border-white/10 self-center p-5 rounded-xl text-off-white sm:flex items-center justify-center space-x-5">
-                                    <div className="sm:flex group cursor-pointer hover:text-off-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
-                                        <h1 className="font-heading2 sm:text-2xl">
-                                            {item.projectsCompleted}
-                                        </h1>
-                                        <h1 className="font-heading1 tracking-wider sm:text-sm">
-                                            Projects Completed
-                                        </h1>
-                                    </div>
-                                    <div className="sm:flex group cursor-pointer hover:text-off-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
+                                <div className="BOTTOM-STATS pt-10 border-b-[1px] border-white/10 self-center p-5 rounded-xl text-white/70 sm:flex items-center justify-center space-x-5  ">
+                                    <div className="sm:flex group cursor-pointer hover:text-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
                                         <h1 className="font-heading2 sm:text-2xl">
                                             {item.ongoingProjects}
                                         </h1>
@@ -357,12 +420,19 @@ const ServiceSection = () => {
                                             Ongoing Projects
                                         </h1>
                                     </div>
+                                    <div className="sm:flex group cursor-pointer hover:text-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
+                                        <h1 className="font-heading2 sm:text-2xl">
+                                            {item.projectsCompleted}
+                                        </h1>
+                                        <h1 className="font-heading1 tracking-wider sm:text-sm">
+                                            Projects Completed
+                                        </h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-
                 <div className="RIGHT w-[40vw]  relative ">
                     <div className="RIGHT-STICKY sticky top-0 w-full h-[100vh]    flex items-center justify-center">
                         {[web, uiux, app, graphic].map((src, index) => (
@@ -370,7 +440,7 @@ const ServiceSection = () => {
                                 key={index}
                                 className="STICKY-IMAGE-CONTAINER sm:flex sm:flex-col items-center  justify-center  absolute h-[100vh] bg-black rounded-full overflow-hidden  "
                                 style={{
-                                    width: "650px",
+                                    width: "650px", // Set the desired square size
                                 }}
                             >
                                 <img
@@ -381,9 +451,10 @@ const ServiceSection = () => {
                                         width: "80%",
                                         height: "80%",
                                         objectFit: "contain",
-                                        zIndex: 1,
+                                        zIndex: 1, // Maintains aspect ratio within the container
                                     }}
                                 />
+
                             </div>
                         ))}
                     </div>
@@ -392,3 +463,4 @@ const ServiceSection = () => {
         </div>
     );
 };
+
