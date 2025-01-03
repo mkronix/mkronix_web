@@ -17,7 +17,7 @@ module.exports = {
         'dynamic-p': 'clamp(2rem, 4.5vw, 6rem)',
       },
       fontFamily: {
-        'antic': ['Antic', 'sans-serif'],
+        'lorimer': ['lorimer', 'sans-serif'],
         'raleway-bold': ['Raleway-bold', 'sans-serif'],
         'raleway-extra-bold': ['Raleway-extra-bold', 'sans-serif'],
         'raleway-regular': ['Raleway-regular', 'sans-serif'],

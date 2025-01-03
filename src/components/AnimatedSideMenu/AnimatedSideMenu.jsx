@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import FlipLink from "../FlipLink/FlipLink";
 
 const AnimatedSideMenu = () => {
     const [open, setOpen] = useState(false);
@@ -46,10 +47,8 @@ const AnimatedSideMenu = () => {
                 className={`fixed top-0 left-0 z-50 w-full p-1 flex justify-between items-center transition-transform duration-500 ${showHeader ? "translate-y-0 " : "-translate-y-full"
                     }`}
             >
-                <div className="p-2 rounded-md flex font-bold uppercase text-2xl">
-                    <h2 className=" text-off-white">M</h2>
-                    <h2 className="text-off-white">K</h2>
-                    <h2 className="text-off-white">ronix</h2>
+                <div className={`p-2 rounded-md flex font-bold uppercase text-2xl ${open ? "text-black " : "text-white "}`}>
+                    <h2>MKronix</h2>
                 </div>
                 <button
                     onClick={() => setOpen(!open)}
@@ -112,19 +111,12 @@ const AnimatedSideMenu = () => {
                 <div className="md:w-[50%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-off-white flex flex-col">
                     <div className="flex items-center h-full">
                         {/* Menu Links */}
-                        <nav className="h-full font-raleway-extra-bold  place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-3 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
-                            <a to="/#home" className="block" onClick={handleCloseMenu}>
-                                Home
-                            </a>
-                            <a to="/#service" className="block" onClick={handleCloseMenu}>
-                                Service
-                            </a>
-                            <a to="/#project" className="block" onClick={handleCloseMenu}>
-                                Projects
-                            </a>
-                            <a to="/#contact" className="block" onClick={handleCloseMenu}>
-                                Contact Us
-                            </a>
+                        <nav className="h-full font-raleway-extra-bold place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-7 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
+                            <FlipLink href={'/#home'}>Home</FlipLink>
+                            <FlipLink href={'/#service'}>Service</FlipLink>
+                            <FlipLink href={'/#project'}>Projects</FlipLink>
+                            <FlipLink href={'/#contact'}>Contact</FlipLink>
+
                         </nav>
                     </div>
                     {/* // Social Links
