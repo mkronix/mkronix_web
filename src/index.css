@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Antic";
-  src: url("/fonts/AnticDidone-Regular.ttf");
+  font-family: "lorimer";
+  src: url("/fonts/lorimer.otf");
+}
+@font-face {
+  font-family: "spaceare";
+  src: url("/fonts/spaceare.ttf");
 }
 
 @font-face {

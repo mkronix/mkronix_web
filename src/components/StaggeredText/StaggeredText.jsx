@@ -31,7 +31,7 @@ const StaggeredText = ({ className, words, delay }) => {
                             exit="initial"
                             custom={i}
                             className={cn(
-                                "pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#bdbdbd] via-[#ffffff] to-[#5e5e5e] bg-clip-text text-center text-4xl lg:text-7xl font-bold leading-none tracking-tighter text-transparent",
+                                "pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#bdbdbd] via-[#ffffff] to-[#5e5e5e] bg-clip-text text-center text-4xl lg:text-7xl font-bold leading-none tracking-wider text-transparent",
                                 className
                             )}
                         >

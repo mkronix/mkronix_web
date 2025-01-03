@@ -2,7 +2,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
-
 import testimonal1 from "../../assets/img/tesitmonal1.png";
 import testimonal2 from "../../assets/img/tesitmonal2.png";
 import testimonal3 from "../../assets/img/tesitmonal3.png";
@@ -17,10 +16,10 @@ const FloatingTestimonials = () => {
     const Images = [Image1, Image2, Image3, Image4];
 
     const originalPos = [
-        { top: "10%", left: "10%", rotate: 0, scale: 1 },
-        { top: "10%", left: "55%", rotate: 0, scale: 1 },
-        { top: "55%", left: "10%", rotate: 0, scale: 1 },
-        { top: "55%", left: "55%", rotate: 0, scale: 1 },
+        { top: "15%", left: "20%" },
+        { top: "30%", left: "70%" },
+        { top: "60%", left: "25%" },
+        { top: "50%", left: "45%" },
     ];
 
     useEffect(() => {
@@ -29,7 +28,7 @@ const FloatingTestimonials = () => {
         ScrollTrigger.create({
             trigger: plane.current,
             start: "top top",
-            end: "+=250%",
+            end: "+=200%",
             pin: true,
             pinSpacing: true,
         });
@@ -38,7 +37,7 @@ const FloatingTestimonials = () => {
             scrollTrigger: {
                 trigger: plane.current,
                 start: "top top",
-                end: "+=250%",
+                end: "+=200%",
                 scrub: true,
             },
         });
@@ -49,9 +48,9 @@ const FloatingTestimonials = () => {
                 image.current,
                 { scale: 0.5, opacity: 0, rotateZ: 180 },
                 {
-                    scale: newPos.scale,
+                    scale: 1,
                     opacity: 1,
-                    rotate: newPos.rotate,
+                    rotate: 0,
                     top: newPos.top,
                     left: newPos.left,
                     ease: "power1.out",
@@ -64,13 +63,16 @@ const FloatingTestimonials = () => {
     return (
         <div
             ref={plane}
-            className="relative z-10 h-screen grid grid-cols-2 gap-4 items-center justify-center overflow-hidden"
+            className="relative z-10 h-screen w-full overflow-hidden pointer-events-none"
         >
             {originalPos.map((_, index) => (
                 <div
                     key={index}
                     ref={Images[index]}
-                    className="absolute overflow-hidden md:w-[300px] md:h-[300px] w-52 h-52"
+                    className="absolute transform transition-transform duration-300 hover:scale-110 md:w-[250px] md:h-[250px] w-40 h-40 rounded-lg shadow-lg overflow-hidden"
+                    style={{
+                        pointerEvents: "all",
+                    }}
                 >
                     <img
                         src={
@@ -83,7 +85,7 @@ const FloatingTestimonials = () => {
                                         : testimonal4
                         }
                         alt={`Testimonial ${index + 1}`}
-                        className="w-full h-full object-cover cursor-pointer"
+                        className="w-full h-full object-cover"
                     />
                 </div>
             ))}

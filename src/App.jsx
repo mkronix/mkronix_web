@@ -1,19 +1,18 @@
 import React from "react";
+import AboutUs from './components/AboutUs/AboutUs';
 import AnimatedSideMenu from "./components/AnimatedSideMenu/AnimatedSideMenu";
 import ZeroToHundredLoader from "./components/BestLoader/ZeroToHunderedLoader";
+import CardStack from "./components/CardStack/CardStack";
+import Footer from './components/Footer/Footer';
+import HeroSection from './components/HeroSection/HeroSection';
+import HowItWorks from './components/HowItWorks/HowItWorks';
+import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
+import RainBowCursor from "./components/RainbowCursor/RainbowCursor";
+import Services from './components/ServiceSection/ServiceSection';
+import StatsSection from './components/StatsSection/StatsSection';
+import Testimonals from './components/Testimonals/Testimonals';
 import useLoading from "./hooks/useLoading";
 import useSmoothScroll from "./hooks/useSmoothScroll";
-import AboutUs from './components/AboutUs/AboutUs'
-import Cursor from './components/Cursor/Cursor'
-import FloatingTestimonals from './components/FloatingTestimonals/FloatingTestimonals'
-import Footer from './components/Footer/Footer'
-import HeroSection from './components/HeroSection/HeroSection'
-import HowItWorks from './components/HowItWorks/HowItWorks'
-import Missions from './components/Mission/Mission'
-import Services from './components/ServiceSection/ServiceSection'
-import StatsSection from './components/StatsSection/StatsSection'
-import Testimonals from './components/Testimonals/Testimonals'
-import RainBowCursor from "./components/RainbowCursor/RainbowCursor";
 const App = () => {
   const loading = useLoading(2000);
   useSmoothScroll(false);
@@ -31,10 +30,11 @@ const App = () => {
         <HeroSection />
         <Testimonals />
         <StatsSection />
+        <CardStack />
         <AboutUs />
-        <Services />
+        {/* <Services /> */}
         <HowItWorks />
-        <Missions />
+        <ProjectsSection />
         <Footer />
       </main>
     </>
