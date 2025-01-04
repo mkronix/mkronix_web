@@ -68,7 +68,7 @@ const ServiceSection = () => {
                             key={index}
                             id={`S-${index + 1}`}
                             style={{ wordSpacing: "0.1vw" }}
-                            className="SPACECRAFT-1 h-[100vh]  w-full flex flex-col space-y-5 border-b-[1px] border-white/10 "
+                            className="h-[100vh]  w-full flex flex-col space-y-5 border-b-[1px] border-white/10 "
                         >
                             <div className="flex flex-col">
                                 <h1
