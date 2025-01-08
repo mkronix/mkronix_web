@@ -9,7 +9,7 @@ export default function index() {
     return (
         <ReactLenis root>
             <section className="relative z-10 ">
-                <CommonHeaderText text={'What We Do'} />
+                <CommonHeaderText text={'What We Do'} iconNumber={2} />
                 <div className="text-white w-full flex flex-col gap-8">
                     {services.map((project, i) => {
                         return (
@@ -61,7 +61,7 @@ export const Card = ({
             >
                 <div className="flex flex-col">
                     <h1
-                        className={`sm:text-4xl text-3xl font-lorimer tracking-tight `}
+                        className={`sm:text-4xl text-3xl tracking-tight `}
                     >
                         {name}
                     </h1>

@@ -6,7 +6,7 @@ import aboutusData from '../../data/aboutusdata'
 const AboutUs = () => {
     return (
         <section className='relative z-10 pointer-events-none'>
-            <CommonHeaderText text='Our Strategy' />
+            <CommonHeaderText text='Our Strategy' iconNumber={3} />
             <div className='relative md:h-[400px] w-full place-items-center grid md:grid-cols-3 grid-cols-1 gap-4 md:p-10 p-4'>
                 {aboutusData.map((card, index) => (
                     <WorkFlowCard
