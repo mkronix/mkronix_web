@@ -3,33 +3,7 @@ import FlipLink from "../FlipLink/FlipLink";
 
 const AnimatedSideMenu = () => {
     const [open, setOpen] = useState(false);
-    const [showHeader, setShowHeader] = useState(true);
-    const [lastScroll, setLastScroll] = useState(0);
     const svgRef = useRef(null);
-    useEffect(() => {
-        let scrollTimeout;
-        const handleScroll = () => {
-            const currentScroll = window.scrollY;
-
-            if (currentScroll > lastScroll) {
-                setShowHeader(false);
-            } else if (currentScroll < lastScroll || currentScroll === 0) {
-                setShowHeader(true);
-            }
-
-            setLastScroll(currentScroll);
-
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                setShowHeader(true);
-            }, 300);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            clearTimeout(scrollTimeout);
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [lastScroll]);
 
     const handleCloseMenu = () => {
         setOpen(false);
@@ -44,12 +18,8 @@ const AnimatedSideMenu = () => {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 z-50 w-full p-1 flex justify-between items-center transition-transform duration-500 ${showHeader ? "translate-y-0 " : "-translate-y-full"
-                    }`}
+                className={`fixed top-0 left-0 z-50 w-full p-1 flex justify-end items-center transition-transform duration-500 translate-y-0`}
             >
-                <div className={`p-2 rounded-md flex font-bold uppercase text-2xl ${open ? "text-black " : "text-white "}`}>
-                    <h2>MKronix</h2>
-                </div>
                 <button
                     onClick={() => setOpen(!open)}
                     className="relative text-white bg-transparent border-none cursor-pointer flex justify-start focus:outline-none"
@@ -111,12 +81,11 @@ const AnimatedSideMenu = () => {
                 <div className="md:w-[50%] max-md:h-1/2 md:p-8 p-3 md:bg-white bg-black max-md:text-off-white flex flex-col">
                     <div className="flex items-center h-full">
                         {/* Menu Links */}
-                        <nav className="h-full font-raleway-extra-bold place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 md:gap-7 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
+                        <nav className="h-full font-raleway-extra-bold place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 gap-7 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
                             <FlipLink href={'/#home'}>Home</FlipLink>
                             <FlipLink href={'/#service'}>Service</FlipLink>
                             <FlipLink href={'/#project'}>Projects</FlipLink>
                             <FlipLink href={'/#contact'}>Contact</FlipLink>
-
                         </nav>
                     </div>
                     {/* // Social Links

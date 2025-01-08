@@ -19,7 +19,7 @@ const StaggeredText = ({ className, words, delay }) => {
     };
 
     return (
-        <h1 ref={ref} className="flex justify-center">
+        <h1 ref={ref} className="flex justify-center max-w-[90vw] flex-wrap">
             <AnimatePresence>
                 {isInView &&
                     letters.map((letter, i) => (
@@ -31,7 +31,7 @@ const StaggeredText = ({ className, words, delay }) => {
                             exit="initial"
                             custom={i}
                             className={cn(
-                                "pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#bdbdbd] via-[#ffffff] to-[#5e5e5e] bg-clip-text text-center text-4xl lg:text-7xl font-bold leading-none tracking-wider text-transparent",
+                                "pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#bdbdbd] via-[#ffffff] to-[#5e5e5e] bg-clip-text text-center text-5xl lg:text-7xl font-bold text-transparent my-1",
                                 className
                             )}
                         >

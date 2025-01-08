@@ -1,6 +1,6 @@
-import p1 from '../assets/img/p1.jpg';
-import p2 from '../assets/img/p2.jpg';
-import p3 from '../assets/img/p5.png';
+import p1 from '../assets/img/happy.png';
+import p2 from '../assets/img/intrested.png';
+import p3 from '../assets/img/enjoying.png';
 
 const howItWorksData = [
     {
