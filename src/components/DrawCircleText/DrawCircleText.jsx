@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 export const DrawCircleText = ({ normalText, circleText, normalText2 }) => {
     return (
-        <div className="grid place-content-center pointer-events-none relative z-10 px-4 py-24 text-white">
+        <div className="grid place-content-center pointer-events-none relative z-10 px-4 py-24 text-off-white">
             <h1 className="max-w-2xl text-center text-5xl leading-snug">
                 {normalText}{" "}
                 <span className="relative">

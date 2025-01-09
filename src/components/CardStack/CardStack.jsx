@@ -1,5 +1,4 @@
 'use client';
-import { ReactLenis } from 'lenis/react';
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import services from '../../data/servicesection';
@@ -7,30 +6,28 @@ import CommonHeaderText from '../CommonHeaderText/CommonHeaderText';
 
 export default function index() {
     return (
-        <ReactLenis root>
-            <section className="relative z-10 ">
-                <CommonHeaderText text={'What We Do'} iconNumber={2} />
-                <div className="text-white w-full flex flex-col gap-8">
-                    {services.map((project, i) => {
-                        return (
-                            <Card
-                                key={`p_${i}`}
-                                i={i}
-                                url={project?.image}
-                                src={project?.image}
-                                name={project?.name}
-                                purpose={project?.purpose}
-                                tools={project?.tools}
-                                notableWorks={project?.notableWorks}
-                                overview={project?.overview}
-                                ongoingProjects={project?.ongoingProjects}
-                                projectsCompleted={project?.projectsCompleted}
-                            />
-                        );
-                    })}
-                </div>
-            </section>
-        </ReactLenis>
+        <section className="relative z-10 ">
+            <CommonHeaderText text={'What We Do'} />
+            <div className="text-off-white w-full flex flex-col gap-8">
+                {services.map((project, i) => {
+                    return (
+                        <Card
+                            key={`p_${i}`}
+                            i={i}
+                            url={project?.image}
+                            src={project?.image}
+                            name={project?.name}
+                            purpose={project?.purpose}
+                            tools={project?.tools}
+                            notableWorks={project?.notableWorks}
+                            overview={project?.overview}
+                            ongoingProjects={project?.ongoingProjects}
+                            projectsCompleted={project?.projectsCompleted}
+                        />
+                    );
+                })}
+            </div>
+        </section>
     );
 }
 export const Card = ({
@@ -97,8 +94,8 @@ export const Card = ({
                             </li>
                         ))}
                     </ul>
-                    <div className="border-b-[1px] border-white/10 p-2 text-white/70 flex items-center justify-center space-x-5">
-                        <div className="sm:flex group cursor-pointer hover:text-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
+                    <div className="border-b-[1px] border-white/10 p-2 text-off-white/70 flex items-center justify-center space-x-5">
+                        <div className="sm:flex group cursor-pointer hover:text-off-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
                             <h1 className="font-heading2 sm:text-2xl">
                                 {ongoingProjects}
                             </h1>
@@ -106,7 +103,7 @@ export const Card = ({
                                 Ongoing Projects
                             </h1>
                         </div>
-                        <div className="sm:flex group cursor-pointer hover:text-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
+                        <div className="sm:flex group cursor-pointer hover:text-off-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
                             <h1 className="font-heading2 sm:text-2xl">
                                 {projectsCompleted}
                             </h1>
@@ -124,7 +121,7 @@ export const Card = ({
                     className={`w-full h-full`}
                     style={{ scale: imageScale }}
                 >
-                    <img fill src={url} alt="image" className="object-cover rounded-lg" />
+                    <img src={url} alt="image" className="object-cover rounded-lg" />
                 </motion.div>
             </div>
 

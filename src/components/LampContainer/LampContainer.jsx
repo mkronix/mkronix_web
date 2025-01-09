@@ -12,11 +12,11 @@ const LampContainer = ({
     return (
         <div
             className={cn(
-                "relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full rounded-md z-0",
+                "relative flex min-h-screen z-10 flex-col items-center justify-center overflow-hidden w-full rounded-md ",
                 className
             )}
         >
-            <div className="max-md:hidden relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
+            <div className="max-md:hidden relative flex w-full flex-1 scale-y-125 items-center justify-center z-0">
                 <motion.div
                     initial={{ opacity: 0.5, width: "15rem" }}
                     whileInView={{ opacity: 1, width: "30rem" }}
@@ -49,9 +49,9 @@ const LampContainer = ({
                     <div className="absolute w-40 h-[100%] right-0 bg-black  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
                     <div className="absolute  w-[100%] right-0 bg-black h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
                 </motion.div>
-                <div className=" absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-black blur-2xl"></div>
+                <div className=" absolute top-1/2 h-48 w-full translate-y-12 scale-x-150  blur-2xl"></div>
                 <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-                <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-white opacity-50 blur-[130px]"></div>
+                {/* <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-white opacity-50 blur-[130px]"></div> */}
                 <motion.div
                     initial={{ width: "8rem" }}
                     whileInView={{ width: "20rem" }}

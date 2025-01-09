@@ -23,7 +23,7 @@ const App = () => {
     <>
 
       {/* Main Content */}
-      <main className={`bg-black font-raleway-regular relative overflow-x-hidden `}>
+      <main className={`bg-black font-raleway-regular relative overflow-x-hidden`}>
         <RainBowCursor />
         <AnimatedSideMenu />
         <HeroSection />
