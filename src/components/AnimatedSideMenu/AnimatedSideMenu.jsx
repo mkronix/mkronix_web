@@ -22,7 +22,7 @@ const AnimatedSideMenu = () => {
             >
                 <button
                     onClick={() => setOpen(!open)}
-                    className="relative text-white bg-transparent border-none cursor-pointer flex justify-start focus:outline-none"
+                    className="relative text-off-white bg-transparent border-none cursor-pointer flex justify-start focus:outline-none"
                 >
                     <svg
                         ref={svgRef}

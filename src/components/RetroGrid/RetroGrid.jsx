@@ -4,11 +4,11 @@ import { cn } from "../../lib/utils";
 
 export function RetroGrid({
     className,
-    angle = 65,
-    cellSize = 60,
-    opacity = 0.5,
-    lightLineColor = "gray",
-    darkLineColor = "gray",
+    angle = 85,
+    cellSize = 30,
+    opacity = 0.8,
+    lightLineColor = "white",
+    darkLineColor = "white",
     ...props
 }) {
     const gridStyles = {
@@ -22,7 +22,7 @@ export function RetroGrid({
     return (
         <div
             className={cn(
-                "pointer-events-none absolute size-full overflow-hidden [perspective:200px]",
+                "pointer-events-none absolute size-full overflow-hidden [perspective:159px]",
                 `opacity-[var(--opacity)]`,
                 className,
             )}

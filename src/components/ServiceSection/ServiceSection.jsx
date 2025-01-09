@@ -62,7 +62,7 @@ const ServiceSection = () => {
             className="bg-white w-[99.6vw] h-fit flex  justify-center items-center"
         >
             <div className="PAGE-2 w-full   flex relative justify-center bg-black p-2  space-x-2">
-                <div className="LEFT w-[50vw]  flex flex-col space-y-5  p-5  h-fit text-white">
+                <div className="LEFT w-[50vw]  flex flex-col space-y-5  p-5  h-fit text-off-white">
                     {services.map((item, index) => (
                         <div
                             key={index}
@@ -109,8 +109,8 @@ const ServiceSection = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="BOTTOM-STATS pt-10 border-b-[1px] border-white/10 self-center p-5 rounded-xl text-white/70 sm:flex items-center justify-center space-x-5  ">
-                                    <div className="sm:flex group cursor-pointer hover:text-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
+                                <div className="BOTTOM-STATS pt-10 border-b-[1px] border-white/10 self-center p-5 rounded-xl text-off-white/70 sm:flex items-center justify-center space-x-5  ">
+                                    <div className="sm:flex group cursor-pointer hover:text-off-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
                                         <h1 className="font-heading2 sm:text-2xl">
                                             {item.ongoingProjects}
                                         </h1>
@@ -118,7 +118,7 @@ const ServiceSection = () => {
                                             Ongoing Projects
                                         </h1>
                                     </div>
-                                    <div className="sm:flex group cursor-pointer hover:text-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
+                                    <div className="sm:flex group cursor-pointer hover:text-off-white sm:flex-col items-center justify-center w-fit h-fit transition-transform duration-300 hover:scale-110">
                                         <h1 className="font-heading2 sm:text-2xl">
                                             {item.projectsCompleted}
                                         </h1>

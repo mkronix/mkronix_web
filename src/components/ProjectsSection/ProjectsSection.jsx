@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ProjectsSection = () => {
     return (
         <div className="relative z-10">
-            <CommonHeaderText text={"Our Projects"} iconNumber={4} />
+            <CommonHeaderText text={"Our Projects"} />
             <Projects />
         </div>
     );
@@ -88,7 +88,7 @@ const Projects = () => {
                         <img
                             loading="lazy"
                             ref={projectsRef}
-                            className="w-[80vw] md:w-[65vw] md:h-[75vh] h-[50vh] mt-[100px] rounded-3xl object-cover"
+                            className="IMAGE-DETAILS w-[80vw] md:w-[65vw] md:h-[75vh] h-[50vh] mt-[100px] rounded-3xl object-cover"
                             src={p1}
                             alt="mkronix projects"
                         />
@@ -96,7 +96,7 @@ const Projects = () => {
                     <div className="w-screen">
                         <img
                             loading="lazy"
-                            className="skew-y-3 w-[80vw] md:w-[65vw] md:h-[75vh] h-[50vh] mt-[100px] rounded-3xl object-cover"
+                            className="skew-y-3 IMAGE-DETAILS w-[80vw] md:w-[65vw] md:h-[75vh] h-[50vh] mt-[100px] rounded-3xl object-cover"
                             src={p2}
                             alt="mkronix projects"
                         />
@@ -104,7 +104,7 @@ const Projects = () => {
                     <div className="w-screen">
                         <img
                             loading="lazy"
-                            className="skew-y-3 w-[80vw] md:w-[65vw] md:h-[75vh] h-[50vh] mt-[100px] rounded-3xl object-cover "
+                            className="skew-y-3 IMAGE-DETAILS w-[80vw] md:w-[65vw] md:h-[75vh] h-[50vh] mt-[100px] rounded-3xl object-cover "
                             src={p3}
                             alt="mkronix projects"
                         />

@@ -30,7 +30,7 @@ export const VelocityText = ({ text }) => {
     return (
         <section
             ref={targetRef}
-            className="h-[1000vh] text-white relative z-10"
+            className="h-[1000vh] text-off-white relative z-10"
         >
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                 <motion.p

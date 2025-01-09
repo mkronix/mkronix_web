@@ -18,8 +18,6 @@ module.exports = {
       },
       fontFamily: {
         'lorimer': ['lorimer', 'sans-serif'],
-        'raleway-bold': ['Raleway-bold', 'sans-serif'],
-        'raleway-extra-bold': ['Raleway-extra-bold', 'sans-serif'],
         'raleway-regular': ['Raleway-regular', 'sans-serif'],
       },
       "animation": {

@@ -7,21 +7,6 @@
   src: url("/fonts/lorimer.otf");
 }
 @font-face {
-  font-family: "spaceare";
-  src: url("/fonts/spaceare.ttf");
-}
-
-@font-face {
-  font-family: "Raleway-bold";
-  src: url("/fonts/Raleway-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Raleway-extra-bold";
-  src: url("/fonts/Raleway-ExtraBold.ttf");
-}
-
-@font-face {
   font-family: "Raleway-regular";
   src: url("/fonts/Raleway-Regular.ttf");
 }

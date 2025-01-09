@@ -15,7 +15,7 @@ const HowItWorks = () => {
                             key={index}
                             className={`flex gap-10 justify-center flex-col-reverse md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center`}
                         >
-                            <div className="md:w-2/12 overflow-hidden w-full relative rounded-md md:rounded-full h-56 md:h-44">
+                            <div className="md:w-2/12 overflow-hidden w-full relative">
                                 <img
                                     src={step.image}
                                     alt={step.title}
